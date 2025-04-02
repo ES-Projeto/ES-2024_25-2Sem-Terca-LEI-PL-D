@@ -2,7 +2,7 @@ ES-2024_25-2Sem-Terça-LEI-PL-D
    
     Francisco Rodrigues dos Santos, 111015, CiscosProgramming
     David Prezado, 111248, DMPrezado
-    Afonso Alves, 111157, (Por Preencher)
+    Afonso Alves, 111157, Alves26Programador
 
 Funcionalidades Implementadas:
 (Por Preencher)
