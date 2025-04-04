@@ -5,17 +5,17 @@ ES-2024_25-2Sem-Terça-LEI-PL-D
     Afonso Alves, 111157, Alves26Programador
 
 Funcionalidades Implementadas:
-(Por Preencher)
+    
+    1: Permita carregar os dados do cadastro de propriedades rústicas em Portugal, a partir das fontes de dados
+    publicamente disponíveis, por exemplo, em https://www.ifap.pt/isip/ows/. É fornecido um ficheiro em formato CSV
+    (Comma-Separated Value) no Moodle (“Madeira-Moodle.csv”), com dados do cadastro de propriedades rústicas da região
+    autónoma da Madeira, que pode ser usado como fonte de dados no desenvolvimento e teste da aplicação;
+
 
 Identificação e Descrição de Erros:
 (Por Preencher)
 
 Funcionalidades Não Implementadas:
-
-    1: Permita carregar os dados do cadastro de propriedades rústicas em Portugal, a partir das fontes de dados
-       publicamente disponíveis, por exemplo, em https://www.ifap.pt/isip/ows/. É fornecido um ficheiro em formato CSV
-       (Comma-Separated Value) no Moodle (“Madeira-Moodle.csv”), com dados do cadastro de propriedades rústicas da região
-       autónoma da Madeira, que pode ser usado como fonte de dados no desenvolvimento e teste da aplicação;
 
     2: Permita representar sob a forma de um grafo o cadastro de propriedades rústicas, onde os nós representam as
        propriedades e as arestas representam as relações de adjacência entre os vértices (entre as propriedades);
