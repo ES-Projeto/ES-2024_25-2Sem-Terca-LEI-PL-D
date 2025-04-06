@@ -11,14 +11,14 @@ Funcionalidades Implementadas:
     (Comma-Separated Value) no Moodle (“Madeira-Moodle.csv”), com dados do cadastro de propriedades rústicas da região
     autónoma da Madeira, que pode ser usado como fonte de dados no desenvolvimento e teste da aplicação;
 
+    2: Permita representar sob a forma de um grafo o cadastro de propriedades rústicas, onde os nós representam as
+    propriedades e as arestas representam as relações de adjacência entre os vértices (entre as propriedades);
+
 
 Identificação e Descrição de Erros:
 (Por Preencher)
 
 Funcionalidades Não Implementadas:
-
-    2: Permita representar sob a forma de um grafo o cadastro de propriedades rústicas, onde os nós representam as
-       propriedades e as arestas representam as relações de adjacência entre os vértices (entre as propriedades);
 
     3: Permita representar sob a forma de um grafo o conjunto dos proprietários, onde os nós representam os proprietários
        e as arestas representam as relações de vizinhança entre proprietários;
