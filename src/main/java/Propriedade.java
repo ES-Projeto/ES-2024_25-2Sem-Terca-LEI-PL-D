@@ -5,12 +5,9 @@ public class Propriedade {
     private int Objectid;
     private int par_id;
     private long par_num;
-
     private double shapeArea;
     private double shapeLength;
-
     private Geometry geometry;
-
     private String owner;
     private String freguesia;
     private String municipio;
