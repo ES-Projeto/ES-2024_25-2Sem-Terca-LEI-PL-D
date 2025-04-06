@@ -4,7 +4,6 @@ import org.apache.commons.csv.CSVRecord;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTReader;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,8 +15,6 @@ public class CSVHandler {
     public CSVHandler(String csvFileName) {
         this.csvFileName = csvFileName;
     }
-
-
 
     public List<Propriedade> getPropriedades(){
         List<Propriedade> propriedades = new ArrayList<>();
@@ -41,7 +38,7 @@ public class CSVHandler {
                     }
                 }
             }catch(IOException e){
-                System.out.println("failure");
+                System.out.println("falha ao carregar propriedades");
             }
             return propriedades;
     }
