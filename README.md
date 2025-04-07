@@ -49,6 +49,7 @@ Funcionalidades Não Implementadas:
        necessariamente as indicadas anteriormente, distância a vias de comunicação e distância a zonas urbanas).
 
 ##Qualidade do código 
+
 O projeto foi analisado com o SonarCloud e passou o Quality Gate com sucesso
 
 - **Cobertura de testes:** 75.5% 
