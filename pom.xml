@@ -75,6 +75,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <configLocation>src/main/resources/checkstyle.xml</configLocation>
+                </configuration>
             </plugin>
 
         </plugins>
