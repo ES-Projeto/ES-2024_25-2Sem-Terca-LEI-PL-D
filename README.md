@@ -58,6 +58,7 @@ O projeto foi analisado com o SonarCloud e passou o Quality Gate com sucesso
 - **Manutenibilidade:** 37 code smells (nível A)
 - **Código duplicado:** 0%
 - **Linhas analisadas:** 266
-[ Ver relatório completo no SonarCloud](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
+[Ver análise completa (Overall Code)](https://sonarcloud.io/summary/overall?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
+
   
 
