@@ -43,3 +43,7 @@ Funcionalidades Não Implementadas:
        O grupo deverá definir as características a usar no processo de comparação do valor das propriedades, devendo
        considerar pelo menos a área (mencionada no ponto 6) e mais duas características à escolha do grupo (não
        necessariamente as indicadas anteriormente, distância a vias de comunicação e distância a zonas urbanas).
+
+##Qualidade do código 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
+
