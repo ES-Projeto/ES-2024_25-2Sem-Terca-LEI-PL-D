@@ -1,5 +1,5 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=alert_status)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=coverage)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
 [![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
 
 ES-2024_25-2Sem-Terça-LEI-PL-D
