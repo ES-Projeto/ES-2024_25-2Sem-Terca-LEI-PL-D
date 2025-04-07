@@ -1,3 +1,7 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=alert_status)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
+[![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
+
 ES-2024_25-2Sem-Terça-LEI-PL-D
    
     Francisco Rodrigues dos Santos, 111015, CiscosProgramming
@@ -43,3 +47,17 @@ Funcionalidades Não Implementadas:
        O grupo deverá definir as características a usar no processo de comparação do valor das propriedades, devendo
        considerar pelo menos a área (mencionada no ponto 6) e mais duas características à escolha do grupo (não
        necessariamente as indicadas anteriormente, distância a vias de comunicação e distância a zonas urbanas).
+
+##Qualidade do código 
+
+O projeto foi analisado com o SonarCloud e passou o Quality Gate com sucesso
+
+- **Cobertura de testes:** 75.5% 
+- **Problemas de segurança:** Nenhum (0 issues)
+- **Fiabilidade:** Sem bugs (0 issues)
+- **Manutenibilidade:** 37 code smells (nível A)
+- **Código duplicado:** 0%
+- **Linhas analisadas:** 266
+[ Ver relatório completo no SonarCloud](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
+  
+
