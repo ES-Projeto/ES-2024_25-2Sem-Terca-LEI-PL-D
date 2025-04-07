@@ -1,0 +1,250 @@
+
+(Propriedade#toString()Ljava/lang/String;j
+`C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Propriedade.javaF F("1*Ç
+1G G(g
+e
+G H(
+%0java.lang.String"__concat*
+G G(
+Propriedade{*
+H H(
+	Objectid=h
+f
+G H(&
+%1java.lang.String"__concat*$
+G H(
+
+%0java.lang.String*
+H H(&
+""o
+m
+G I(
+%2java.lang.String"__concat*$
+G H(&
+
+%1java.lang.String*
+I I(
+	, par_id=h
+f
+G I($
+%3java.lang.String"__concat*$
+G I(
+
+%2java.lang.String*
+I I($
+""p
+n
+G J(
+%4java.lang.String"__concat*$
+G I($
+
+%3java.lang.String*
+J J(
+
+, par_num=h
+f
+G J(&
+%5java.lang.String"__concat*$
+G J(
+
+%4java.lang.String*
+J J(&
+""r
+p
+G K(
+%6java.lang.String"__concat*$
+G J(&
+
+%5java.lang.String*
+K K(
+, shapeArea=h
+f
+G K(*
+%7java.lang.String"__concat*$
+G K(
+
+%6java.lang.String*
+K! K(*
+""t
+r
+G L( 
+%8java.lang.String"__concat*$
+G K(*
+
+%7java.lang.String*
+L L( 
+, shapeLength=h
+f
+G L(.
+%9java.lang.String"__concat*$
+G L( 
+
+%8java.lang.String*
+L# L(.
+""r
+p
+G M(
+%10java.lang.String"__concat*$
+G L(.
+
+%9java.lang.String*
+M M(
+, geometry=x
+v
+M  M(()
+%11"org.locationtech.jts.geom.Geometry"__id*9
+
+__unknown_file (*
+Propriedade"
+
+geometryê
+ç
+G M((
+%12java.lang.String"__concat*%
+G M(
+
+%10java.lang.String*7
+M  M((+
+)
+%11"org.locationtech.jts.geom.Geometryq
+o
+G N(
+%13java.lang.String"__concat*%
+G M((
+
+%12java.lang.String*
+N N(
+	, owner='c
+a
+N N(#
+%14java.lang.String"__id*6
+
+__unknown_file (*
+Propriedade"
+owner}
+{
+G N(#
+%15java.lang.String"__concat*%
+G N(
+
+%13java.lang.String*%
+N N(#
+
+%14java.lang.Stringj
+h
+G N(*
+%16java.lang.String"__concat*%
+G N(#
+
+%15java.lang.String*
+N& N(*
+\'u
+s
+G O(
+%17java.lang.String"__concat*%
+G N(*
+
+%16java.lang.String*
+O O(
+, freguesia='g
+e
+O" O(+
+%18java.lang.String"__id*:
+
+__unknown_file (*
+Propriedade"
+	freguesia}
+{
+G O(+
+%19java.lang.String"__concat*%
+G O(
+
+%17java.lang.String*%
+O" O(+
+
+%18java.lang.Stringj
+h
+G O(2
+%20java.lang.String"__concat*%
+G O(+
+
+%19java.lang.String*
+O. O(2
+\'u
+s
+G P(
+%21java.lang.String"__concat*%
+G O(2
+
+%20java.lang.String*
+P P(
+, municipio='g
+e
+P" P(+
+%22java.lang.String"__id*:
+
+__unknown_file (*
+Propriedade"
+	municipio}
+{
+G P(+
+%23java.lang.String"__concat*%
+G P(
+
+%21java.lang.String*%
+P" P(+
+
+%22java.lang.Stringj
+h
+G P(2
+%24java.lang.String"__concat*%
+G P(+
+
+%23java.lang.String*
+P. P(2
+\'p
+n
+G Q(
+%25java.lang.String"__concat*%
+G P(2
+
+%24java.lang.String*
+Q Q(
+
+, ilha='b
+`
+Q Q(!
+%26java.lang.String"__id*5
+
+__unknown_file (*
+Propriedade"
+ilha}
+{
+G Q(!
+%27java.lang.String"__concat*%
+G Q(
+
+%25java.lang.String*%
+Q Q(!
+
+%26java.lang.Stringj
+h
+G Q((
+%28java.lang.String"__concat*%
+G Q(!
+
+%27java.lang.String*
+Q$ Q((
+\'i
+g
+G R(
+%29java.lang.String"__concat*%
+G Q((
+
+%28java.lang.String*
+R R(
+}"%
+G R(
+
+%29java.lang.StringB
+PropriedadeH

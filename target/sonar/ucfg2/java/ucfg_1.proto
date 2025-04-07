@@ -1,0 +1,296 @@
+
+&Grafo#propriedade()Lorg/jgrapht/Graph;d
+ZC:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Grafo.java+ (6"15*¯
+13 (×Ô
+ (
+%5boolean"0org.jgrapht.Graph#addVertex(Ljava/lang/Object;)Z*8
+
+__unknown_file (
+
+grafoorg.jgrapht.Graph*.
+
+__unknown_file (
+
+pPropriedade2addVertex(Ljava/lang/Object;)µ²
+ ('(
+%6"org.locationtech.jts.geom.Geometry"=Propriedade#getGeometry()Lorg/locationtech/jts/geom/Geometry;*.
+
+__unknown_file (
+
+pPropriedade2getGeometry()ôñ
+ (=(
+%7"org.locationtech.jts.geom.Envelope"\org.locationtech.jts.geom.Geometry#getEnvelopeInternal()Lorg/locationtech/jts/geom/Envelope;*F
+
+__unknown_file (*
+(
+%6"org.locationtech.jts.geom.Geometry2getEnvelopeInternal()Œ
+ (A
+
+%8void"jorg.locationtech.jts.index.strtree.STRtree#insert(Lorg/locationtech/jts/geom/Envelope;Ljava/lang/Object;)V*P
+
+__unknown_file (4
+2
+tree*org.locationtech.jts.index.strtree.STRtree*F
+
+__unknown_file (*
+(
+%7"org.locationtech.jts.geom.Envelope*.
+
+__unknown_file (
+
+pPropriedade2>insert(Lorg/locationtech/jts/geom/Envelope;Ljava/lang/Object;)*
+12*w
+14 ()a
+_
+ ()
+%4java.util.List"__id*7
+
+__unknown_file (*
+Grafo"
+propriedades*
+12*²
+15B (SPN
+4 (A#
+%0org.jgrapht.graph.SimpleGraph"org.jgrapht.graph.SimpleGraph´
+±
+0 (T
+%1"8org.jgrapht.graph.SimpleGraph#<init>(Ljava/lang/Class;)V*A
+
+__unknown_file (%
+#
+%0org.jgrapht.graph.SimpleGraph*"
+
+__unknown_file (
+""q
+o
+ (U
+grafoorg.jgrapht.Graph"__id*A
+
+__unknown_file (%
+#
+%0org.jgrapht.graph.SimpleGraphjh
+ ("0
+%2*org.locationtech.jts.index.strtree.STRtree"*org.locationtech.jts.index.strtree.STRtree™
+–
+ ($
+%3"4org.locationtech.jts.index.strtree.STRtree#<init>()V*N
+
+__unknown_file (2
+0
+%2*org.locationtech.jts.index.strtree.STRtree—
+”
+ (%2
+tree*org.locationtech.jts.index.strtree.STRtree"__id*N
+
+__unknown_file (2
+0
+%2*org.locationtech.jts.index.strtree.STRtree*
+14*7
+1! !("(
+! !(
+
+grafoorg.jgrapht.Graph*æ
+2 (H
+F
+ (
+pPropriedade"__id*"
+
+__unknown_file (
+""ƒ
+€
+ (
+pPropriedade"
+__arrayGet*2
+
+__unknown_file (
+
+%9java.util.List*"
+
+__unknown_file (
+""*
+10
+1*í
+3 (H
+F
+ (
+cPropriedade"__id*"
+
+__unknown_file (
+""‹
+ˆ
+ (
+cPropriedade"
+__arrayGet*:
+
+__unknown_file (
+
+
+candidatosjava.util.List*"
+
+__unknown_file (
+""*
+2
+8*ä
+4 (ÏÌ
+ (+$
+%22org.jgrapht.graph.DefaultEdge"Qorg.jgrapht.Graph#addEdge(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;*8
+
+__unknown_file (
+
+grafoorg.jgrapht.Graph*.
+
+__unknown_file (
+
+pPropriedade*.
+
+__unknown_file (
+
+cPropriedade2-addEdge(Ljava/lang/Object;Ljava/lang/Object;)*
+3*Á
+5 (¶³
+ (')
+%19"org.locationtech.jts.geom.Geometry"=Propriedade#getGeometry()Lorg/locationtech/jts/geom/Geometry;*.
+
+__unknown_file (
+
+pPropriedade2getGeometry()¶³
+3 (B)
+%20"org.locationtech.jts.geom.Geometry"=Propriedade#getGeometry()Lorg/locationtech/jts/geom/Geometry;*.
+
+__unknown_file (
+
+cPropriedade2getGeometry()·´
+ (C
+%21boolean"Torg.locationtech.jts.geom.Geometry#intersects(Lorg/locationtech/jts/geom/Geometry;)Z*G
+
+__unknown_file (+
+)
+%19"org.locationtech.jts.geom.Geometry*G
+
+__unknown_file (+
+)
+%20"org.locationtech.jts.geom.Geometry20intersects(Lorg/locationtech/jts/geom/Geometry;)*
+3
+4*ç
+6 (om
+ (!
+
+%16int"Propriedade#getPar_id()I*.
+
+__unknown_file (
+
+pPropriedade2getPar_id()om
+$ (1
+
+%17int"Propriedade#getPar_id()I*.
+
+__unknown_file (
+
+cPropriedade2getPar_id()n
+l
+ (1
+%18boolean"	__compare*
+" (#
+<*
+ (!
+
+
+%16int*
+$ (1
+
+
+%17int*
+3
+5*è
+8 (om
+ (!
+
+%13int"Propriedade#getPar_id()I*.
+
+__unknown_file (
+
+pPropriedade2getPar_id()om
+% (2
+
+%14int"Propriedade#getPar_id()I*.
+
+__unknown_file (
+
+cPropriedade2getPar_id()o
+m
+ (2
+%15boolean"	__compare*
+" ($
+==*
+ (!
+
+
+%13int*
+% (2
+
+
+%14int*
+3
+6*ƒ
+10? (C¶³
+J (Y)
+%10"org.locationtech.jts.geom.Geometry"=Propriedade#getGeometry()Lorg/locationtech/jts/geom/Geometry;*.
+
+__unknown_file (
+
+pPropriedade2getGeometry()öó
+J (o)
+%11"org.locationtech.jts.geom.Envelope"\org.locationtech.jts.geom.Geometry#getEnvelopeInternal()Lorg/locationtech/jts/geom/Envelope;*G
+
+__unknown_file (+
+)
+%10"org.locationtech.jts.geom.Geometry2getEnvelopeInternal()ÔÑ
+? (p
+%12java.util.List"forg.locationtech.jts.index.strtree.STRtree#query(Lorg/locationtech/jts/geom/Envelope;)Ljava/util/List;*P
+
+__unknown_file (4
+2
+tree*org.locationtech.jts.index.strtree.STRtree*G
+
+__unknown_file (+
+)
+%11"org.locationtech.jts.geom.Envelope2+query(Lorg/locationtech/jts/geom/Envelope;)e
+c
+ (q
+
+candidatosjava.util.List"__id*3
+
+__unknown_file (
+
+%12java.util.List*
+3*v
+11 ()a
+_
+ ()
+%9java.util.List"__id*7
+
+__unknown_file (*
+Grafo"
+propriedades*
+2*è
+12 (H
+F
+ (
+pPropriedade"__id*"
+
+__unknown_file (
+""ƒ
+€
+ (
+pPropriedade"
+__arrayGet*2
+
+__unknown_file (
+
+%4java.util.List*"
+
+__unknown_file (
+""*
+13
+11B	
+GrafoH
