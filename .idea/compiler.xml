@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ES-2024_25-2Sem-Terca-LEI-PL-D" />
+        <module name="CSVHandler" />
       </profile>
     </annotationProcessing>
   </component>
