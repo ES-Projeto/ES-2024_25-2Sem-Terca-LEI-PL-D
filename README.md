@@ -1,12 +1,14 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=alert_status)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=coverage)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
-[![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
-
 ES-2024_25-2Sem-Terça-LEI-PL-D
    
     Francisco Rodrigues dos Santos, 111015, CiscosProgramming
     David Prezado, 111248, DMPos
     Afonso Alves, 111157, Alves26Programador
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=alert_status)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
+
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=coverage)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
+
+[![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
 
 Funcionalidades Implementadas:
     
@@ -48,16 +50,16 @@ Funcionalidades Não Implementadas:
        considerar pelo menos a área (mencionada no ponto 6) e mais duas características à escolha do grupo (não
        necessariamente as indicadas anteriormente, distância a vias de comunicação e distância a zonas urbanas).
 
-##Qualidade do código 
+Relatório de avaliação de qualidade do software:
 
-O projeto foi analisado com o SonarCloud e passou o Quality Gate com sucesso
-
-- **Cobertura de testes:** 75.5% 
-- **Problemas de segurança:** Nenhum (0 issues)
-- **Fiabilidade:** Sem bugs (0 issues)
-- **Manutenibilidade:** 37 code smells (nível A)
-- **Código duplicado:** 0%
-- **Linhas analisadas:** 266
+        A avaliação da qualidade do software foi feita através da ferramenta SonarCloud. Estes são alguns dados relativamente ao
+        relatório gerado pela ferramenta:
+        **Cobertura de testes:** 75.5% 
+      - **Problemas de segurança:** Nenhum (0 issues)
+      - **Fiabilidade:** Sem bugs (0 issues)
+      - **Manutenibilidade:** 37 code smells (nível A)
+      - **Código duplicado:** 0%
+      - **Linhas analisadas:** 266
 [Ver análise completa (Overall Code)](https://sonarcloud.io/summary/overall?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
 
   
