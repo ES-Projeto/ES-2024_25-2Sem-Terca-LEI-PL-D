@@ -22,7 +22,9 @@ Funcionalidades Implementadas:
 
 
 Identificação e Descrição de Erros:
-(Por Preencher)
+    
+    De momento não existem erros no código.
+
 
 Funcionalidades Não Implementadas:
 
@@ -54,12 +56,12 @@ Relatório de avaliação de qualidade do software:
 
         A avaliação da qualidade do software foi feita através da ferramenta SonarCloud. Estes são alguns dados relativamente ao
         relatório gerado pela ferramenta:
-        **Cobertura de testes:** 75.5% 
-      - **Problemas de segurança:** Nenhum (0 issues)
-      - **Fiabilidade:** Sem bugs (0 issues)
-      - **Manutenibilidade:** 37 code smells (nível A)
-      - **Código duplicado:** 0%
-      - **Linhas analisadas:** 266
+        Coverage: 75.5% 
+        Security: 0 issues
+        Reliability: Sem bugs (0 issues)
+        Maintainability: 37 code smells (nível A)
+        Duplications: 0%
+        Linhas analisadas: 226
 [Ver análise completa (Overall Code)](https://sonarcloud.io/summary/overall?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
 
   
