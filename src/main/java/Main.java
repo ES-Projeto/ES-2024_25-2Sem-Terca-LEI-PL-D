@@ -10,6 +10,6 @@ public class Main {
         List<Propriedade> propriedades = teste.getPropriedades();
         Grafo dois = new Grafo(propriedades);
         Graph<Propriedade, DefaultEdge> grafopropriedade = dois.propriedade();
-        dois.printText(grafopropriedade);
+        Grafo.printText(grafopropriedade);
     }
 }
