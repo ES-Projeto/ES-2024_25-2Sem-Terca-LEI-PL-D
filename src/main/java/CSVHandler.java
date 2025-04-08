@@ -12,10 +12,22 @@ import java.util.List;
 public class CSVHandler {
     private String csvFileName;
 
+
+    /**
+     * Construtor da classe CSVHandler.
+     *
+     * @param csvFileName nome (ou caminho) do ficheiro CSV a ser lido
+     */
     public CSVHandler(String csvFileName) {
         this.csvFileName = csvFileName;
     }
 
+
+    /**
+     * Lê o ficheiro CSV e retorna uma lista de objetos {@link Propriedade}.
+     *
+     * @return lista de propriedades lidas do ficheiro CSV
+     */
     public List<Propriedade> getPropriedades(){
         List<Propriedade> propriedades = new ArrayList<>();
             try(CSVParser parser = CSVFormat.DEFAULT.withFirstRecordAsHeader().withDelimiter(';').parse(new FileReader(csvFileName))){

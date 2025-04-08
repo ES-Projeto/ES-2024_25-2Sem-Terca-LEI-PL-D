@@ -13,6 +13,22 @@ public class Propriedade {
     private String municipio;
     private String ilha;
 
+
+
+    /**
+     * Construtor da classe Propriedade.
+     *
+     * @param ObjectId     identificador do objeto
+     * @param par_id       identificador do parcelamento
+     * @param par_num      número do parcelamento
+     * @param shapeArea    área da forma geométrica
+     * @param shapeLength  perímetro da forma geométrica
+     * @param geometry     geometria da propriedade
+     * @param owner        nome do proprietário
+     * @param freguesia    freguesia onde está localizada
+     * @param municipio    município onde está localizada
+     * @param ilha         ilha onde está localizada
+     */
     public Propriedade(int ObjectId, int par_id, long par_num, double shapeArea, double shapeLength, Geometry geometry, String owner,  String freguesia, String municipio, String ilha) {
         this.Objectid = ObjectId;
         this.par_id = par_id;
@@ -26,46 +42,80 @@ public class Propriedade {
         this.ilha = ilha;
     }
 
+
+    /**
+     * @return identificador do objeto
+     */
     public int getObjectid() {
         return Objectid;
     }
 
+    /**
+     * @return identificador do parcelamento
+     */
     public int getPar_id() {
         return par_id;
     }
 
+    /**
+     * @return número do parcelamento
+     */
     public long getPar_num() {
         return par_num;
     }
 
+    /**
+     * @return área da forma geométrica
+     */
     public double getShapeArea() {
         return shapeArea;
     }
 
+    /**
+     * @return perímetro da forma geométrica
+     */
     public double getShapeLength() {
         return shapeLength;
     }
 
+    /**
+     * @return geometria da propriedade
+     */
     public Geometry getGeometry() {
         return geometry;
     }
 
+    /**
+     * @return nome do proprietário
+     */
     public String getOwner() {
         return owner;
     }
 
+    /**
+     * @return freguesia onde está localizada a propriedade
+     */
     public String getFreguesia() {
         return freguesia;
     }
 
+    /**
+     * @return município onde está localizada a propriedade
+     */
     public String getMunicipio() {
         return municipio;
     }
 
+    /**
+     * @return ilha onde está localizada a propriedade
+     */
     public String getIlha() {
         return ilha;
     }
 
+    /**
+     * @return representação em string do objeto Propriedade
+     */
     @Override
     public String toString() {
         return "Propriedade{" +
