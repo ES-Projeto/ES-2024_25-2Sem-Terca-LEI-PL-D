@@ -11,7 +11,7 @@ public class GrafoVisual {
 
     public static <V, E> void visualize(Graph<V, E> jGraphTGraph) {
         if (jGraphTGraph == null || jGraphTGraph.vertexSet().isEmpty()) {
-            System.out.println("⚠️ Grafo vazio. Nenhum nó para visualizar.");
+            System.out.println(" Grafo vazio. Nenhum nó para visualizar.");
             JOptionPane.showMessageDialog(null, "O grafo está vazio e não pode ser visualizado.", "Grafo vazio", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -42,7 +42,7 @@ public class GrafoVisual {
                 }
             }
 
-            // ✅ Apply layout inside update block
+            // Apply layout inside update block
             mxOrganicLayout layout = new mxOrganicLayout(mxGraph);
             layout.execute(parent);
         } finally {
@@ -65,6 +65,6 @@ public class GrafoVisual {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-        System.out.println("✅ Janela de grafo aberta com sucesso.");
+        System.out.println(" Janela de grafo aberta com sucesso.");
     }
 }

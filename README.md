@@ -20,6 +20,12 @@ Funcionalidades Implementadas:
     2: Permita representar sob a forma de um grafo o cadastro de propriedades rústicas, onde os nós representam as
     propriedades e as arestas representam as relações de adjacência entre os vértices (entre as propriedades);
 
+    3: Permita representar sob a forma de um grafo o conjunto dos proprietários, onde os nós representam os proprietários
+    e as arestas representam as relações de vizinhança entre proprietários;
+
+    4:  Permita calcular a área média das propriedades, de uma área geográfica/administrativa indicada pelo utilizador
+    (freguesia, concelho, distrito);
+
 
 Identificação e Descrição de Erros:
     
@@ -27,12 +33,6 @@ Identificação e Descrição de Erros:
 
 
 Funcionalidades Não Implementadas:
-
-    3: Permita representar sob a forma de um grafo o conjunto dos proprietários, onde os nós representam os proprietários
-       e as arestas representam as relações de vizinhança entre proprietários;
-
-    4:  Permita calcular a área média das propriedades, de uma área geográfica/administrativa indicada pelo utilizador
-       (freguesia, concelho, distrito);
 
     5:  Permita calcular a área média das propriedades, assumindo que propriedades adjacentes, do mesmo proprietário,
        devem ser consideradas como uma única propriedade, para uma área geográfica/administrativa indicada pelo utilizador;

@@ -78,6 +78,22 @@ public class Grafo {
     }
 
     return grafo;
-}
+    }
+
+    public static double areaMedia(List<Propriedade> propriedades, String tipo, String valor) {
+            return propriedades.stream()
+                .filter(p -> {
+                    return switch (tipo.toLowerCase()) {
+                        case "freguesia" -> p.getFreguesia().equalsIgnoreCase(valor);
+                        case "municipio" -> p.getMunicipio().equalsIgnoreCase(valor);
+                        case "ilha" -> p.getIlha().equalsIgnoreCase(valor);
+                        default -> false;
+                    };
+                })
+                .mapToDouble(Propriedade::getShapeArea)
+                .average()
+                .orElse(0.0);
+    }
+
 
 }
