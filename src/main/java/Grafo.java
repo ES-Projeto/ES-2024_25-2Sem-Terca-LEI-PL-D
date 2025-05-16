@@ -60,4 +60,24 @@ public class Grafo {
         }
     }
 
+    public Graph<String, DefaultEdge> grafoProprietarios(Graph<Propriedade, DefaultEdge> grafoPropriedades) {
+    Graph<String, DefaultEdge> grafo = new SimpleGraph<>(DefaultEdge.class);
+
+    for (DefaultEdge edge : grafoPropriedades.edgeSet()) {
+        Propriedade p1 = grafoPropriedades.getEdgeSource(edge);
+        Propriedade p2 = grafoPropriedades.getEdgeTarget(edge);
+
+        String owner1 = p1.getOwner();
+        String owner2 = p2.getOwner();
+
+        if (!owner1.equals(owner2)) {
+            grafo.addVertex(owner1);
+            grafo.addVertex(owner2);
+            grafo.addEdge(owner1, owner2);
+        }
+    }
+
+    return grafo;
+}
+
 }

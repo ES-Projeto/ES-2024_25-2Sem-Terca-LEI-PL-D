@@ -8,40 +8,77 @@ import java.util.List;
 public class Grafo {
     private List&lt;Propriedade&gt; propriedades;
 
-<span class="fc" id="L11">    public Grafo(List&lt;Propriedade&gt; propriedades) {</span>
-<span class="fc" id="L12">        this.propriedades = propriedades;</span>
-<span class="fc" id="L13">    }</span>
+    /**
+     * Construtor da classe Grafo.
+     *
+     * @param propriedades lista de propriedades a serem usadas na construção do grafo
+     */
+<span class="fc" id="L16">    public Grafo(List&lt;Propriedade&gt; propriedades) {</span>
+<span class="fc" id="L17">        this.propriedades = propriedades;</span>
+<span class="fc" id="L18">    }</span>
 
+    /**
+     * Cria um grafo onde cada nó representa uma propriedade e cada aresta representa uma interseção entre geometrias.
+     *
+     * @return grafo com as propriedades e suas conexões por interseção
+     */
     public Graph&lt;Propriedade, DefaultEdge&gt; propriedade() {
-<span class="fc" id="L16">        Graph&lt;Propriedade, DefaultEdge&gt; grafo = new SimpleGraph&lt;&gt;(DefaultEdge.class);</span>
-<span class="fc" id="L17">        STRtree tree = new STRtree();</span>
-<span class="fc bfc" id="L18" title="All 2 branches covered.">        for (Propriedade p : propriedades) {</span>
-<span class="fc" id="L19">            grafo.addVertex(p);</span>
-<span class="fc" id="L20">            tree.insert(p.getGeometry().getEnvelopeInternal(), p);</span>
-<span class="fc" id="L21">        }</span>
-<span class="fc bfc" id="L22" title="All 2 branches covered.">        for (Propriedade p : propriedades) {</span>
-<span class="fc" id="L23">            List&lt;Propriedade&gt; candidatos = (List&lt;Propriedade&gt;) tree.query(p.getGeometry().getEnvelopeInternal());</span>
-<span class="fc bfc" id="L24" title="All 2 branches covered.">            for (Propriedade c : candidatos) {</span>
-<span class="fc bfc" id="L25" title="All 2 branches covered.">                if (p.getPar_id() == c.getPar_id()) continue;</span>
-<span class="fc bfc" id="L26" title="All 2 branches covered.">                if (p.getPar_id() &lt; c.getPar_id()) {</span>
-<span class="pc bpc" id="L27" title="1 of 2 branches missed.">                    if (p.getGeometry().intersects(c.getGeometry())) {</span>
-<span class="fc" id="L28">                        grafo.addEdge(p, c);</span>
+<span class="fc" id="L26">        Graph&lt;Propriedade, DefaultEdge&gt; grafo = new SimpleGraph&lt;&gt;(DefaultEdge.class);</span>
+<span class="fc" id="L27">        STRtree tree = new STRtree();</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        for (Propriedade p : propriedades) {</span>
+<span class="fc" id="L29">            grafo.addVertex(p);</span>
+<span class="fc" id="L30">            tree.insert(p.getGeometry().getEnvelopeInternal(), p);</span>
+<span class="fc" id="L31">        }</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        for (Propriedade p : propriedades) {</span>
+<span class="fc" id="L33">            List&lt;Propriedade&gt; candidatos = (List&lt;Propriedade&gt;) tree.query(p.getGeometry().getEnvelopeInternal());</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            for (Propriedade c : candidatos) {</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">                if (p.getPar_id() == c.getPar_id()) continue;</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">                if (p.getPar_id() &lt; c.getPar_id()) {</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">                    if (p.getGeometry().intersects(c.getGeometry())) {</span>
+<span class="fc" id="L38">                        grafo.addEdge(p, c);</span>
                     }
                 }
-<span class="fc" id="L31">            }</span>
-<span class="fc" id="L32">        }</span>
-<span class="fc" id="L33">        return grafo;</span>
+<span class="fc" id="L41">            }</span>
+<span class="fc" id="L42">        }</span>
+<span class="fc" id="L43">        return grafo;</span>
     }
 
+    /**
+     * Imprime o grafo no terminal, listando cada nó e seus vizinhos.
+     *
+     * @param grafo o grafo a ser impresso
+     * @param &lt;V&gt; tipo dos vértices
+     * @param &lt;E&gt; tipo das arestas
+     */
     public static &lt;V, E&gt; void printText(Graph&lt;V, E&gt; grafo) {
-<span class="nc bnc" id="L37" title="All 2 branches missed.">        for (V vertice : grafo.vertexSet()) {</span>
-<span class="nc" id="L38">            System.out.println(&quot;Nó: &quot; + vertice);</span>
-<span class="nc bnc" id="L39" title="All 2 branches missed.">            for (V vizinho : Graphs.neighborListOf(grafo, vertice)) {</span>
-<span class="nc" id="L40">                System.out.println(&quot;   → vizinho: &quot; + vizinho);</span>
-<span class="nc" id="L41">            }</span>
-<span class="nc" id="L42">            System.out.println();</span>
-<span class="nc" id="L43">        }</span>
-<span class="nc" id="L44">    }</span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">        for (V vertice : grafo.vertexSet()) {</span>
+<span class="nc" id="L55">            System.out.println(&quot;Nó: &quot; + vertice);</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">            for (V vizinho : Graphs.neighborListOf(grafo, vertice)) {</span>
+<span class="nc" id="L57">                System.out.println(&quot;   → vizinho: &quot; + vizinho);</span>
+<span class="nc" id="L58">            }</span>
+<span class="nc" id="L59">            System.out.println();</span>
+<span class="nc" id="L60">        }</span>
+<span class="nc" id="L61">    }</span>
+
+    public Graph&lt;String, DefaultEdge&gt; grafoProprietarios(Graph&lt;Propriedade, DefaultEdge&gt; grafoPropriedades) {
+<span class="nc" id="L64">    Graph&lt;String, DefaultEdge&gt; grafo = new SimpleGraph&lt;&gt;(DefaultEdge.class);</span>
+
+<span class="nc bnc" id="L66" title="All 2 branches missed.">    for (DefaultEdge edge : grafoPropriedades.edgeSet()) {</span>
+<span class="nc" id="L67">        Propriedade p1 = grafoPropriedades.getEdgeSource(edge);</span>
+<span class="nc" id="L68">        Propriedade p2 = grafoPropriedades.getEdgeTarget(edge);</span>
+
+<span class="nc" id="L70">        String owner1 = p1.getOwner();</span>
+<span class="nc" id="L71">        String owner2 = p2.getOwner();</span>
+
+<span class="nc bnc" id="L73" title="All 2 branches missed.">        if (!owner1.equals(owner2)) {</span>
+<span class="nc" id="L74">            grafo.addVertex(owner1);</span>
+<span class="nc" id="L75">            grafo.addVertex(owner2);</span>
+<span class="nc" id="L76">            grafo.addEdge(owner1, owner2);</span>
+        }
+<span class="nc" id="L78">    }</span>
+
+<span class="nc" id="L80">    return grafo;</span>
+}
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

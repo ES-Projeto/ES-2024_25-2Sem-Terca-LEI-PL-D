@@ -12,35 +12,47 @@ import java.util.List;
 public class CSVHandler {
     private String csvFileName;
 
-<span class="fc" id="L15">    public CSVHandler(String csvFileName) {</span>
-<span class="fc" id="L16">        this.csvFileName = csvFileName;</span>
-<span class="fc" id="L17">    }</span>
 
+    /**
+     * Construtor da classe CSVHandler.
+     *
+     * @param csvFileName nome (ou caminho) do ficheiro CSV a ser lido
+     */
+<span class="fc" id="L21">    public CSVHandler(String csvFileName) {</span>
+<span class="fc" id="L22">        this.csvFileName = csvFileName;</span>
+<span class="fc" id="L23">    }</span>
+
+
+    /**
+     * Lê o ficheiro CSV e retorna uma lista de objetos {@link Propriedade}.
+     *
+     * @return lista de propriedades lidas do ficheiro CSV
+     */
     public List&lt;Propriedade&gt; getPropriedades(){
-<span class="fc" id="L20">        List&lt;Propriedade&gt; propriedades = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L21">            try(CSVParser parser = CSVFormat.DEFAULT.withFirstRecordAsHeader().withDelimiter(';').parse(new FileReader(csvFileName))){</span>
-<span class="fc" id="L22">                WKTReader reader = new WKTReader();</span>
-<span class="fc bfc" id="L23" title="All 2 branches covered.">                for(CSVRecord record : parser){</span>
+<span class="fc" id="L32">        List&lt;Propriedade&gt; propriedades = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L33">            try(CSVParser parser = CSVFormat.DEFAULT.withFirstRecordAsHeader().withDelimiter(';').parse(new FileReader(csvFileName))){</span>
+<span class="fc" id="L34">                WKTReader reader = new WKTReader();</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">                for(CSVRecord record : parser){</span>
                     try{
-<span class="fc" id="L25">                        int objectId = Integer.parseInt(record.get(&quot;OBJECTID&quot;));</span>
-<span class="fc" id="L26">                        int par_id = (int) Double.parseDouble(record.get(&quot;PAR_ID&quot;));</span>
-<span class="fc" id="L27">                        long par_num = (long) Double.parseDouble(record.get(&quot;PAR_NUM&quot;).replace(&quot;,&quot;, &quot;.&quot;));</span>
-<span class="fc" id="L28">                        double shapeLenght = Double.parseDouble(record.get(&quot;Shape_Length&quot;));</span>
-<span class="fc" id="L29">                        double shapeArea = Double.parseDouble(record.get(&quot;Shape_Area&quot;));</span>
-<span class="fc" id="L30">                        Geometry geometry = reader.read(record.get(&quot;geometry&quot;));</span>
-<span class="fc" id="L31">                        String owner = record.get(&quot;OWNER&quot;);</span>
-<span class="fc" id="L32">                        String freguesia = record.get(&quot;Freguesia&quot;);</span>
-<span class="fc" id="L33">                        String municipio = record.get(&quot;Municipio&quot;);</span>
-<span class="fc" id="L34">                        String ilha = record.get(&quot;Ilha&quot;);</span>
-<span class="fc" id="L35">                        propriedades.add(new Propriedade(objectId, par_id, par_num, shapeArea, shapeLenght, geometry , owner, freguesia, municipio, ilha));</span>
-<span class="nc" id="L36">                    }catch (ParseException e) {</span>
-<span class="nc" id="L37">                        throw new RuntimeException(e);</span>
-<span class="fc" id="L38">                    }</span>
-<span class="fc" id="L39">                }</span>
-<span class="nc" id="L40">            }catch(IOException e){</span>
-<span class="nc" id="L41">                System.out.println(&quot;falha ao carregar propriedades&quot;);</span>
-<span class="fc" id="L42">            }</span>
-<span class="fc" id="L43">            return propriedades;</span>
+<span class="fc" id="L37">                        int objectId = Integer.parseInt(record.get(&quot;OBJECTID&quot;));</span>
+<span class="fc" id="L38">                        int par_id = (int) Double.parseDouble(record.get(&quot;PAR_ID&quot;));</span>
+<span class="fc" id="L39">                        long par_num = (long) Double.parseDouble(record.get(&quot;PAR_NUM&quot;).replace(&quot;,&quot;, &quot;.&quot;));</span>
+<span class="fc" id="L40">                        double shapeLenght = Double.parseDouble(record.get(&quot;Shape_Length&quot;));</span>
+<span class="fc" id="L41">                        double shapeArea = Double.parseDouble(record.get(&quot;Shape_Area&quot;));</span>
+<span class="fc" id="L42">                        Geometry geometry = reader.read(record.get(&quot;geometry&quot;));</span>
+<span class="fc" id="L43">                        String owner = record.get(&quot;OWNER&quot;);</span>
+<span class="fc" id="L44">                        String freguesia = record.get(&quot;Freguesia&quot;);</span>
+<span class="fc" id="L45">                        String municipio = record.get(&quot;Municipio&quot;);</span>
+<span class="fc" id="L46">                        String ilha = record.get(&quot;Ilha&quot;);</span>
+<span class="fc" id="L47">                        propriedades.add(new Propriedade(objectId, par_id, par_num, shapeArea, shapeLenght, geometry , owner, freguesia, municipio, ilha));</span>
+<span class="nc" id="L48">                    }catch (ParseException e) {</span>
+<span class="nc" id="L49">                        throw new RuntimeException(e);</span>
+<span class="fc" id="L50">                    }</span>
+<span class="fc" id="L51">                }</span>
+<span class="nc" id="L52">            }catch(IOException e){</span>
+<span class="nc" id="L53">                System.out.println(&quot;falha ao carregar propriedades&quot;);</span>
+<span class="fc" id="L54">            }</span>
+<span class="fc" id="L55">            return propriedades;</span>
     }
 
 

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GrafoVisual.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CSVHandler</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">GrafoVisual.java</span></div><h1>GrafoVisual.java</h1><pre class="source lang-java linenums">import com.mxgraph.layout.mxOrganicLayout;
+import com.mxgraph.swing.mxGraphComponent;
+import com.mxgraph.view.mxGraph;
+import org.jgrapht.Graph;
+
+import javax.swing.*;
+import java.util.HashMap;
+import java.util.Map;
+
+<span class="nc" id="L10">public class GrafoVisual {</span>
+
+    public static &lt;V, E&gt; void visualize(Graph&lt;V, E&gt; jGraphTGraph) {
+<span class="nc" id="L13">        mxGraph mxGraph = new mxGraph();</span>
+<span class="nc" id="L14">        Object parent = mxGraph.getDefaultParent();</span>
+<span class="nc" id="L15">        Map&lt;V, Object&gt; vertexMap = new HashMap&lt;&gt;();</span>
+
+<span class="nc" id="L17">        mxGraph.getModel().beginUpdate();</span>
+        try {
+            // Insert all vertices (positions don't matter - layout will handle it)
+<span class="nc bnc" id="L20" title="All 2 branches missed.">            for (V vertex : jGraphTGraph.vertexSet()) {</span>
+<span class="nc" id="L21">                Object cell = mxGraph.insertVertex(parent, null, vertex.toString(), 0, 0, 120, 50);</span>
+<span class="nc" id="L22">                vertexMap.put(vertex, cell);</span>
+<span class="nc" id="L23">            }</span>
+
+            // Insert all edges
+<span class="nc bnc" id="L26" title="All 2 branches missed.">            for (E edge : jGraphTGraph.edgeSet()) {</span>
+<span class="nc" id="L27">                V source = jGraphTGraph.getEdgeSource(edge);</span>
+<span class="nc" id="L28">                V target = jGraphTGraph.getEdgeTarget(edge);</span>
+<span class="nc" id="L29">                mxGraph.insertEdge(parent, null, &quot;&quot;, vertexMap.get(source), vertexMap.get(target));</span>
+<span class="nc" id="L30">            }</span>
+        } finally {
+<span class="nc" id="L32">            mxGraph.getModel().endUpdate();</span>
+
+            // ✅ Apply organic layout for automatic arrangement
+<span class="nc" id="L35">            mxOrganicLayout layout = new mxOrganicLayout(mxGraph);</span>
+<span class="nc" id="L36">            layout.execute(parent);</span>
+        }
+
+        // Create Swing component to show the graph
+<span class="nc" id="L40">        mxGraphComponent graphComponent = new mxGraphComponent(mxGraph);</span>
+<span class="nc" id="L41">        graphComponent.setConnectable(false);</span>
+<span class="nc" id="L42">        graphComponent.setPanning(true);</span>
+<span class="nc" id="L43">        graphComponent.setToolTips(true);</span>
+<span class="nc" id="L44">        graphComponent.setZoomPolicy(mxGraphComponent.ZOOM_POLICY_PAGE);</span>
+<span class="nc" id="L45">        graphComponent.setCenterZoom(true);</span>
+
+        // Setup the frame
+<span class="nc" id="L48">        JFrame frame = new JFrame(&quot;Grafo de Propriedades / Proprietários&quot;);</span>
+<span class="nc" id="L49">        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L50">        frame.getContentPane().add(graphComponent);</span>
+<span class="nc" id="L51">        frame.setSize(1000, 700);</span>
+<span class="nc" id="L52">        frame.setLocationRelativeTo(null);</span>
+<span class="nc" id="L53">        frame.setVisible(true);</span>
+<span class="nc" id="L54">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

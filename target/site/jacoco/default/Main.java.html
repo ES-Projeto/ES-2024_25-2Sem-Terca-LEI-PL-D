@@ -10,7 +10,11 @@ import java.util.List;
 <span class="nc" id="L10">        List&lt;Propriedade&gt; propriedades = teste.getPropriedades();</span>
 <span class="nc" id="L11">        Grafo dois = new Grafo(propriedades);</span>
 <span class="nc" id="L12">        Graph&lt;Propriedade, DefaultEdge&gt; grafopropriedade = dois.propriedade();</span>
-<span class="nc" id="L13">        dois.printText(grafopropriedade);</span>
-<span class="nc" id="L14">    }</span>
+       // Grafo.printText(grafopropriedade);
+       // GrafoVisual.visualize(grafopropriedade);
+
+<span class="nc" id="L16">        Graph&lt;String, DefaultEdge&gt; grafoProprietarios = dois.grafoProprietarios(grafopropriedade);</span>
+<span class="nc" id="L17">        GrafoVisual.visualize(grafoProprietarios);</span>
+<span class="nc" id="L18">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
