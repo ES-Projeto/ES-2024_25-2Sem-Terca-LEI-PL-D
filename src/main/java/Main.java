@@ -42,8 +42,22 @@ public class Main {
         GrafoVisual.visualize(subGraph);
 
         // Cálculo da área média das propriedades de uma determinada freguesia~
-        String freguesia = "Arco da Calheta";
+        String freguesia = "Ponta do Sol";
         double media = Grafo.areaMedia(propriedades, "freguesia", freguesia);
         System.out.printf("Área média das propriedades em " + freguesia + ": %.2f m²%n", media);
+
+        double mediaUnificada = Grafo.areaMediaUnificada(propriedades, "freguesia", freguesia);
+        System.out.printf("Área média das propriedades em %s (com união): %.2f m²%n", freguesia, mediaUnificada);
+
+        List<SugestaoTroca> trocas = Grafo.sugerirTrocas(propriedades, "freguesia", freguesia);
+        System.out.println("Número total de sugestões geradas: " + trocas.size());
+
+        if (trocas.isEmpty()) {
+            System.out.println("⚠️ Nenhuma sugestão de troca encontrada.");
+        } else {
+            System.out.println("Melhores sugestões de troca:");
+            trocas.stream().limit(5).forEach(System.out::println);
+        }
+
     }
 }

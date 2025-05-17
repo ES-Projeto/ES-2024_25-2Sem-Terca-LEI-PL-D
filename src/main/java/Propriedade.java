@@ -131,4 +131,9 @@ public class Propriedade {
                 ", ilha='" + ilha + '\'' +
                 '}';
     }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
 }
