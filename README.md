@@ -4,6 +4,8 @@ ES-2024_25-2Sem-Terça-LEI-PL-D
     David Prezado, 111248, DMPos
     Afonso Alves, 111157, Alves26Programador
 
+    Sprint 2 : https://trello.com/invite/b/68236ae28230b8a6d04b738e/ATTId49b2bfc5fe4624b4ddb42be5722d20f3138B616/sprint-2 
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=alert_status)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
 
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=coverage)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
