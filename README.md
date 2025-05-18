@@ -57,12 +57,12 @@ Relatório de avaliação de qualidade do software:
 
         A avaliação da qualidade do software foi feita através da ferramenta SonarCloud. Estes são alguns dados relativamente ao
         relatório gerado pela ferramenta:
-        Coverage: 75.5% 
+        Coverage: 81.4% 
         Security: 0 issues
         Reliability: Sem bugs (0 issues)
-        Maintainability: 37 code smells (nível A)
+        Maintainability: 63 code smells (nível A)
         Duplications: 0%
-        Linhas analisadas: 226
+        Linhas analisadas: 219
 [Ver análise completa (Overall Code)](https://sonarcloud.io/summary/overall?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
 
   
