@@ -12,6 +12,7 @@ public class Main {
         // Carregamento do ficheiro CSV e criação da lista de propriedades
         CSVHandler teste = new CSVHandler(csvFileName);
         List<Propriedade> propriedades = teste.getPropriedades();
+        ValorTerrenoCalculator.inicializarPrecosBase(propriedades); // Inicializar valores base
         Grafo dois = new Grafo(propriedades);
 
         // Criação do grafo de propriedades (baseado em interseções)
@@ -41,7 +42,7 @@ public class Main {
         // Visualização do grafo de proprietários filtrado
         GrafoVisual.visualize(subGraph);
 
-        // Cálculo da área média das propriedades de uma determinada freguesia~
+        // Cálculo da área média das propriedades de uma determinada freguesia
         String freguesia = "Ponta do Sol";
         double media = Grafo.areaMedia(propriedades, "freguesia", freguesia);
         System.out.printf("Área média das propriedades em " + freguesia + ": %.2f m²%n", media);
@@ -49,15 +50,22 @@ public class Main {
         double mediaUnificada = Grafo.areaMediaUnificada(propriedades, "freguesia", freguesia);
         System.out.printf("Área média das propriedades em %s (com união): %.2f m²%n", freguesia, mediaUnificada);
 
+        // Sugestões de troca versão original
         List<SugestaoTroca> trocas = Grafo.sugerirTrocas(propriedades, "freguesia", freguesia);
-        System.out.println("Número total de sugestões geradas: " + trocas.size());
-
+        System.out.println("\n--- Sugestões de troca (versão original) ---");
         if (trocas.isEmpty()) {
             System.out.println("⚠️ Nenhuma sugestão de troca encontrada.");
         } else {
-            System.out.println("Melhores sugestões de troca:");
             trocas.stream().limit(5).forEach(System.out::println);
         }
 
+        // Sugestões de troca versão com valor de terreno
+        List<SugestaoTrocaV2> trocasV2 = Grafo.sugerirTrocasV2(propriedades, "freguesia", freguesia);
+        System.out.println("\n--- Sugestões de troca (versão com valor de terreno) ---");
+        if (trocasV2.isEmpty()) {
+            System.out.println("⚠️ Nenhuma sugestão de troca encontrada.");
+        } else {
+            trocasV2.stream().limit(5).forEach(System.out::println);
+        }
     }
 }

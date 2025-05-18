@@ -1,4 +1,5 @@
 import org.locationtech.jts.geom.Geometry;
+import java.util.Random;
 
 public class Propriedade {
 
@@ -13,23 +14,12 @@ public class Propriedade {
     private String municipio;
     private String ilha;
 
+    // Novos atributos
+    private boolean loteavel;
+    private int acesso;
 
-
-    /**
-     * Construtor da classe Propriedade.
-     *
-     * @param ObjectId     identificador do objeto
-     * @param par_id       identificador do parcelamento
-     * @param par_num      número do parcelamento
-     * @param shapeArea    área da forma geométrica
-     * @param shapeLength  perímetro da forma geométrica
-     * @param geometry     geometria da propriedade
-     * @param owner        nome do proprietário
-     * @param freguesia    freguesia onde está localizada
-     * @param municipio    município onde está localizada
-     * @param ilha         ilha onde está localizada
-     */
-    public Propriedade(int ObjectId, int par_id, long par_num, double shapeArea, double shapeLength, Geometry geometry, String owner,  String freguesia, String municipio, String ilha) {
+    public Propriedade(int ObjectId, int par_id, long par_num, double shapeArea, double shapeLength,
+                       Geometry geometry, String owner, String freguesia, String municipio, String ilha) {
         this.Objectid = ObjectId;
         this.par_id = par_id;
         this.par_num = par_num;
@@ -40,82 +30,76 @@ public class Propriedade {
         this.freguesia = freguesia;
         this.municipio = municipio;
         this.ilha = ilha;
+
+        // Geração aleatória razoável
+        Random random = new Random(ObjectId); // Seed para consistência entre execuções
+        this.loteavel = random.nextBoolean();
+        this.acesso = 1 + random.nextInt(10); // [1, 10]
     }
 
-
-    /**
-     * @return identificador do objeto
-     */
+    // Getters
     public int getObjectid() {
         return Objectid;
     }
 
-    /**
-     * @return identificador do parcelamento
-     */
     public int getPar_id() {
         return par_id;
     }
 
-    /**
-     * @return número do parcelamento
-     */
     public long getPar_num() {
         return par_num;
     }
 
-    /**
-     * @return área da forma geométrica
-     */
     public double getShapeArea() {
         return shapeArea;
     }
 
-    /**
-     * @return perímetro da forma geométrica
-     */
     public double getShapeLength() {
         return shapeLength;
     }
 
-    /**
-     * @return geometria da propriedade
-     */
     public Geometry getGeometry() {
         return geometry;
     }
 
-    /**
-     * @return nome do proprietário
-     */
     public String getOwner() {
         return owner;
     }
 
-    /**
-     * @return freguesia onde está localizada a propriedade
-     */
     public String getFreguesia() {
         return freguesia;
     }
 
-    /**
-     * @return município onde está localizada a propriedade
-     */
     public String getMunicipio() {
         return municipio;
     }
 
-    /**
-     * @return ilha onde está localizada a propriedade
-     */
     public String getIlha() {
         return ilha;
     }
 
-    /**
-     * @return representação em string do objeto Propriedade
-     */
+    public boolean isLoteavel() {
+        return loteavel;
+    }
+
+    public int getAcesso() {
+        return acesso;
+    }
+
+    // Setters (caso precises no futuro)
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public void setLoteavel(boolean loteavel) {
+        this.loteavel = loteavel;
+    }
+
+    public void setAcesso(int acesso) {
+        this.acesso = acesso;
+    }
+
+    // toString
     @Override
     public String toString() {
         return "Propriedade{" +
@@ -129,11 +113,8 @@ public class Propriedade {
                 ", freguesia='" + freguesia + '\'' +
                 ", municipio='" + municipio + '\'' +
                 ", ilha='" + ilha + '\'' +
+                ", loteavel=" + loteavel +
+                ", acesso=" + acesso +
                 '}';
     }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
 }
