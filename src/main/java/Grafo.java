@@ -152,8 +152,9 @@ public class Grafo {
                     double ganho = depois - antes;
 
                     if (ganho > 0.01) {
-                        double valorTotalA = a.getShapeArea() * a.getPrecoMetro2();
-                        double valorTotalB = b.getShapeArea() * b.getPrecoMetro2();
+                        double valorTotalA = a.getShapeArea() * ValorTerrenoCalculator.getPrecoBase(a.getFreguesia());
+                        double valorTotalB = b.getShapeArea() * ValorTerrenoCalculator.getPrecoBase(b.getFreguesia());
+
                         double deltaValor = Math.abs(valorTotalA - valorTotalB);
                         double qualidade = ganho / (1 + deltaValor);
 
