@@ -1,6 +1,6 @@
 Grafo#areaMedia(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D
 false
-3b3537c3450bb93398febed17a565972
+1c228b931605c330461e3e4da8d7034b
 java.util.OptionalDouble#orElse(D)D
 ==
 average java.util.stream.DoubleStream#average()Ljava/util/OptionalDouble;

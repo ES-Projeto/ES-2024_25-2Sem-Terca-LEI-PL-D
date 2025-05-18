@@ -1,8 +1,5 @@
-SugestaoTroca#toString()Ljava/lang/String;
+SugestaoTroca#setOwnerA(Ljava/lang/String;)V
 false
-cb0cd4a5dea6e57b6ab74c89eb48994e
-java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+d26ff5abf370dea7d6b97367736e88c8
 ==
-getOwner Propriedade#getOwner()Ljava/lang/String;
-getPar_id Propriedade#getPar_id()I
-getShapeArea Propriedade#getShapeArea()D
+setOwner Propriedade#setOwner(Ljava/lang/String;)V

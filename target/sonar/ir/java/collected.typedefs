@@ -266,15 +266,16 @@ checkStateicom.google.common.base.Preconditions#checkState(ZLjava/lang/String;L
 
 checkState{com.google.common.base.Preconditions#checkState(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V*ú
 
-checkStateçcom.google.common.base.Preconditions#checkState(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)VÑGrafojava.lang.Object*)
+checkStateçcom.google.common.base.Preconditions#checkState(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)VËGrafojava.lang.Object*)
 <init>Grafo#<init>(Ljava/util/List;)V*S
 	areaMediaFGrafo#areaMedia(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D*e
-areaMediaUnificadaOGrafo#areaMediaUnificada(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D*Q
-areaMediaUnificadaSubgrupo3Grafo#areaMediaUnificadaSubgrupo(Ljava/util/List;)D*V
+areaMediaUnificadaOGrafo#areaMediaUnificada(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D*W
+calcularAreaMediaUnificada9Grafo#calcularAreaMediaUnificada(Ljava/util/Collection;)D*V
 grafoProprietarios@Grafo#grafoProprietarios(Lorg/jgrapht/Graph;)Lorg/jgrapht/Graph;*2
 	printText%Grafo#printText(Lorg/jgrapht/Graph;)V*5
 propriedade&Grafo#propriedade()Lorg/jgrapht/Graph;*j
-sugerirTrocasYGrafo#sugerirTrocas(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;(java.lang.Iterablejava.lang.Object>java.util.Collectionjava.lang.Iterablejava.lang.ObjectIjava.util.SequencedCollectionjava.util.Collectionjava.lang.ObjectCjava.util.Listjava.util.SequencedCollectionjava.lang.Object'org.jgrapht.Graphjava.lang.Object)java.lang.Cloneablejava.lang.ObjectHorg.jgrapht.graph.AbstractGraphorg.jgrapht.Graphjava.lang.ObjectÜ#org.jgrapht.graph.AbstractBaseGraphorg.jgrapht.Graphjava.lang.Cloneablejava.io.Serializableorg.jgrapht.graph.AbstractGraph˜org.jgrapht.graph.SimpleGraph#org.jgrapht.graph.AbstractBaseGraph*B
+sugerirTrocasYGrafo#sugerirTrocas(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;*\
+unirGeometriasPorDonoCGrafo#unirGeometriasPorDono(Ljava/util/Collection;)Ljava/util/List;(java.lang.Iterablejava.lang.Object>java.util.Collectionjava.lang.Iterablejava.lang.ObjectIjava.util.SequencedCollectionjava.util.Collectionjava.lang.ObjectCjava.util.Listjava.util.SequencedCollectionjava.lang.Object'org.jgrapht.Graphjava.lang.Object)java.lang.Cloneablejava.lang.ObjectHorg.jgrapht.graph.AbstractGraphorg.jgrapht.Graphjava.lang.ObjectÜ#org.jgrapht.graph.AbstractBaseGraphorg.jgrapht.Graphjava.lang.Cloneablejava.io.Serializableorg.jgrapht.graph.AbstractGraph˜org.jgrapht.graph.SimpleGraph#org.jgrapht.graph.AbstractBaseGraph*B
 <init>8org.jgrapht.graph.SimpleGraph#<init>(Ljava/lang/Class;)V*l
 <init>borg.jgrapht.graph.SimpleGraph#<init>(Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V*w
 createBuilderforg.jgrapht.graph.SimpleGraph#createBuilder(Ljava/lang/Class;)Lorg/jgrapht/graph/builder/GraphBuilder;*É
@@ -309,7 +310,7 @@ createNodeiorg.locationtech.jts.index.strtree.STRtree#createNode(I)Lorg/locatio
 queryorg.locationtech.jts.index.strtree.STRtree#query(Lorg/locationtech/jts/geom/Envelope;Lorg/locationtech/jts/index/ItemVisitor;)V*t
 removejorg.locationtech.jts.index.strtree.STRtree#remove(Lorg/locationtech/jts/geom/Envelope;Ljava/lang/Object;)Z*:
 size2org.locationtech.jts.index.strtree.STRtree#size()I*o
-verticalSlices]org.locationtech.jts.index.strtree.STRtree#verticalSlices(Ljava/util/List;I)[Ljava/util/List;!Propriedadejava.lang.Objecty"org.locationtech.jts.geom.Geometryjava.lang.Cloneablejava.lang.Comparablejava.io.Serializablejava.lang.Objectd"org.locationtech.jts.geom.Envelopejava.lang.Comparablejava.io.Serializablejava.lang.Object9java.util.Setjava.util.Collectionjava.lang.ObjectVjava.lang.Object *java.lang.Appendablejava.lang.Object'java.io.Flushablejava.lang.ObjectPjava.io.OutputStreamjava.io.Closeablejava.io.Flushablejava.lang.Object4java.io.FilterOutputStreamjava.io.OutputStream\java.io.PrintStreamjava.lang.Appendablejava.io.Closeablejava.io.FilterOutputStream`org.jgrapht.graph.IntrusiveEdgejava.lang.Cloneablejava.io.Serializablejava.lang.ObjectBorg.jgrapht.graph.DefaultEdgeorg.jgrapht.graph.IntrusiveEdgeJjava.util.stream.BaseStreamjava.lang.AutoCloseablejava.lang.ObjectJjava.util.stream.Streamjava.util.stream.BaseStreamjava.lang.ObjectPjava.util.stream.DoubleStreamjava.util.stream.BaseStreamjava.lang.Object.java.util.OptionalDoublejava.lang.Objectdoublejava.lang.Double&java.lang.Doublejava.lang.Number0java.util.stream.Collectorjava.lang.Object#java.util.Mapjava.lang.Object,java.util.RandomAccessjava.lang.ObjectHjava.util.AbstractCollectionjava.util.Collectionjava.lang.ObjectHjava.util.AbstractListjava.util.Listjava.util.AbstractCollection∫"java.util.ArrayListjava.util.Listjava.util.RandomAccessjava.lang.Cloneablejava.io.Serializablejava.util.AbstractList*'
+verticalSlices]org.locationtech.jts.index.strtree.STRtree#verticalSlices(Ljava/util/List;I)[Ljava/util/List;!Propriedadejava.lang.Objecty"org.locationtech.jts.geom.Geometryjava.lang.Cloneablejava.lang.Comparablejava.io.Serializablejava.lang.Objectd"org.locationtech.jts.geom.Envelopejava.lang.Comparablejava.io.Serializablejava.lang.Object9java.util.Setjava.util.Collectionjava.lang.ObjectVjava.lang.Object *java.lang.Appendablejava.lang.Object'java.io.Flushablejava.lang.ObjectPjava.io.OutputStreamjava.io.Closeablejava.io.Flushablejava.lang.Object4java.io.FilterOutputStreamjava.io.OutputStream\java.io.PrintStreamjava.lang.Appendablejava.io.Closeablejava.io.FilterOutputStream`org.jgrapht.graph.IntrusiveEdgejava.lang.Cloneablejava.io.Serializablejava.lang.ObjectBorg.jgrapht.graph.DefaultEdgeorg.jgrapht.graph.IntrusiveEdgeJjava.util.stream.BaseStreamjava.lang.AutoCloseablejava.lang.ObjectJjava.util.stream.Streamjava.util.stream.BaseStreamjava.lang.ObjectPjava.util.stream.DoubleStreamjava.util.stream.BaseStreamjava.lang.Object.java.util.OptionalDoublejava.lang.Objectdoublejava.lang.Double&java.lang.Doublejava.lang.Number0java.util.stream.Collectorjava.lang.Object,java.util.RandomAccessjava.lang.ObjectHjava.util.AbstractCollectionjava.util.Collectionjava.lang.ObjectHjava.util.AbstractListjava.util.Listjava.util.AbstractCollection∫"java.util.ArrayListjava.util.Listjava.util.RandomAccessjava.lang.Cloneablejava.io.Serializablejava.util.AbstractList*'
 <init>java.util.ArrayList#<init>()V*(
 <init>java.util.ArrayList#<init>(I)V*=
 <init>3java.util.ArrayList#<init>(Ljava/util/Collection;)V*3
@@ -381,7 +382,7 @@ replaceAllCjava.util.ArrayList#replaceAll(Ljava/util/function/UnaryOperator;)V*
 toArrayCjava.util.ArrayList#toArray([Ljava/lang/Object;)[Ljava/lang/Object;*/
 
 trimToSize!java.util.ArrayList#trimToSize()V*M
-writeObject>java.util.ArrayList#writeObject(Ljava/io/ObjectOutputStream;)Vjava.lang.Object|GrafoVisualjava.lang.Object*
+writeObject>java.util.ArrayList#writeObject(Ljava/io/ObjectOutputStream;)V#java.util.Mapjava.lang.Objectjava.lang.Object|GrafoVisualjava.lang.Object*
 <init>GrafoVisual#<init>()V*8
 	visualize+GrafoVisual#visualize(Lorg/jgrapht/Graph;)V'org.jgrapht.Graphjava.lang.Object
 null booleanjava.lang.Boolean'java.lang.Booleanjava.lang.Object9java.util.Setjava.util.Collectionjava.lang.Object>java.util.Collectionjava.lang.Iterablejava.lang.Object(java.lang.Iterablejava.lang.Objectojava.lang.Systemjava.lang.Object*$
@@ -966,15 +967,16 @@ getPar_numPropriedade#getPar_num()J*+
 mainMain#main([Ljava/lang/String;)V*java.lang.String[]java.lang.Object ©java.lang.Stringjava.io.Serializablejava.lang.Comparablejava.lang.CharSequencejava.lang.constant.Constablejava.lang.constant.ConstantDescjava.lang.Object*java.io.Serializablejava.lang.Object*java.lang.Comparablejava.lang.Object,java.lang.CharSequencejava.lang.Object2java.lang.constant.Constablejava.lang.Object5java.lang.constant.ConstantDescjava.lang.Objectì
 CSVHandlerjava.lang.Object*0
 <init>&CSVHandler#<init>(Ljava/lang/String;)V*?
-getPropriedades,CSVHandler#getPropriedades()Ljava/util/List;Cjava.util.Listjava.util.SequencedCollectionjava.lang.ObjectIjava.util.SequencedCollectionjava.util.Collectionjava.lang.Object>java.util.Collectionjava.lang.Iterablejava.lang.Object(java.lang.Iterablejava.lang.ObjectÑGrafojava.lang.Object*)
+getPropriedades,CSVHandler#getPropriedades()Ljava/util/List;Cjava.util.Listjava.util.SequencedCollectionjava.lang.ObjectIjava.util.SequencedCollectionjava.util.Collectionjava.lang.Object>java.util.Collectionjava.lang.Iterablejava.lang.Object(java.lang.Iterablejava.lang.ObjectËGrafojava.lang.Object*)
 <init>Grafo#<init>(Ljava/util/List;)V*S
 	areaMediaFGrafo#areaMedia(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D*e
-areaMediaUnificadaOGrafo#areaMediaUnificada(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D*Q
-areaMediaUnificadaSubgrupo3Grafo#areaMediaUnificadaSubgrupo(Ljava/util/List;)D*V
+areaMediaUnificadaOGrafo#areaMediaUnificada(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D*W
+calcularAreaMediaUnificada9Grafo#calcularAreaMediaUnificada(Ljava/util/Collection;)D*V
 grafoProprietarios@Grafo#grafoProprietarios(Lorg/jgrapht/Graph;)Lorg/jgrapht/Graph;*2
 	printText%Grafo#printText(Lorg/jgrapht/Graph;)V*5
 propriedade&Grafo#propriedade()Lorg/jgrapht/Graph;*j
-sugerirTrocasYGrafo#sugerirTrocas(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;'org.jgrapht.Graphjava.lang.Object˜org.jgrapht.graph.SimpleGraph#org.jgrapht.graph.AbstractBaseGraph*B
+sugerirTrocasYGrafo#sugerirTrocas(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;*\
+unirGeometriasPorDonoCGrafo#unirGeometriasPorDono(Ljava/util/Collection;)Ljava/util/List;'org.jgrapht.Graphjava.lang.Object˜org.jgrapht.graph.SimpleGraph#org.jgrapht.graph.AbstractBaseGraph*B
 <init>8org.jgrapht.graph.SimpleGraph#<init>(Ljava/lang/Class;)V*l
 <init>borg.jgrapht.graph.SimpleGraph#<init>(Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V*w
 createBuilderforg.jgrapht.graph.SimpleGraph#createBuilder(Ljava/lang/Class;)Lorg/jgrapht/graph/builder/GraphBuilder;*É

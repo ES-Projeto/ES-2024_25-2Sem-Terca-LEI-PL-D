@@ -1,3 +1,9 @@
-GrafoVisual#instance-init#
+Grafo#areaMediaUnificada(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D
 false
-02f305baf19ca97a93716e2dc40f12bd
+e88d3b39845b026925f3a5499d9b3986
+Grafo#calcularAreaMediaUnificada(Ljava/util/Collection;)D
+java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
+==
+collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+filter java.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;

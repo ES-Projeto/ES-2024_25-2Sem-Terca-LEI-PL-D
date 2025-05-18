@@ -1,6 +1,5 @@
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.SimpleGraph;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.locationtech.jts.geom.Geometry;
@@ -21,6 +20,7 @@ class GrafoTest {
     void setUp() throws Exception {
         propriedades = new ArrayList<>();
         WKTReader reader = new WKTReader();
+
         Geometry g1 = reader.read("POLYGON((0 0, 2 0, 2 2, 0 2, 0 0))");
         Geometry g2 = reader.read("POLYGON((2 0, 4 0, 4 2, 2 2, 2 0))");
         Geometry g3 = reader.read("POLYGON((5 5, 7 5, 7 7, 5 7, 5 5))");
@@ -53,20 +53,90 @@ class GrafoTest {
     }
 
     @Test
-    void testAreaMedia() {
+    void testAreaMediaFreguesia() {
         double media = Grafo.areaMedia(propriedades, "freguesia", "F1");
         assertTrue(media > 0);
     }
 
     @Test
-    void testAreaMediaUnificada() {
+    void testAreaMediaMunicipio() {
+        double media = Grafo.areaMedia(propriedades, "municipio", "M1");
+        assertTrue(media > 0);
+    }
+
+    @Test
+    void testAreaMediaIlha() {
+        double media = Grafo.areaMedia(propriedades, "ilha", "I1");
+        assertTrue(media > 0);
+    }
+
+    @Test
+    void testAreaMediaTipoInvalido() {
+        double media = Grafo.areaMedia(propriedades, "tipo_invalido", "qualquer_valor");
+        assertEquals(0.0, media);
+    }
+
+    @Test
+    void testAreaMediaUnificadaFreguesia() {
         double media = Grafo.areaMediaUnificada(propriedades, "freguesia", "F1");
         assertTrue(media > 0);
     }
 
     @Test
-    void testSugerirTrocas() {
+    void testAreaMediaUnificadaMunicipio() {
+        double media = Grafo.areaMediaUnificada(propriedades, "municipio", "M1");
+        assertTrue(media > 0);
+    }
+
+    @Test
+    void testAreaMediaUnificadaIlha() {
+        double media = Grafo.areaMediaUnificada(propriedades, "ilha", "I1");
+        assertTrue(media > 0);
+    }
+
+    @Test
+    void testSugerirTrocasComResultados() {
         List<SugestaoTroca> trocas = Grafo.sugerirTrocas(propriedades, "freguesia", "F1");
         assertNotNull(trocas);
     }
-}
+
+    @Test
+    void testSugerirTrocasSemTrocas() {
+        for (Propriedade p : propriedades) {
+            p.setOwner("Z");
+        }
+        List<SugestaoTroca> trocas = Grafo.sugerirTrocas(propriedades, "freguesia", "F1");
+        assertTrue(trocas.isEmpty());
+    }
+
+    @Test
+    void testPrintTextDoesNotThrow() {
+        Graph<Propriedade, DefaultEdge> graph = grafo.propriedade();
+        assertDoesNotThrow(() -> Grafo.printText(graph));
+    }
+    @Test
+    void testSugerirTrocasComGanhoIrrelevante() throws Exception {
+        WKTReader reader = new WKTReader();
+        Geometry g4 = reader.read("POLYGON((10 10, 12 10, 12 12, 10 12, 10 10))");
+        Geometry g5 = reader.read("POLYGON((12 10, 14 10, 14 12, 12 12, 12 10))");
+
+        Propriedade p4 = new Propriedade(4, 4, 4, g4.getArea(), g4.getLength(), g4, "X", "F1", "M1", "I1");
+        Propriedade p5 = new Propriedade(5, 5, 5, g5.getArea(), g5.getLength(), g5, "Y", "F1", "M1", "I1");
+
+        propriedades.clear(); // limpar anteriores
+        propriedades.add(p4);
+        propriedades.add(p5);
+
+        List<SugestaoTroca> trocas = Grafo.sugerirTrocas(propriedades, "freguesia", "F1");
+
+        // Mesmo que haja troca, o ganho tem de ser > 0.01 para ser incluída
+        assertTrue(trocas.isEmpty());
+    }
+
+    @Test
+    void testAreaMediaUnificadaTipoInvalido() {
+        double media = Grafo.areaMediaUnificada(propriedades, "tipo_invalido", "F1");
+        assertEquals(0.0, media);
+    }
+
+    }

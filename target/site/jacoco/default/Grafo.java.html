@@ -2,246 +2,183 @@
 import org.jgrapht.Graphs;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
+import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.index.strtree.STRtree;
+import org.locationtech.jts.operation.union.CascadedPolygonUnion;
+
 import java.util.*;
 import java.util.stream.Collectors;
-
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.operation.union.CascadedPolygonUnion;
 
 public class Grafo {
     private List&lt;Propriedade&gt; propriedades;
 
-    /**
-     * Construtor da classe Grafo.
-     *
-     * @param propriedades lista de propriedades a serem usadas na construção do grafo
-     */
-<span class="fc" id="L20">    public Grafo(List&lt;Propriedade&gt; propriedades) {</span>
-<span class="fc" id="L21">        this.propriedades = propriedades;</span>
-<span class="fc" id="L22">    }</span>
+<span class="fc" id="L15">    public Grafo(List&lt;Propriedade&gt; propriedades) {</span>
+<span class="fc" id="L16">        this.propriedades = propriedades;</span>
+<span class="fc" id="L17">    }</span>
 
-    /**
-     * Cria um grafo onde cada nó representa uma propriedade e cada aresta representa uma interseção entre geometrias.
-     *
-     * @return grafo com as propriedades e suas conexões por interseção
-     */
     public Graph&lt;Propriedade, DefaultEdge&gt; propriedade() {
-<span class="fc" id="L30">        Graph&lt;Propriedade, DefaultEdge&gt; grafo = new SimpleGraph&lt;&gt;(DefaultEdge.class);</span>
-<span class="fc" id="L31">        STRtree tree = new STRtree();</span>
-<span class="fc bfc" id="L32" title="All 2 branches covered.">        for (Propriedade p : propriedades) {</span>
-<span class="fc" id="L33">            grafo.addVertex(p);</span>
-<span class="fc" id="L34">            tree.insert(p.getGeometry().getEnvelopeInternal(), p);</span>
-<span class="fc" id="L35">        }</span>
-<span class="fc bfc" id="L36" title="All 2 branches covered.">        for (Propriedade p : propriedades) {</span>
-<span class="fc" id="L37">            List&lt;Propriedade&gt; candidatos = (List&lt;Propriedade&gt;) tree.query(p.getGeometry().getEnvelopeInternal());</span>
-<span class="fc bfc" id="L38" title="All 2 branches covered.">            for (Propriedade c : candidatos) {</span>
-<span class="fc bfc" id="L39" title="All 2 branches covered.">                if (p.getPar_id() == c.getPar_id()) continue;</span>
-<span class="fc bfc" id="L40" title="All 2 branches covered.">                if (p.getPar_id() &lt; c.getPar_id()) {</span>
-<span class="pc bpc" id="L41" title="1 of 2 branches missed.">                    if (p.getGeometry().intersects(c.getGeometry())) {</span>
-<span class="fc" id="L42">                        grafo.addEdge(p, c);</span>
+<span class="fc" id="L20">        Graph&lt;Propriedade, DefaultEdge&gt; grafo = new SimpleGraph&lt;&gt;(DefaultEdge.class);</span>
+<span class="fc" id="L21">        STRtree tree = new STRtree();</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        for (Propriedade p : propriedades) {</span>
+<span class="fc" id="L23">            grafo.addVertex(p);</span>
+<span class="fc" id="L24">            tree.insert(p.getGeometry().getEnvelopeInternal(), p);</span>
+<span class="fc" id="L25">        }</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        for (Propriedade p : propriedades) {</span>
+<span class="fc" id="L27">            List&lt;Propriedade&gt; candidatos = (List&lt;Propriedade&gt;) tree.query(p.getGeometry().getEnvelopeInternal());</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">            for (Propriedade c : candidatos) {</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">                if (p.getPar_id() == c.getPar_id()) continue;</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">                if (p.getPar_id() &lt; c.getPar_id()) {</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">                    if (p.getGeometry().intersects(c.getGeometry())) {</span>
+<span class="fc" id="L32">                        grafo.addEdge(p, c);</span>
                     }
                 }
-<span class="fc" id="L45">            }</span>
-<span class="fc" id="L46">        }</span>
-<span class="fc" id="L47">        return grafo;</span>
+<span class="fc" id="L35">            }</span>
+<span class="fc" id="L36">        }</span>
+<span class="fc" id="L37">        return grafo;</span>
     }
 
-    /**
-     * Imprime o grafo no terminal, listando cada nó e seus vizinhos.
-     *
-     * @param grafo o grafo a ser impresso
-     * @param &lt;V&gt; tipo dos vértices
-     * @param &lt;E&gt; tipo das arestas
-     */
     public static &lt;V, E&gt; void printText(Graph&lt;V, E&gt; grafo) {
-<span class="nc bnc" id="L58" title="All 2 branches missed.">        for (V vertice : grafo.vertexSet()) {</span>
-<span class="nc" id="L59">            System.out.println(&quot;Nó: &quot; + vertice);</span>
-<span class="nc bnc" id="L60" title="All 2 branches missed.">            for (V vizinho : Graphs.neighborListOf(grafo, vertice)) {</span>
-<span class="nc" id="L61">                System.out.println(&quot;   → vizinho: &quot; + vizinho);</span>
-<span class="nc" id="L62">            }</span>
-<span class="nc" id="L63">            System.out.println();</span>
-<span class="nc" id="L64">        }</span>
-<span class="nc" id="L65">    }</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        for (V vertice : grafo.vertexSet()) {</span>
+<span class="fc" id="L42">            System.out.println(&quot;Nó: &quot; + vertice);</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">            for (V vizinho : Graphs.neighborListOf(grafo, vertice)) {</span>
+<span class="fc" id="L44">                System.out.println(&quot;   → vizinho: &quot; + vizinho);</span>
+<span class="fc" id="L45">            }</span>
+<span class="fc" id="L46">            System.out.println();</span>
+<span class="fc" id="L47">        }</span>
+<span class="fc" id="L48">    }</span>
 
     public Graph&lt;String, DefaultEdge&gt; grafoProprietarios(Graph&lt;Propriedade, DefaultEdge&gt; grafoPropriedades) {
-<span class="fc" id="L68">    Graph&lt;String, DefaultEdge&gt; grafo = new SimpleGraph&lt;&gt;(DefaultEdge.class);</span>
-
-<span class="fc bfc" id="L70" title="All 2 branches covered.">    for (DefaultEdge edge : grafoPropriedades.edgeSet()) {</span>
-<span class="fc" id="L71">        Propriedade p1 = grafoPropriedades.getEdgeSource(edge);</span>
-<span class="fc" id="L72">        Propriedade p2 = grafoPropriedades.getEdgeTarget(edge);</span>
-
-<span class="fc" id="L74">        String owner1 = p1.getOwner();</span>
-<span class="fc" id="L75">        String owner2 = p2.getOwner();</span>
-
-<span class="pc bpc" id="L77" title="1 of 2 branches missed.">        if (!owner1.equals(owner2)) {</span>
-<span class="fc" id="L78">            grafo.addVertex(owner1);</span>
-<span class="fc" id="L79">            grafo.addVertex(owner2);</span>
-<span class="fc" id="L80">            grafo.addEdge(owner1, owner2);</span>
-        }
-<span class="fc" id="L82">    }</span>
-
-<span class="fc" id="L84">    return grafo;</span>
+<span class="fc" id="L51">        Graph&lt;String, DefaultEdge&gt; grafo = new SimpleGraph&lt;&gt;(DefaultEdge.class);</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        for (DefaultEdge edge : grafoPropriedades.edgeSet()) {</span>
+<span class="fc" id="L53">            Propriedade p1 = grafoPropriedades.getEdgeSource(edge);</span>
+<span class="fc" id="L54">            Propriedade p2 = grafoPropriedades.getEdgeTarget(edge);</span>
+<span class="fc" id="L55">            String owner1 = p1.getOwner();</span>
+<span class="fc" id="L56">            String owner2 = p2.getOwner();</span>
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">            if (!owner1.equals(owner2)) {</span>
+<span class="fc" id="L58">                grafo.addVertex(owner1);</span>
+<span class="fc" id="L59">                grafo.addVertex(owner2);</span>
+<span class="fc" id="L60">                grafo.addEdge(owner1, owner2);</span>
+            }
+<span class="fc" id="L62">        }</span>
+<span class="fc" id="L63">        return grafo;</span>
     }
 
     public static double areaMedia(List&lt;Propriedade&gt; propriedades, String tipo, String valor) {
-<span class="fc" id="L88">            return propriedades.stream()</span>
-<span class="fc" id="L89">                .filter(p -&gt; {</span>
-<span class="pc bpc" id="L90" title="3 of 4 branches missed.">                    return switch (tipo.toLowerCase()) {</span>
-<span class="fc" id="L91">                        case &quot;freguesia&quot; -&gt; p.getFreguesia().equalsIgnoreCase(valor);</span>
-<span class="nc" id="L92">                        case &quot;municipio&quot; -&gt; p.getMunicipio().equalsIgnoreCase(valor);</span>
-<span class="nc" id="L93">                        case &quot;ilha&quot; -&gt; p.getIlha().equalsIgnoreCase(valor);</span>
-<span class="nc" id="L94">                        default -&gt; false;</span>
-                    };
+<span class="fc" id="L67">        return propriedades.stream()</span>
+<span class="fc bfc" id="L68" title="All 4 branches covered.">                .filter(p -&gt; switch (tipo.toLowerCase()) {</span>
+<span class="fc" id="L69">                    case &quot;freguesia&quot; -&gt; p.getFreguesia().equalsIgnoreCase(valor);</span>
+<span class="fc" id="L70">                    case &quot;municipio&quot; -&gt; p.getMunicipio().equalsIgnoreCase(valor);</span>
+<span class="fc" id="L71">                    case &quot;ilha&quot; -&gt; p.getIlha().equalsIgnoreCase(valor);</span>
+<span class="fc" id="L72">                    default -&gt; false;</span>
                 })
-<span class="fc" id="L97">                .mapToDouble(Propriedade::getShapeArea)</span>
-<span class="fc" id="L98">                .average()</span>
-<span class="fc" id="L99">                .orElse(0.0);</span>
+<span class="fc" id="L74">                .mapToDouble(Propriedade::getShapeArea)</span>
+<span class="fc" id="L75">                .average()</span>
+<span class="fc" id="L76">                .orElse(0.0);</span>
     }
 
     public static double areaMediaUnificada(List&lt;Propriedade&gt; propriedades, String tipo, String valor) {
-        // 1. Filtrar propriedades da área geográfica indicada
-<span class="fc" id="L104">        List&lt;Propriedade&gt; filtradas = propriedades.stream()</span>
-<span class="pc bpc" id="L105" title="3 of 4 branches missed.">                .filter(p -&gt; switch (tipo.toLowerCase()) {</span>
-<span class="fc" id="L106">                    case &quot;freguesia&quot; -&gt; p.getFreguesia().equalsIgnoreCase(valor);</span>
-<span class="nc" id="L107">                    case &quot;municipio&quot; -&gt; p.getMunicipio().equalsIgnoreCase(valor);</span>
-<span class="nc" id="L108">                    case &quot;ilha&quot; -&gt; p.getIlha().equalsIgnoreCase(valor);</span>
-<span class="nc" id="L109">                    default -&gt; false;</span>
-<span class="fc" id="L110">                }).collect(Collectors.toList());</span>
+<span class="fc" id="L80">        List&lt;Propriedade&gt; filtradas = propriedades.stream()</span>
+<span class="fc bfc" id="L81" title="All 4 branches covered.">                .filter(p -&gt; switch (tipo.toLowerCase()) {</span>
+<span class="fc" id="L82">                    case &quot;freguesia&quot; -&gt; p.getFreguesia().equalsIgnoreCase(valor);</span>
+<span class="fc" id="L83">                    case &quot;municipio&quot; -&gt; p.getMunicipio().equalsIgnoreCase(valor);</span>
+<span class="fc" id="L84">                    case &quot;ilha&quot; -&gt; p.getIlha().equalsIgnoreCase(valor);</span>
+<span class="fc" id="L85">                    default -&gt; false;</span>
+                })
+<span class="fc" id="L87">                .collect(Collectors.toList());</span>
 
-
-<span class="fc" id="L113">        Map&lt;String, List&lt;Propriedade&gt;&gt; porDono = filtradas.stream()</span>
-<span class="fc" id="L114">                .collect(Collectors.groupingBy(Propriedade::getOwner));</span>
-
-<span class="fc" id="L116">        List&lt;Geometry&gt; geometriasAgrupadas = new ArrayList&lt;&gt;();</span>
-
-<span class="fc bfc" id="L118" title="All 2 branches covered.">        for (List&lt;Propriedade&gt; props : porDono.values()) {</span>
-<span class="fc" id="L119">            List&lt;Geometry&gt; restantes = new ArrayList&lt;&gt;(props.stream().map(Propriedade::getGeometry).toList());</span>
-
-<span class="fc bfc" id="L121" title="All 2 branches covered.">            while (!restantes.isEmpty()) {</span>
-<span class="fc" id="L122">                Geometry base = restantes.remove(0);</span>
-<span class="fc" id="L123">                List&lt;Geometry&gt; grupo = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L124">                grupo.add(base);</span>
-
-                boolean alterado;
-                do {
-<span class="fc" id="L128">                    alterado = false;</span>
-<span class="fc" id="L129">                    Iterator&lt;Geometry&gt; it = restantes.iterator();</span>
-<span class="fc bfc" id="L130" title="All 2 branches covered.">                    while (it.hasNext()) {</span>
-<span class="fc" id="L131">                        Geometry g = it.next();</span>
-<span class="pc bpc" id="L132" title="3 of 6 branches missed.">                        if (grupo.stream().anyMatch(baseG -&gt; baseG.touches(g) || baseG.intersects(g))) {</span>
-<span class="nc" id="L133">                            grupo.add(g);</span>
-<span class="nc" id="L134">                            it.remove();</span>
-<span class="nc" id="L135">                            alterado = true;</span>
-                        }
-<span class="fc" id="L137">                    }</span>
-<span class="pc bpc" id="L138" title="1 of 2 branches missed.">                } while (alterado);</span>
-
-<span class="fc" id="L140">                Geometry unida = CascadedPolygonUnion.union(grupo);</span>
-<span class="fc" id="L141">                geometriasAgrupadas.add(unida);</span>
-<span class="fc" id="L142">            }</span>
-<span class="fc" id="L143">        }</span>
-
-<span class="fc" id="L145">        double soma = geometriasAgrupadas.stream().mapToDouble(Geometry::getArea).sum();</span>
-<span class="fc" id="L146">        int total = geometriasAgrupadas.size();</span>
-
-<span class="pc bpc" id="L148" title="1 of 2 branches missed.">        return total == 0 ? 0.0 : soma / total;</span>
+<span class="fc" id="L89">        return calcularAreaMediaUnificada(filtradas);</span>
     }
 
     public static List&lt;SugestaoTroca&gt; sugerirTrocas(List&lt;Propriedade&gt; propriedades, String tipo, String valor) {
-<span class="fc" id="L152">        List&lt;Propriedade&gt; filtradas = propriedades.stream()</span>
-<span class="pc bpc" id="L153" title="3 of 4 branches missed.">                .filter(p -&gt; switch (tipo.toLowerCase()) {</span>
-<span class="fc" id="L154">                    case &quot;freguesia&quot; -&gt; p.getFreguesia().equalsIgnoreCase(valor);</span>
-<span class="nc" id="L155">                    case &quot;municipio&quot; -&gt; p.getMunicipio().equalsIgnoreCase(valor);</span>
-<span class="nc" id="L156">                    case &quot;ilha&quot; -&gt; p.getIlha().equalsIgnoreCase(valor);</span>
-<span class="nc" id="L157">                    default -&gt; false;</span>
+<span class="fc" id="L93">        List&lt;Propriedade&gt; filtradas = propriedades.stream()</span>
+<span class="pc bpc" id="L94" title="3 of 4 branches missed.">                .filter(p -&gt; switch (tipo.toLowerCase()) {</span>
+<span class="fc" id="L95">                    case &quot;freguesia&quot; -&gt; p.getFreguesia().equalsIgnoreCase(valor);</span>
+<span class="nc" id="L96">                    case &quot;municipio&quot; -&gt; p.getMunicipio().equalsIgnoreCase(valor);</span>
+<span class="nc" id="L97">                    case &quot;ilha&quot; -&gt; p.getIlha().equalsIgnoreCase(valor);</span>
+<span class="nc" id="L98">                    default -&gt; false;</span>
                 })
-<span class="fc" id="L159">                .toList();</span>
+<span class="fc" id="L100">                .toList();</span>
 
-<span class="fc" id="L161">        List&lt;SugestaoTroca&gt; sugestoes = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L162">        int tentativas = 0;</span>
-<span class="fc" id="L163">        int limite = 500;</span>
+<span class="fc" id="L102">        List&lt;SugestaoTroca&gt; sugestoes = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L103">        int tentativas = 0;</span>
+<span class="fc" id="L104">        int limite = 500;</span>
 
-<span class="fc bfc" id="L165" title="All 2 branches covered.">        for (Propriedade a : filtradas) {</span>
-<span class="fc bfc" id="L166" title="All 2 branches covered.">            for (Propriedade b : filtradas) {</span>
-<span class="pc bpc" id="L167" title="1 of 2 branches missed.">                if (tentativas++ &gt; limite) break;</span>
-<span class="fc bfc" id="L168" title="All 2 branches covered.">                if (a.getPar_id() == b.getPar_id()) continue;</span>
-<span class="fc bfc" id="L169" title="All 2 branches covered.">                if (!a.getOwner().equals(b.getOwner())) {</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">        for (Propriedade a : filtradas) {</span>
+<span class="fc bfc" id="L107" title="All 2 branches covered.">            for (Propriedade b : filtradas) {</span>
+<span class="pc bpc" id="L108" title="1 of 2 branches missed.">                if (tentativas++ &gt; limite) break;</span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">                if (a.getPar_id() == b.getPar_id()) continue;</span>
+<span class="fc bfc" id="L110" title="All 2 branches covered.">                if (!a.getOwner().equals(b.getOwner())) {</span>
+<span class="fc" id="L111">                    String donoA = a.getOwner();</span>
+<span class="fc" id="L112">                    String donoB = b.getOwner();</span>
 
-<span class="fc" id="L171">                    String donoA = a.getOwner();</span>
-<span class="fc" id="L172">                    String donoB = b.getOwner();</span>
+<span class="fc" id="L114">                    List&lt;Propriedade&gt; grupoOriginal = filtradas.stream()</span>
+<span class="pc bpc" id="L115" title="1 of 4 branches missed.">                            .filter(p -&gt; p.getOwner().equals(donoA) || p.getOwner().equals(donoB))</span>
+<span class="fc" id="L116">                            .collect(Collectors.toList());</span>
 
-<span class="fc" id="L174">                    List&lt;Propriedade&gt; grupoOriginal = filtradas.stream()</span>
-<span class="pc bpc" id="L175" title="1 of 4 branches missed.">                            .filter(p -&gt; p.getOwner().equals(donoA) || p.getOwner().equals(donoB))</span>
-<span class="fc" id="L176">                            .collect(Collectors.toList());</span>
+<span class="fc" id="L118">                    double antes = calcularAreaMediaUnificada(grupoOriginal);</span>
 
-<span class="fc" id="L178">                    double antes = areaMediaUnificadaSubgrupo(grupoOriginal);</span>
+<span class="fc" id="L120">                    a.setOwner(donoB);</span>
+<span class="fc" id="L121">                    b.setOwner(donoA);</span>
 
+<span class="fc" id="L123">                    double depois = calcularAreaMediaUnificada(grupoOriginal);</span>
 
-<span class="fc" id="L181">                    a.setOwner(donoB);</span>
-<span class="fc" id="L182">                    b.setOwner(donoA);</span>
+<span class="fc" id="L125">                    a.setOwner(donoA);</span>
+<span class="fc" id="L126">                    b.setOwner(donoB);</span>
 
-<span class="fc" id="L184">                    double depois = areaMediaUnificadaSubgrupo(grupoOriginal);</span>
+<span class="fc" id="L128">                    double ganho = depois - antes;</span>
 
-
-<span class="fc" id="L187">                    a.setOwner(donoA);</span>
-<span class="fc" id="L188">                    b.setOwner(donoB);</span>
-
-<span class="fc" id="L190">                    double ganho = depois - antes;</span>
-
-<span class="fc bfc" id="L192" title="All 2 branches covered.">                    if (ganho &gt; 0.01) {</span>
-<span class="fc" id="L193">                        double dif = Math.abs(a.getShapeArea() - b.getShapeArea());</span>
-                        // Formula menos restrita em relação ao ganho mas menos realista: double potencial = 1.0 / (1.0 + Mathsqrt(dif));
-<span class="fc" id="L195">                        double potencial = 1.0 / (1.0 + dif);</span>
-<span class="fc" id="L196">                        sugestoes.add(new SugestaoTroca(a, b, ganho, potencial));</span>
+<span class="fc bfc" id="L130" title="All 2 branches covered.">                    if (ganho &gt; 0.01) {</span>
+<span class="fc" id="L131">                        double dif = Math.abs(a.getShapeArea() - b.getShapeArea());</span>
+<span class="fc" id="L132">                        double potencial = 1.0 / (1.0 + dif);</span>
+<span class="fc" id="L133">                        sugestoes.add(new SugestaoTroca(a, b, ganho, potencial));</span>
                     }
                 }
-<span class="fc" id="L199">            }</span>
-<span class="fc" id="L200">        }</span>
+<span class="fc" id="L136">            }</span>
+<span class="fc" id="L137">        }</span>
 
-<span class="fc" id="L202">        sugestoes.sort(Comparator.comparingDouble(s -&gt; -(s.getGanhoTotal() * s.getPotencial())));</span>
-<span class="fc" id="L203">        return sugestoes;</span>
+<span class="fc" id="L139">        sugestoes.sort(Comparator.comparingDouble(s -&gt; -(s.getGanhoTotal() * s.getPotencial())));</span>
+<span class="fc" id="L140">        return sugestoes;</span>
     }
 
-    private static double areaMediaUnificadaSubgrupo(List&lt;Propriedade&gt; propriedades) {
-<span class="fc" id="L207">        Map&lt;String, List&lt;Propriedade&gt;&gt; porDono = propriedades.stream()</span>
-<span class="fc" id="L208">                .collect(Collectors.groupingBy(Propriedade::getOwner));</span>
+    private static List&lt;Geometry&gt; unirGeometriasPorDono(Collection&lt;Propriedade&gt; propriedades) {
+<span class="fc" id="L144">        Map&lt;String, List&lt;Propriedade&gt;&gt; porDono = propriedades.stream()</span>
+<span class="fc" id="L145">                .collect(Collectors.groupingBy(Propriedade::getOwner));</span>
 
-<span class="fc" id="L210">        List&lt;Geometry&gt; geometriasAgrupadas = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L147">        List&lt;Geometry&gt; geometriasAgrupadas = new ArrayList&lt;&gt;();</span>
 
-<span class="fc bfc" id="L212" title="All 2 branches covered.">        for (List&lt;Propriedade&gt; props : porDono.values()) {</span>
-<span class="fc" id="L213">            List&lt;Geometry&gt; restantes = new ArrayList&lt;&gt;(props.stream().map(Propriedade::getGeometry).toList());</span>
-
-<span class="fc bfc" id="L215" title="All 2 branches covered.">            while (!restantes.isEmpty()) {</span>
-<span class="fc" id="L216">                Geometry base = restantes.remove(0);</span>
-<span class="fc" id="L217">                List&lt;Geometry&gt; grupo = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L218">                grupo.add(base);</span>
+<span class="fc bfc" id="L149" title="All 2 branches covered.">        for (List&lt;Propriedade&gt; props : porDono.values()) {</span>
+<span class="fc" id="L150">            List&lt;Geometry&gt; restantes = new ArrayList&lt;&gt;(props.stream().map(Propriedade::getGeometry).toList());</span>
+<span class="fc bfc" id="L151" title="All 2 branches covered.">            while (!restantes.isEmpty()) {</span>
+<span class="fc" id="L152">                Geometry base = restantes.remove(0);</span>
+<span class="fc" id="L153">                List&lt;Geometry&gt; grupo = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L154">                grupo.add(base);</span>
 
                 boolean alterado;
                 do {
-<span class="fc" id="L222">                    alterado = false;</span>
-<span class="fc" id="L223">                    Iterator&lt;Geometry&gt; it = restantes.iterator();</span>
-<span class="fc bfc" id="L224" title="All 2 branches covered.">                    while (it.hasNext()) {</span>
-<span class="fc" id="L225">                        Geometry g = it.next();</span>
-<span class="pc bpc" id="L226" title="1 of 6 branches missed.">                        if (grupo.stream().anyMatch(baseG -&gt; baseG.touches(g) || baseG.intersects(g))) {</span>
-<span class="fc" id="L227">                            grupo.add(g);</span>
-<span class="fc" id="L228">                            it.remove();</span>
-<span class="fc" id="L229">                            alterado = true;</span>
+<span class="fc" id="L158">                    alterado = false;</span>
+<span class="fc" id="L159">                    Iterator&lt;Geometry&gt; it = restantes.iterator();</span>
+<span class="fc bfc" id="L160" title="All 2 branches covered.">                    while (it.hasNext()) {</span>
+<span class="fc" id="L161">                        Geometry g = it.next();</span>
+<span class="pc bpc" id="L162" title="1 of 6 branches missed.">                        if (grupo.stream().anyMatch(baseG -&gt; baseG.touches(g) || baseG.intersects(g))) {</span>
+<span class="fc" id="L163">                            grupo.add(g);</span>
+<span class="fc" id="L164">                            it.remove();</span>
+<span class="fc" id="L165">                            alterado = true;</span>
                         }
-<span class="fc" id="L231">                    }</span>
-<span class="fc bfc" id="L232" title="All 2 branches covered.">                } while (alterado);</span>
+<span class="fc" id="L167">                    }</span>
+<span class="fc bfc" id="L168" title="All 2 branches covered.">                } while (alterado);</span>
 
-<span class="fc" id="L234">                Geometry unida = CascadedPolygonUnion.union(grupo);</span>
-<span class="fc" id="L235">                geometriasAgrupadas.add(unida);</span>
-<span class="fc" id="L236">            }</span>
-<span class="fc" id="L237">        }</span>
+<span class="fc" id="L170">                Geometry unida = CascadedPolygonUnion.union(grupo);</span>
+<span class="fc" id="L171">                geometriasAgrupadas.add(unida);</span>
+<span class="fc" id="L172">            }</span>
+<span class="fc" id="L173">        }</span>
 
-<span class="fc" id="L239">        double soma = geometriasAgrupadas.stream().mapToDouble(Geometry::getArea).sum();</span>
-<span class="fc" id="L240">        int total = geometriasAgrupadas.size();</span>
-
-<span class="pc bpc" id="L242" title="1 of 2 branches missed.">        return total == 0 ? 0.0 : soma / total;</span>
+<span class="fc" id="L175">        return geometriasAgrupadas;</span>
     }
 
-
+    private static double calcularAreaMediaUnificada(Collection&lt;Propriedade&gt; propriedades) {
+<span class="fc" id="L179">        List&lt;Geometry&gt; geometrias = unirGeometriasPorDono(propriedades);</span>
+<span class="fc" id="L180">        double soma = geometrias.stream().mapToDouble(Geometry::getArea).sum();</span>
+<span class="fc bfc" id="L181" title="All 2 branches covered.">        return geometrias.isEmpty() ? 0.0 : soma / geometrias.size();</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
