@@ -28,15 +28,7 @@ Funcionalidades Implementadas:
     4:  Permita calcular a área média das propriedades, de uma área geográfica/administrativa indicada pelo utilizador
     (freguesia, concelho, distrito);
 
-
-Identificação e Descrição de Erros:
-    
-    De momento não existem erros no código.
-
-
-Funcionalidades Não Implementadas:
-
-    5:  Permita calcular a área média das propriedades, assumindo que propriedades adjacentes, do mesmo proprietário,
+    5: Permita calcular a área média das propriedades, assumindo que propriedades adjacentes, do mesmo proprietário,
        devem ser consideradas como uma única propriedade, para uma área geográfica/administrativa indicada pelo utilizador;
 
     6: Permita gerar sugestões para troca de propriedades entre proprietários, que maximizem a área média das
@@ -47,6 +39,13 @@ Funcionalidades Não Implementadas:
        por outra propriedade de 11 m2 entre dois proprietários, tem mais potencial de ser realizada, do que a sugestão de
        troca de uma propriedade de 10 m2 por outra propriedade de 1000 m2. A área deverá por isso ser uma característica
        considerada na avaliação do potencial de troca, no processo de sugestão de trocas da aplicação a desenvolver;
+
+Identificação e Descrição de Erros:
+    
+    De momento não existem erros no código.
+
+
+Funcionalidades Não Implementadas:
 
     7:  Em geral, trocas entre propriedades com características (valor) similares, têm mais potencial de ser realizadas. Entre
        as possíveis caraterísticas a considerar encontram-se a distância a vias de comunicação, distância a zonas urbanas, etc.
