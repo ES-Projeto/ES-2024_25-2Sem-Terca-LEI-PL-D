@@ -7,6 +7,7 @@ import org.locationtech.jts.io.WKTReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -55,5 +56,24 @@ public class CSVHandler {
             System.out.println("falha ao carregar propriedades");
         }
         return propriedades;
+    }
+
+    public HashMap<String, Double> getPrecosFreguesia() {
+        HashMap<String, Double> precos = new HashMap<>();
+        java.util.Random random = new java.util.Random();
+        try (CSVParser parser = CSVFormat.DEFAULT.withFirstRecordAsHeader().withDelimiter(';').parse(new FileReader(csvFileName))) {
+            for (CSVRecord record : parser) {
+                String freguesia = record.get("Freguesia");
+                if (!precos.containsKey(freguesia)) {
+                    // Preço por metro quadrado entre 200 e 2000 euros
+                    double preco = 200 + (1800 * random.nextDouble());
+                    preco = Math.round(preco * 100.0) / 100.0; // arredonda para 2 casas decimais
+                    precos.put(freguesia, preco);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("falha ao carregar preços");
+        }
+        return precos;
     }
 }

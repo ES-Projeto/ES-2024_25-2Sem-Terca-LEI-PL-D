@@ -3,6 +3,7 @@ import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -31,7 +32,8 @@ public class Main {
         // Carregamento das Propriedades a partir do CSV
         CSVHandler teste = new CSVHandler(csvFileName);
         List<Propriedade> propriedades = teste.getPropriedades();
-        Grafo dois = new Grafo(propriedades);
+        HashMap<String,Double> precos = teste.getPrecosFreguesia();
+        Grafo dois = new Grafo(propriedades,precos);
 
         //Contrução do grafo de propriedades (com base em interseçoes geométricas)
         Graph<Propriedade, DefaultEdge> grafopropriedade = dois.propriedade();
@@ -77,6 +79,17 @@ public class Main {
         } else {
             System.out.println("Melhores sugestões de troca:");
             trocas.stream().limit(5).forEach(System.out::println);
+        }
+
+
+        List<SugestaoTroca> trocasAvancadas = Grafo.sugerirTrocasAvancado(propriedades, "freguesia", freguesia);
+        System.out.println("Número total de sugestões geradas: " + trocas.size());
+
+        if (trocasAvancadas.isEmpty()) {
+            System.out.println("Nenhuma sugestão de troca encontrada.");
+        } else {
+            System.out.println("Melhores sugestões de troca AVANÇADAS:");
+            trocasAvancadas.stream().limit(5).forEach(System.out::println);
         }
 
     }

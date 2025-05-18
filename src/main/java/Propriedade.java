@@ -17,8 +17,8 @@ public class Propriedade {
     private String freguesia;
     private String municipio;
     private String ilha;
-
-
+    private Boolean isLoteavel;
+    private int qualidadeAcesso;
 
     /**
      * Construtor da classe Propriedade.
@@ -45,8 +45,9 @@ public class Propriedade {
         this.freguesia = freguesia;
         this.municipio = municipio;
         this.ilha = ilha;
+        this.isLoteavel = new java.util.Random().nextBoolean();
+        this.qualidadeAcesso = 1 + new java.util.Random().nextInt(10);
     }
-
 
     /**
      * @return identificador do objeto
@@ -119,6 +120,20 @@ public class Propriedade {
     }
 
     /**
+     * @return se a propriedade é loteável
+     */
+    public Boolean getIsLoteavel() {
+        return isLoteavel;
+    }
+
+    /**
+     * @return qualidade de acesso da propriedade
+     */
+    public int getQualidadeAcesso() {
+        return qualidadeAcesso;
+    }
+
+    /**
      * @return representação em string do objeto Propriedade
      */
     @Override
@@ -134,6 +149,8 @@ public class Propriedade {
                 ", freguesia='" + freguesia + '\'' +
                 ", municipio='" + municipio + '\'' +
                 ", ilha='" + ilha + '\'' +
+                ", isLoteavel=" + isLoteavel +
+                ", qualidadeAcesso=" + qualidadeAcesso +
                 '}';
     }
 

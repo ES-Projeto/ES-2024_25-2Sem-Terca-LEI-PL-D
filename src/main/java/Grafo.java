@@ -16,12 +16,18 @@ import java.util.stream.Collectors;
 
 public class Grafo {
     private List<Propriedade> propriedades;
+    private static HashMap<String,Double> precos;
 
     /**
      * Construtor da classe Grafo.
      *
      * @param propriedades Lista de propriedades disponíveis no sistema.
      */
+    public Grafo(List<Propriedade> propriedades, HashMap<String,Double> precos) {
+        this.propriedades = propriedades;
+        Grafo.precos = precos;
+    }
+
     public Grafo(List<Propriedade> propriedades) {
         this.propriedades = propriedades;
     }
@@ -245,5 +251,77 @@ public class Grafo {
         List<Geometry> geometrias = unirGeometriasPorDono(propriedades);
         double soma = geometrias.stream().mapToDouble(Geometry::getArea).sum();
         return geometrias.isEmpty() ? 0.0 : soma / geometrias.size();
+    }
+
+    public static List<SugestaoTroca> sugerirTrocasAvancado(List<Propriedade> propriedades, String tipo, String valor) {
+        List<Propriedade> filtradas = propriedades.stream()
+                .filter(p -> switch (tipo.toLowerCase()) {
+                    case "freguesia" -> p.getFreguesia().equalsIgnoreCase(valor);
+                    case "municipio" -> p.getMunicipio().equalsIgnoreCase(valor);
+                    case "ilha" -> p.getIlha().equalsIgnoreCase(valor);
+                    default -> false;
+                })
+                .toList();
+
+        List<SugestaoTroca> sugestoes = new ArrayList<>();
+        int tentativas = 0;
+        int limite = 10000; // aumenta o limite
+
+        for (Propriedade a : filtradas) {
+            for (Propriedade b : filtradas) {
+                if (tentativas++ > limite) break;
+                if (a.getPar_id() == b.getPar_id()) continue;
+                if (!a.getOwner().equals(b.getOwner())) {
+                    // Permite trocas se pelo menos uma for loteável
+                    if (Boolean.TRUE.equals(a.getIsLoteavel()) || Boolean.TRUE.equals(b.getIsLoteavel())) {
+                        String donoA = a.getOwner();
+                        String donoB = b.getOwner();
+
+                        List<Propriedade> grupoOriginal = filtradas.stream()
+                                .filter(p -> p.getOwner().equals(donoA) || p.getOwner().equals(donoB))
+                                .toList();
+
+                        double antes = calcularAreaMediaUnificada(grupoOriginal);
+
+                        a.setOwner(donoB);
+                        b.setOwner(donoA);
+
+                        double depois = calcularAreaMediaUnificada(grupoOriginal);
+
+                        a.setOwner(donoA);
+                        b.setOwner(donoB);
+
+                        double ganho = depois - antes;
+
+                        if (ganho > 0) { // permite qualquer ganho positivo
+                            double precoA = precos.getOrDefault(a.getFreguesia(), 1000.0);
+                            double precoB = precos.getOrDefault(b.getFreguesia(), 1000.0);
+                            double precoMedio = (precoA + precoB) / 2.0;
+                            double qualidadeMed = (a.getQualidadeAcesso() + b.getQualidadeAcesso()) / 20.0;
+                            double score = ganho * precoMedio * qualidadeMed;
+                            double dif = Math.abs(a.getShapeArea() - b.getShapeArea());
+                            double potencial = 1.0 / (1.0 + dif);
+                            SugestaoTroca s = new SugestaoTroca(a, b, ganho, potencial);
+                            try {
+                                java.lang.reflect.Method m = s.getClass().getMethod("setScore", double.class);
+                                m.invoke(s, score);
+                            } catch (Exception ignored) {}
+                            sugestoes.add(s);
+                        }
+                    }
+                }
+            }
+        }
+        sugestoes.sort((s1, s2) -> {
+            try {
+                java.lang.reflect.Method m = s1.getClass().getMethod("getScore");
+                double sc1 = (double) m.invoke(s1);
+                double sc2 = (double) m.invoke(s2);
+                return -Double.compare(sc1, sc2);
+            } catch (Exception e) {
+                return -Double.compare(s1.getGanhoTotal() * s1.getPotencial(), s2.getGanhoTotal() * s2.getPotencial());
+            }
+        });
+        return sugestoes;
     }
 }
