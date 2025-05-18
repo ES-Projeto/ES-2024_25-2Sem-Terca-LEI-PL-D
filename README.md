@@ -41,6 +41,12 @@ Funcionalidades Implementadas:
        troca de uma propriedade de 10 m2 por outra propriedade de 1000 m2. A área deverá por isso ser uma característica
        considerada na avaliação do potencial de troca, no processo de sugestão de trocas da aplicação a desenvolver;
 
+    7:  Em geral, trocas entre propriedades com características (valor) similares, têm mais potencial de ser realizadas. Entre
+    as possíveis caraterísticas a considerar encontram-se a distância a vias de comunicação, distância a zonas urbanas, etc.
+    O grupo deverá definir as características a usar no processo de comparação do valor das propriedades, devendo
+    considerar pelo menos a área (mencionada no ponto 6) e mais duas características à escolha do grupo (não
+    necessariamente as indicadas anteriormente, distância a vias de comunicação e distância a zonas urbanas).
+
 Identificação e Descrição de Erros:
     
     De momento não existem erros no código.
@@ -48,11 +54,6 @@ Identificação e Descrição de Erros:
 
 Funcionalidades Não Implementadas:
 
-    7:  Em geral, trocas entre propriedades com características (valor) similares, têm mais potencial de ser realizadas. Entre
-       as possíveis caraterísticas a considerar encontram-se a distância a vias de comunicação, distância a zonas urbanas, etc.
-       O grupo deverá definir as características a usar no processo de comparação do valor das propriedades, devendo
-       considerar pelo menos a área (mencionada no ponto 6) e mais duas características à escolha do grupo (não
-       necessariamente as indicadas anteriormente, distância a vias de comunicação e distância a zonas urbanas).
 
 Relatório de avaliação de qualidade do software:
 
