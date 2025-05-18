@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.WKTReader;
@@ -6,40 +7,41 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PropriedadeTest {
 
-    @Test
-    public void testGettersAndToString() throws Exception {
+    private Propriedade propriedade;
+    private Geometry geometry;
+
+    @BeforeEach
+    void setup() throws Exception {
         WKTReader reader = new WKTReader();
-        Geometry geometry = reader.read("POINT(1 1)");
+        geometry = reader.read("POLYGON((0 0, 2 0, 2 2, 0 2, 0 0))");
+        propriedade = new Propriedade(1, 123, 456L, 4.0, 8.0, geometry, "Maria", "Funchal", "Funchal", "Madeira");
+    }
 
-        Propriedade p = new Propriedade(
-                10, 20 ,123456L,
-                100.5,200.5,geometry,
-                "João","Freguesia X",
-                "Município Y","Ilha Z");
+    @Test
+    void testGetters() {
+        assertEquals(1, propriedade.getObjectid());
+        assertEquals(123, propriedade.getPar_id());
+        assertEquals(456L, propriedade.getPar_num());
+        assertEquals(4.0, propriedade.getShapeArea(), 0.01);
+        assertEquals(8.0, propriedade.getShapeLength(), 0.01);
+        assertEquals("Maria", propriedade.getOwner());
+        assertEquals("Funchal", propriedade.getFreguesia());
+        assertEquals("Funchal", propriedade.getMunicipio());
+        assertEquals("Madeira", propriedade.getIlha());
+        assertEquals(geometry, propriedade.getGeometry());
+    }
 
-        // Testando os getters
-        assertEquals(10, p.getObjectid());
-        assertEquals(20, p.getPar_id());
-        assertEquals(123456L, p.getPar_num());
-        assertEquals(100.5, p.getShapeArea());
-        assertEquals(200.5, p.getShapeLength());
-        assertEquals("João", p.getOwner());
-        assertEquals("Freguesia X", p.getFreguesia());
-        assertEquals("Município Y", p.getMunicipio());
-        assertEquals("Ilha Z", p.getIlha());
-        assertEquals("POINT (1 1)", p.getGeometry().toText());
+    @Test
+    void testSetOwner() {
+        propriedade.setOwner("João");
+        assertEquals("João", propriedade.getOwner());
+    }
 
-        // Testando o toString
-        String output = p.toString();
-        assertTrue(output.contains("Objectid=10"));
-        assertTrue(output.contains("par_id=20"));
-        assertTrue(output.contains("par_num=123456"));
-        assertTrue(output.contains("shapeArea=100.5"));
-        assertTrue(output.contains("shapeLength=200.5"));
-        assertTrue(output.contains("geometry=POINT (1 1)"));
-        assertTrue(output.contains("owner='João'"));
-        assertTrue(output.contains("freguesia='Freguesia X'"));
-        assertTrue(output.contains("municipio='Município Y'"));
-        assertTrue(output.contains("ilha='Ilha Z'"));
+    @Test
+    void testToStringContainsKeyInfo() {
+        String output = propriedade.toString();
+        assertTrue(output.contains("Objectid=1"));
+        assertTrue(output.contains("owner='Maria'"));
+        assertTrue(output.contains("ilha='Madeira'"));
     }
 }

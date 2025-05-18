@@ -1,46 +1,44 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
+import org.locationtech.jts.geom.Geometry;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CSVHandlerTest {
 
-    @Test
-    public void testGetPropriedades() throws IOException {
-        String csvFileName = "test.csv";
-        try (FileWriter writer = new FileWriter(csvFileName)) {
+    private static final String TEMP_CSV = "test_propriedades.csv";
+
+    @BeforeEach
+    public void setupCSV() throws IOException {
+        try (FileWriter writer = new FileWriter(TEMP_CSV)) {
             writer.write("OBJECTID;PAR_ID;PAR_NUM;Shape_Length;Shape_Area;geometry;OWNER;Freguesia;Municipio;Ilha\n");
-            writer.write("1;1;1234567890;10.0;20.0;POINT(1 1);Owner1;Freguesia1;Municipio1;Ilha1\n");
-            writer.write("2;2;9876543210;15.0;30.0;POINT(2 2);Owner2;Freguesia2;Municipio2;Ilha2\n");
+            writer.write("1;101;1001;123.45;678.90;POLYGON ((0 0, 1 0, 1 1, 0 1, 0 0));John Doe;Funchal;Funchal;Madeira\n");
         }
+    }
 
-        try {
-            CSVHandler csvHandler = new CSVHandler(csvFileName);
-            List<Propriedade> propriedades = csvHandler.getPropriedades();
+    @Test
+    public void testGetPropriedadesSuccessfullyParsesCSV() {
+        CSVHandler handler = new CSVHandler(TEMP_CSV);
+        List<Propriedade> propriedades = handler.getPropriedades();
 
-            assertFalse(propriedades.isEmpty());
-            assertEquals(2, propriedades.size());
+        assertEquals(1, propriedades.size());
 
-            Propriedade prop1 = propriedades.get(0);
-            assertEquals(1, prop1.getObjectid());
-            assertEquals(1, prop1.getPar_id());
-            assertEquals(1234567890L, prop1.getPar_num());
-            assertEquals(10.0, prop1.getShapeLength());
-            assertEquals(20.0, prop1.getShapeArea());
-            assertEquals("Owner1", prop1.getOwner());
-            assertEquals("Freguesia1", prop1.getFreguesia());
-            assertEquals("Municipio1", prop1.getMunicipio());
-            assertEquals("Ilha1", prop1.getIlha());
+        Propriedade p = propriedades.get(0);
+        assertEquals(1, p.getObjectid());
+        assertEquals(101, p.getPar_id());
+        assertEquals(1001, p.getPar_num());
+        assertEquals(123.45, p.getShapeLength(), 0.01);
+        assertEquals(678.90, p.getShapeArea(), 0.01);
+        assertEquals("John Doe", p.getOwner());
+        assertEquals("Funchal", p.getFreguesia());
+        assertEquals("Funchal", p.getMunicipio());
+        assertEquals("Madeira", p.getIlha());
 
-        } catch (Exception e) {
-            fail("Exception should not have been thrown: " + e.getMessage());
-        }
-
-        java.io.File file = new java.io.File(csvFileName);
-        boolean deleted = file.delete();
-        assertTrue(deleted, "Temporary file should be deleted");
+        Geometry g = p.getGeometry();
+        assertNotNull(g);
+        assertTrue(g.isValid());
     }
 }

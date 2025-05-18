@@ -109,7 +109,7 @@ public class Grafo {
                     default -> false;
                 }).collect(Collectors.toList());
 
-        // 2. Agrupar por proprietário
+
         Map<String, List<Propriedade>> porDono = filtradas.stream()
                 .collect(Collectors.groupingBy(Propriedade::getOwner));
 
@@ -118,7 +118,6 @@ public class Grafo {
         for (List<Propriedade> props : porDono.values()) {
             List<Geometry> restantes = new ArrayList<>(props.stream().map(Propriedade::getGeometry).toList());
 
-            // Agrupar geometrias adjacentes
             while (!restantes.isEmpty()) {
                 Geometry base = restantes.remove(0);
                 List<Geometry> grupo = new ArrayList<>();
@@ -138,13 +137,11 @@ public class Grafo {
                     }
                 } while (alterado);
 
-                // União do grupo
                 Geometry unida = CascadedPolygonUnion.union(grupo);
                 geometriasAgrupadas.add(unida);
             }
         }
 
-        // 3. Calcular média das áreas unificadas
         double soma = geometriasAgrupadas.stream().mapToDouble(Geometry::getArea).sum();
         int total = geometriasAgrupadas.size();
 
@@ -174,20 +171,19 @@ public class Grafo {
                     String donoA = a.getOwner();
                     String donoB = b.getOwner();
 
-                    // Subconjunto só com os dois donos
                     List<Propriedade> grupoOriginal = filtradas.stream()
                             .filter(p -> p.getOwner().equals(donoA) || p.getOwner().equals(donoB))
                             .collect(Collectors.toList());
 
                     double antes = areaMediaUnificadaSubgrupo(grupoOriginal);
 
-                    // Simula a troca
+
                     a.setOwner(donoB);
                     b.setOwner(donoA);
 
                     double depois = areaMediaUnificadaSubgrupo(grupoOriginal);
 
-                    // Reverte
+
                     a.setOwner(donoA);
                     b.setOwner(donoB);
 
