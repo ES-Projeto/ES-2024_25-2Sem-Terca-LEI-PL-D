@@ -12,6 +12,7 @@ ES-2024_25-2Sem-Terça-LEI-PL-D
 
 [![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
 
+
 Funcionalidades Implementadas:
     
     1: Permita carregar os dados do cadastro de propriedades rústicas em Portugal, a partir das fontes de dados
