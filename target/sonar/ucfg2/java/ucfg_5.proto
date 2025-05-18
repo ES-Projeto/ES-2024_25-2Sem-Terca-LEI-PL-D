@@ -1,0 +1,79 @@
+
+FGrafo#areaMedia(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Dd
+ZC:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Grafo.javaW W(""1*¼
+1X X(¬©
+X X((
+%0java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*<
+
+__unknown_file ( 
+
+propriedadesjava.util.List2stream()v
+t
+Y `("
+%1java.util.function.Predicate"__declareFunction*1
+
+__unknown_file (
+__sonar_lambda_0$‰
+†
+
+__unknown_file (,
+"
+%1java.util.function.Predicate"
+tipo"__id*6
+
+__unknown_file (
+
+tipojava.lang.String‹
+ˆ
+
+__unknown_file (-
+"
+%1java.util.function.Predicate"
+valor"__id*7
+
+__unknown_file (
+
+valorjava.lang.String¬©
+X `(
+%9java.util.stream.Stream"Wjava.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;*;
+
+__unknown_file (
+
+%0java.util.stream.Stream*@
+
+__unknown_file ($
+"
+%1java.util.function.Predicate2&filter(Ljava/util/function/Predicate;)³°
+X a(7$
+%10java.util.stream.DoubleStream"ijava.util.stream.Stream#mapToDouble(Ljava/util/function/ToDoubleFunction;)Ljava/util/stream/DoubleStream;*;
+
+__unknown_file (
+
+%9java.util.stream.Stream*"
+
+__unknown_file (
+""22mapToDouble(Ljava/util/function/ToDoubleFunction;)À½
+X b(
+%11java.util.OptionalDouble"Ajava.util.stream.DoubleStream#average()Ljava/util/OptionalDouble;*B
+
+__unknown_file (&
+$
+%10java.util.stream.DoubleStream2	average()¯¬
+X c(
+%12double"#java.util.OptionalDouble#orElse(D)D*=
+
+__unknown_file (!
+
+%11java.util.OptionalDouble*"
+
+__unknown_file (
+""2	orElse(D)"
+X c(
+"":*
+W# W(B
+propriedadesjava.util.List:$
+WC W(O
+tipojava.lang.String:%
+WP W(\
+valorjava.lang.StringB	"
+GrafoHX

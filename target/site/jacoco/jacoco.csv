@@ -1,6 +1,7 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-CSVHandler,default,Grafo,88,90,9,11,20,19,7,7,2,2
-CSVHandler,default,Propriedade,0,86,0,0,0,23,0,12,0,12
+CSVHandler,default,Grafo,85,570,24,56,20,123,23,35,1,14
+CSVHandler,default,Propriedade,0,90,0,0,0,25,0,13,0,13
 CSVHandler,default,CSVHandler,10,108,0,2,4,22,0,3,0,2
-CSVHandler,default,GrafoVisual,130,0,4,0,30,0,4,0,2,0
-CSVHandler,default,Main,28,0,0,0,9,0,2,0,2,0
+CSVHandler,default,GrafoVisual,4,175,5,11,1,39,6,4,1,1
+CSVHandler,default,SugestaoTroca,0,94,0,0,0,18,0,8,0,8
+CSVHandler,default,Main,160,0,12,0,33,0,8,0,2,0

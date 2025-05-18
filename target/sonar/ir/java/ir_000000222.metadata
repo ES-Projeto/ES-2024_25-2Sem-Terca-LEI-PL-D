@@ -1,0 +1,8 @@
+Grafo#printText(Lorg/jgrapht/Graph;)V
+false
+351280c4d819852fe248ceb32b71b017
+org.jgrapht.Graphs#neighborListOf(Lorg/jgrapht/Graph;Ljava/lang/Object;)Ljava/util/List;
+==
+println java.io.PrintStream#println()V
+println java.io.PrintStream#println(Ljava/lang/String;)V
+vertexSet org.jgrapht.Graph#vertexSet()Ljava/util/Set;

@@ -16,7 +16,7 @@ public class GrafoVisual {
             return;
         }
 
-        System.out.println("📊 Visualizando grafo:");
+        System.out.println(" Visualizando grafo:");
         System.out.println("   Nós: " + jGraphTGraph.vertexSet().size());
         System.out.println("   Arestas: " + jGraphTGraph.edgeSet().size());
 

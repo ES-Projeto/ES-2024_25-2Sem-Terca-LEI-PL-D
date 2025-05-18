@@ -1,0 +1,92 @@
+
+__sonar_lambda_0$d
+ZC:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Grafo.javaY `("startingBlock*º
+2Z# Z('ûõ
+Z# Z(5
+%2java.lang.String"0java.lang.String#toLowerCase()Ljava/lang/String;*6
+
+__unknown_file (
+
+tipojava.lang.String2toLowerCase()*
+4
+5
+6
+1*˛
+startingBlockY `(m
+k
+
+__unknown_file (
+tipojava.lang.String"__id*/
+
+__unknown_file (*
+Grafo"
+tipoo
+m
+
+__unknown_file (
+valorjava.lang.String"__id*0
+
+__unknown_file (*
+Grafo"
+valor*
+2*ä
+4] ](KâÜ
+]' ](2
+%7java.lang.String"'Propriedade#getIlha()Ljava/lang/String;*.
+
+__unknown_file (
+
+pPropriedade2	getIlha()ÈÊ
+]' ](J
+%8boolean"6java.lang.String#equalsIgnoreCase(Ljava/lang/String;)Z*4
+
+__unknown_file (
+
+%7java.lang.String*7
+
+__unknown_file (
+
+valorjava.lang.String2$equalsIgnoreCase(Ljava/lang/String;)*
+1*î
+5\ \(Uìê
+\, \(<
+%5java.lang.String",Propriedade#getMunicipio()Ljava/lang/String;*.
+
+__unknown_file (
+
+pPropriedade2getMunicipio()ÈÊ
+\, \(T
+%6boolean"6java.lang.String#equalsIgnoreCase(Ljava/lang/String;)Z*4
+
+__unknown_file (
+
+%5java.lang.String*7
+
+__unknown_file (
+
+valorjava.lang.String2$equalsIgnoreCase(Ljava/lang/String;)*
+1*î
+6[ [(Uìê
+[, [(<
+%3java.lang.String",Propriedade#getFreguesia()Ljava/lang/String;*.
+
+__unknown_file (
+
+pPropriedade2getFreguesia()ÈÊ
+[, [(T
+%4boolean"6java.lang.String#equalsIgnoreCase(Ljava/lang/String;)Z*4
+
+__unknown_file (
+
+%3java.lang.String*7
+
+__unknown_file (
+
+valorjava.lang.String2$equalsIgnoreCase(Ljava/lang/String;)*
+1*!
+1Z _("
+Z _(
+"":
+Y Y(
+pPropriedadeB 
+java.util.function.Predicate

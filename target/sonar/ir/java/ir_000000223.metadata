@@ -1,0 +1,13 @@
+Grafo#grafoProprietarios(Lorg/jgrapht/Graph;)Lorg/jgrapht/Graph;
+false
+b3db65b23b8b37facfa4e1f91a5b191a
+java.lang.String#equals(Ljava/lang/Object;)Z
+org.jgrapht.graph.SimpleGraph#<init>(Ljava/lang/Class;)V
+org.jgrapht.graph.SimpleGraph#instance-init#
+==
+addEdge org.jgrapht.Graph#addEdge(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+addVertex org.jgrapht.Graph#addVertex(Ljava/lang/Object;)Z
+edgeSet org.jgrapht.Graph#edgeSet()Ljava/util/Set;
+getEdgeSource org.jgrapht.Graph#getEdgeSource(Ljava/lang/Object;)Ljava/lang/Object;
+getEdgeTarget org.jgrapht.Graph#getEdgeTarget(Ljava/lang/Object;)Ljava/lang/Object;
+getOwner Propriedade#getOwner()Ljava/lang/String;

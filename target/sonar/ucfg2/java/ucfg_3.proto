@@ -1,0 +1,170 @@
+
+@Grafo#grafoProprietarios(Lorg/jgrapht/Graph;)Lorg/jgrapht/Graph;d
+ZC:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Grafo.javaC& C(8"6*Ž
+2F	 F(]
+[
+F	 F(%
+edgeorg.jgrapht.graph.DefaultEdge"__id*"
+
+__unknown_file (
+""—
+”
+F	 F(%
+edgeorg.jgrapht.graph.DefaultEdge"
+__arrayGet*1
+
+__unknown_file (
+
+%2java.util.Set*"
+
+__unknown_file (
+""*
+4
+1*À
+3N N(áÞ
+N N(#
+%8boolean"0org.jgrapht.Graph#addVertex(Ljava/lang/Object;)Z*8
+
+__unknown_file (
+
+grafoorg.jgrapht.Graph*8
+
+__unknown_file (
+
+owner1java.lang.String2addVertex(Ljava/lang/Object;)áÞ
+O O(#
+%9boolean"0org.jgrapht.Graph#addVertex(Ljava/lang/Object;)Z*8
+
+__unknown_file (
+
+grafoorg.jgrapht.Graph*8
+
+__unknown_file (
+
+owner2java.lang.String2addVertex(Ljava/lang/Object;)ãà
+P P()$
+%10org.jgrapht.graph.DefaultEdge"Qorg.jgrapht.Graph#addEdge(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;*8
+
+__unknown_file (
+
+grafoorg.jgrapht.Graph*8
+
+__unknown_file (
+
+owner1java.lang.String*8
+
+__unknown_file (
+
+owner2java.lang.String2-addEdge(Ljava/lang/Object;Ljava/lang/Object;)*
+2*¼
+4G G(*•’
+G G(>
+%3Propriedade"Eorg.jgrapht.Graph#getEdgeSource(Ljava/lang/Object;)Ljava/lang/Object;*D
+
+__unknown_file ((
+&
+grafoPropriedadesorg.jgrapht.Graph*C
+
+__unknown_file ('
+%
+edgeorg.jgrapht.graph.DefaultEdge2!getEdgeSource(Ljava/lang/Object;)V
+T
+G G(?
+p1Propriedade"__id*/
+
+__unknown_file (
+
+%3Propriedade•’
+H H(>
+%4Propriedade"Eorg.jgrapht.Graph#getEdgeTarget(Ljava/lang/Object;)Ljava/lang/Object;*D
+
+__unknown_file ((
+&
+grafoPropriedadesorg.jgrapht.Graph*C
+
+__unknown_file ('
+%
+edgeorg.jgrapht.graph.DefaultEdge2!getEdgeTarget(Ljava/lang/Object;)V
+T
+H H(?
+p2Propriedade"__id*/
+
+__unknown_file (
+
+%4PropriedadeŒ‰
+J J(%
+%5java.lang.String"(Propriedade#getOwner()Ljava/lang/String;*/
+
+__unknown_file (
+
+p1Propriedade2
+getOwner()d
+b
+J J(&
+owner1java.lang.String"__id*4
+
+__unknown_file (
+
+%5java.lang.StringŒ‰
+K K(%
+%6java.lang.String"(Propriedade#getOwner()Ljava/lang/String;*/
+
+__unknown_file (
+
+p2Propriedade2
+getOwner()d
+b
+K K(&
+owner2java.lang.String"__id*4
+
+__unknown_file (
+
+%6java.lang.StringÚ×
+M M("
+%7boolean",java.lang.String#equals(Ljava/lang/Object;)Z*8
+
+__unknown_file (
+
+owner1java.lang.String*8
+
+__unknown_file (
+
+owner2java.lang.String2equals(Ljava/lang/Object;)*
+2
+3*´
+5F F(-Ÿœ
+F F(7
+%2java.util.Set"*org.jgrapht.Graph#edgeSet()Ljava/util/Set;*D
+
+__unknown_file ((
+&
+grafoPropriedadesorg.jgrapht.Graph2	edgeSet()*
+2*Ž
+6D9 D(JPN
+D+ D(8#
+%0org.jgrapht.graph.SimpleGraph"org.jgrapht.graph.SimpleGraph´
+±
+D' D(K
+%1"8org.jgrapht.graph.SimpleGraph#<init>(Ljava/lang/Class;)V*A
+
+__unknown_file (%
+#
+%0org.jgrapht.graph.SimpleGraph*"
+
+__unknown_file (
+""q
+o
+D D(L
+grafoorg.jgrapht.Graph"__id*A
+
+__unknown_file (%
+#
+%0org.jgrapht.graph.SimpleGraph*
+5*7
+1T T("(
+T T(
+
+grafoorg.jgrapht.Graph:2
+C9 C(j&
+grafoPropriedadesorg.jgrapht.GraphB	
+GrafoH
