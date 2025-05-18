@@ -6,12 +6,9 @@ ES-2024_25-2Sem-Terça-LEI-PL-D
 
     Sprint 2 : https://trello.com/invite/b/68236ae28230b8a6d04b738e/ATTId49b2bfc5fe4624b4ddb42be5722d20f3138B616/sprint-2 
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=alert_status)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
-
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=coverage)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
 
 [![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
-
 
 Funcionalidades Implementadas:
     
@@ -59,12 +56,12 @@ Relatório de avaliação de qualidade do software:
 
         A avaliação da qualidade do software foi feita através da ferramenta SonarCloud. Estes são alguns dados relativamente ao
         relatório gerado pela ferramenta:
-        Coverage: 81.4% 
+        Coverage: 72.8% 
         Security: 0 issues
         Reliability: Sem bugs (0 issues)
-        Maintainability: 63 code smells (nível A)
-        Duplications: 0%
-        Linhas analisadas: 219
+        Maintainability: 81 code smells (nível A)
+        Duplications: 3.5%
+        Linhas analisadas: 253
 [Ver análise completa (Overall Code)](https://sonarcloud.io/summary/overall?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D)
 
   

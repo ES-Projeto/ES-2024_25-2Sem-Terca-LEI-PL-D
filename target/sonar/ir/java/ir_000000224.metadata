@@ -1,9 +1,13 @@
-Grafo#areaMedia(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D
+Grafo#grafoProprietarios(Lorg/jgrapht/Graph;)Lorg/jgrapht/Graph;
 false
-1c228b931605c330461e3e4da8d7034b
-java.util.OptionalDouble#orElse(D)D
+47c7559ab8d20823796a66638f99ce11
+java.lang.String#equals(Ljava/lang/Object;)Z
+org.jgrapht.graph.SimpleGraph#<init>(Ljava/lang/Class;)V
+org.jgrapht.graph.SimpleGraph#instance-init#
 ==
-average java.util.stream.DoubleStream#average()Ljava/util/OptionalDouble;
-filter java.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
-mapToDouble java.util.stream.Stream#mapToDouble(Ljava/util/function/ToDoubleFunction;)Ljava/util/stream/DoubleStream;
-stream java.util.Collection#stream()Ljava/util/stream/Stream;
+addEdge org.jgrapht.Graph#addEdge(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+addVertex org.jgrapht.Graph#addVertex(Ljava/lang/Object;)Z
+edgeSet org.jgrapht.Graph#edgeSet()Ljava/util/Set;
+getEdgeSource org.jgrapht.Graph#getEdgeSource(Ljava/lang/Object;)Ljava/lang/Object;
+getEdgeTarget org.jgrapht.Graph#getEdgeTarget(Ljava/lang/Object;)Ljava/lang/Object;
+getOwner Propriedade#getOwner()Ljava/lang/String;

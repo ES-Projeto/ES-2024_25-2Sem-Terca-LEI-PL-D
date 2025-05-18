@@ -6,11 +6,13 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 public class GrafoVisualTest {
 
+
     @Test
     void testVisualizeWithEmptyGraph() {
         var emptyGraph = new SimpleGraph<String, DefaultEdge>(DefaultEdge.class);
         assertDoesNotThrow(() -> GrafoVisual.visualize(emptyGraph));
     }
+
 
     @Test
     void testVisualizeWithValidGraph() {

@@ -1,7 +1,127 @@
 
-Propriedade#getPar_id()Ij
-`C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Propriedade.java8 8("1*!
-19 9("
-9 9(
-""B
-PropriedadeHX
+*SugestaoTroca#toString()Ljava/lang/String;l
+bC:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/SugestaoTroca.javaX X("1*Î
+1Y Y(_
+]
+Z Z(
+%0Propriedade"__id*8
+
+__unknown_file (*
+SugestaoTroca"
+propAŒ‰
+Z Z( 
+%1java.lang.String"(Propriedade#getOwner()Ljava/lang/String;*/
+
+__unknown_file (
+
+%0Propriedade2
+getOwner()_
+]
+Z" Z('
+%2Propriedade"__id*8
+
+__unknown_file (*
+SugestaoTroca"
+propAom
+Z" Z(3	
+%3int"Propriedade#getPar_id()I*/
+
+__unknown_file (
+
+%2Propriedade2getPar_id()_
+]
+Z5 Z(:
+%4Propriedade"__id*8
+
+__unknown_file (*
+SugestaoTroca"
+propAxv
+Z5 Z(I
+%5double"Propriedade#getShapeArea()D*/
+
+__unknown_file (
+
+%4Propriedade2getShapeArea()_
+]
+[ [(
+%6Propriedade"__id*8
+
+__unknown_file (*
+SugestaoTroca"
+propBŒ‰
+[ [( 
+%7java.lang.String"(Propriedade#getOwner()Ljava/lang/String;*/
+
+__unknown_file (
+
+%6Propriedade2
+getOwner()_
+]
+[" [('
+%8Propriedade"__id*8
+
+__unknown_file (*
+SugestaoTroca"
+propBom
+[" [(3	
+%9int"Propriedade#getPar_id()I*/
+
+__unknown_file (
+
+%8Propriedade2getPar_id()`
+^
+[5 [(:
+%10Propriedade"__id*8
+
+__unknown_file (*
+SugestaoTroca"
+propBzx
+[5 [(I
+%11double"Propriedade#getShapeArea()D*0
+
+__unknown_file (
+
+%10Propriedade2getShapeArea()Ú
+×
+Y \(&
+%12java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*0
+
+__unknown_file ("
+java.lang.String*Î
+
+__unknown_file (±®
+«Troca sugerida:\n - ProprietÃ¡rio %s troca parcela %d (%.2f mÂ²)\n - ProprietÃ¡rio %s troca parcela %d (%.2f mÂ²)\n - Ganho mÃ©dio total: %.2f\n - Potencial de troca: %.2f*4
+
+__unknown_file (
+
+%1java.lang.String*'
+
+__unknown_file (
+	
+%3int**
+
+__unknown_file (
+
+%5double*4
+
+__unknown_file (
+
+%7java.lang.String*'
+
+__unknown_file (
+	
+%9int*+
+
+__unknown_file (
+
+%11double*"
+
+__unknown_file (
+""*"
+
+__unknown_file (
+"""%
+Y \('
+
+%12java.lang.StringB
+SugestaoTrocaH

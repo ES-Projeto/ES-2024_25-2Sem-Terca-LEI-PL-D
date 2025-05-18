@@ -1,10 +1,9 @@
-Grafo#calcularAreaMediaUnificada(Ljava/util/Collection;)D
+Grafo#areaMediaUnificada(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D
 false
-455673a45d00b7bb3d03a0304307b341
-Grafo#unirGeometriasPorDono(Ljava/util/Collection;)Ljava/util/List;
+765fa69c7cf1b628126dac852965691a
+Grafo#calcularAreaMediaUnificada(Ljava/util/Collection;)D
+java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
 ==
-isEmpty java.util.List#isEmpty()Z
-mapToDouble java.util.stream.Stream#mapToDouble(Ljava/util/function/ToDoubleFunction;)Ljava/util/stream/DoubleStream;
-size java.util.List#size()I
+collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+filter java.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
 stream java.util.Collection#stream()Ljava/util/stream/Stream;
-sum java.util.stream.DoubleStream#sum()D

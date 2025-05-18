@@ -7,65 +7,77 @@ import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
 
-<span class="nc" id="L10">public class GrafoVisual {</span>
+/**
+ * Classe utilitária responsável pela visualização gráfica de um grafo genérico usando a biblioteca JGraphX.
+ * Os vértices e arestas do grafo são convertidos em elementos visuais, exibidos numa interface Swing.
+ */
+<span class="nc" id="L14">public class GrafoVisual {</span>
 
+    /**
+     * Visualiza um grafo passado como argumento numa janela gráfica.
+     * Esta função utiliza {@code mxGraph} para desenhar os vértices e as conexões (arestas) com um layout orgânico.
+     *
+     * @param jGraphTGraph Grafo do JGraphT a ser visualizado. Os nós e arestas são desenhados automaticamente.
+     * @param &lt;V&gt; Tipo dos vértices.
+     * @param &lt;E&gt; Tipo das arestas.
+     */
     public static &lt;V, E&gt; void visualize(Graph&lt;V, E&gt; jGraphTGraph) {
-<span class="pc bpc" id="L13" title="1 of 4 branches missed.">        if (jGraphTGraph == null || jGraphTGraph.vertexSet().isEmpty()) {</span>
-<span class="fc" id="L14">            System.out.println(&quot; Grafo vazio. Nenhum nó para visualizar.&quot;);</span>
-<span class="fc" id="L15">            JOptionPane.showMessageDialog(null, &quot;O grafo está vazio e não pode ser visualizado.&quot;, &quot;Grafo vazio&quot;, JOptionPane.WARNING_MESSAGE);</span>
-<span class="fc" id="L16">            return;</span>
+<span class="pc bpc" id="L25" title="1 of 4 branches missed.">        if (jGraphTGraph == null || jGraphTGraph.vertexSet().isEmpty()) {</span>
+<span class="fc" id="L26">            System.out.println(&quot; Grafo vazio. Nenhum nó para visualizar.&quot;);</span>
+<span class="fc" id="L27">            JOptionPane.showMessageDialog(null, &quot;O grafo está vazio e não pode ser visualizado.&quot;, &quot;Grafo vazio&quot;, JOptionPane.WARNING_MESSAGE);</span>
+<span class="fc" id="L28">            return;</span>
         }
 
-<span class="fc" id="L19">        System.out.println(&quot; Visualizando grafo:&quot;);</span>
-<span class="fc" id="L20">        System.out.println(&quot;   Nós: &quot; + jGraphTGraph.vertexSet().size());</span>
-<span class="fc" id="L21">        System.out.println(&quot;   Arestas: &quot; + jGraphTGraph.edgeSet().size());</span>
+<span class="fc" id="L31">        System.out.println(&quot; Visualizando grafo:&quot;);</span>
+<span class="fc" id="L32">        System.out.println(&quot;   Nós: &quot; + jGraphTGraph.vertexSet().size());</span>
+<span class="fc" id="L33">        System.out.println(&quot;   Arestas: &quot; + jGraphTGraph.edgeSet().size());</span>
 
-<span class="fc" id="L23">        mxGraph mxGraph = new mxGraph();</span>
-<span class="fc" id="L24">        Object parent = mxGraph.getDefaultParent();</span>
-<span class="fc" id="L25">        Map&lt;V, Object&gt; vertexMap = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L35">        mxGraph mxGraph = new mxGraph();</span>
+<span class="fc" id="L36">        Object parent = mxGraph.getDefaultParent();</span>
+<span class="fc" id="L37">        Map&lt;V, Object&gt; vertexMap = new HashMap&lt;&gt;();</span>
 
-<span class="fc" id="L27">        mxGraph.getModel().beginUpdate();</span>
+<span class="fc" id="L39">        mxGraph.getModel().beginUpdate();</span>
         try {
             // Add vertices
-<span class="fc bfc" id="L30" title="All 2 branches covered.">            for (V vertex : jGraphTGraph.vertexSet()) {</span>
-<span class="pc bpc" id="L31" title="2 of 4 branches missed.">                if (vertex == null || vertex.toString().trim().isEmpty()) continue;</span>
-<span class="fc" id="L32">                Object cell = mxGraph.insertVertex(parent, null, vertex.toString(), 0, 0, 120, 50);</span>
-<span class="fc" id="L33">                vertexMap.put(vertex, cell);</span>
-<span class="fc" id="L34">            }</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">            for (V vertex : jGraphTGraph.vertexSet()) {</span>
+<span class="pc bpc" id="L43" title="2 of 4 branches missed.">                if (vertex == null || vertex.toString().trim().isEmpty()) continue;</span>
+<span class="fc" id="L44">                Object cell = mxGraph.insertVertex(parent, null, vertex.toString(), 0, 0, 120, 50);</span>
+<span class="fc" id="L45">                vertexMap.put(vertex, cell);</span>
+<span class="fc" id="L46">            }</span>
 
             // Add edges
-<span class="fc bfc" id="L37" title="All 2 branches covered.">            for (E edge : jGraphTGraph.edgeSet()) {</span>
-<span class="fc" id="L38">                V source = jGraphTGraph.getEdgeSource(edge);</span>
-<span class="fc" id="L39">                V target = jGraphTGraph.getEdgeTarget(edge);</span>
-<span class="pc bpc" id="L40" title="2 of 4 branches missed.">                if (vertexMap.containsKey(source) &amp;&amp; vertexMap.containsKey(target)) {</span>
-<span class="fc" id="L41">                    mxGraph.insertEdge(parent, null, &quot;&quot;, vertexMap.get(source), vertexMap.get(target));</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">            for (E edge : jGraphTGraph.edgeSet()) {</span>
+<span class="fc" id="L50">                V source = jGraphTGraph.getEdgeSource(edge);</span>
+<span class="fc" id="L51">                V target = jGraphTGraph.getEdgeTarget(edge);</span>
+<span class="pc bpc" id="L52" title="2 of 4 branches missed.">                if (vertexMap.containsKey(source) &amp;&amp; vertexMap.containsKey(target)) {</span>
+<span class="fc" id="L53">                    mxGraph.insertEdge(parent, null, &quot;&quot;, vertexMap.get(source), vertexMap.get(target));</span>
                 }
-<span class="fc" id="L43">            }</span>
+<span class="fc" id="L55">            }</span>
 
             // Apply layout inside update block
-<span class="fc" id="L46">            mxOrganicLayout layout = new mxOrganicLayout(mxGraph);</span>
-<span class="fc" id="L47">            layout.execute(parent);</span>
+<span class="fc" id="L58">            mxOrganicLayout layout = new mxOrganicLayout(mxGraph);</span>
+<span class="fc" id="L59">            layout.execute(parent);</span>
         } finally {
-<span class="fc" id="L49">            mxGraph.getModel().endUpdate();</span>
+<span class="fc" id="L61">            mxGraph.getModel().endUpdate();</span>
         }
 
         // Create Swing component
-<span class="fc" id="L53">        mxGraphComponent graphComponent = new mxGraphComponent(mxGraph);</span>
-<span class="fc" id="L54">        graphComponent.setConnectable(false);</span>
-<span class="fc" id="L55">        graphComponent.setPanning(true);</span>
-<span class="fc" id="L56">        graphComponent.setToolTips(true);</span>
-<span class="fc" id="L57">        graphComponent.setZoomPolicy(mxGraphComponent.ZOOM_POLICY_PAGE);</span>
-<span class="fc" id="L58">        graphComponent.setCenterZoom(true);</span>
+<span class="fc" id="L65">        mxGraphComponent graphComponent = new mxGraphComponent(mxGraph);</span>
+<span class="fc" id="L66">        graphComponent.setConnectable(false);</span>
+<span class="fc" id="L67">        graphComponent.setPanning(true);</span>
+<span class="fc" id="L68">        graphComponent.setToolTips(true);</span>
+<span class="fc" id="L69">        graphComponent.setZoomPolicy(mxGraphComponent.ZOOM_POLICY_PAGE);</span>
+<span class="fc" id="L70">        graphComponent.setCenterZoom(true);</span>
 
         // Setup the frame
-<span class="fc" id="L61">        JFrame frame = new JFrame(&quot;Grafo de Propriedades / Proprietários&quot;);</span>
-<span class="fc" id="L62">        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
-<span class="fc" id="L63">        frame.getContentPane().add(graphComponent);</span>
-<span class="fc" id="L64">        frame.setSize(1000, 700);</span>
-<span class="fc" id="L65">        frame.setLocationRelativeTo(null);</span>
-<span class="fc" id="L66">        frame.setVisible(true);</span>
+<span class="fc" id="L73">        JFrame frame = new JFrame(&quot;Grafo de Propriedades / Proprietários&quot;);</span>
+<span class="fc" id="L74">        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="fc" id="L75">        frame.getContentPane().add(graphComponent);</span>
+<span class="fc" id="L76">        frame.setSize(1000, 700);</span>
+<span class="fc" id="L77">        frame.setLocationRelativeTo(null);</span>
+<span class="fc" id="L78">        frame.setVisible(true);</span>
 
-<span class="fc" id="L68">        System.out.println(&quot; Janela de grafo aberta com sucesso.&quot;);</span>
-<span class="fc" id="L69">    }</span>
+<span class="fc" id="L80">        System.out.println(&quot; Janela de grafo aberta com sucesso.&quot;);</span>
+<span class="fc" id="L81">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

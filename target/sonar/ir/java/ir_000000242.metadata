@@ -1,3 +1,8 @@
-Propriedade#getObjectid()I
+Propriedade#<init>(IIJDDLorg/locationtech/jts/geom/Geometry;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 false
-5e7f38ce207ab93347f3af63ea1fa0aa
+ce2e16fd8eee369a794b6e8b07829dc7
+java.util.Random#<init>()V
+java.util.Random#instance-init#
+==
+nextBoolean java.util.Random#nextBoolean()Z
+nextInt java.util.Random#nextInt(I)I

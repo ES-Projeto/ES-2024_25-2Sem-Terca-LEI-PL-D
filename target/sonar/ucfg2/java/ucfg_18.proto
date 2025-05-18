@@ -1,15 +1,108 @@
 
-%SugestaoTroca#getPropB()LPropriedade;l
-bC:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/SugestaoTroca.java ("1*è
-1 (_
-]
- (
-%0Propriedade"__id*8
+__sonar_lambda_8$f
+ZC:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Grafo.java◊ ‡(	"startingBlock*ë
+startingBlock
+◊ ‡(	n
+l
 
-__unknown_file (*
-SugestaoTroca"
-propB"
- (
-
-%0PropriedadeB
-SugestaoTrocaH
+__unknown_file (
+
+Grafo.thisGrafo"__id*5
+
+__unknown_file (*
+Grafo"
+
+Grafo.this*
+12*+
+7
+‹ ‹(0"
+
+‹ ‹(1
+
+
+%75int*À
+8
+€ €(2¥
+±
+
+‹ ‹(0
+
+%75int"java.lang.Double#compare(DD)I*0
+
+__unknown_file ("
+java.lang.Double*"
+
+__unknown_file (
+""*"
+
+__unknown_file (
+""*
+7*∏
+9
+⁄ ⁄(2°û
+
+€& €(2
+%74java.lang.Object"Xjava.lang.reflect.Method#invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;*;
+
+__unknown_file (
+
+mjava.lang.reflect.Method*1
+
+__unknown_file (
+
+s2SugestaoTroca2-invoke(Ljava/lang/Object;[Ljava/lang/Object;)*
+8*≠
+10
+Ÿ Ÿ(Qr
+p
+
+Ÿ Ÿ(Q
+mjava.lang.reflect.Method"__id*=
+
+__unknown_file (!
+
+%72java.lang.reflect.Method°û
+
+⁄& ⁄(2
+%73java.lang.Object"Xjava.lang.reflect.Method#invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;*;
+
+__unknown_file (
+
+mjava.lang.reflect.Method*1
+
+__unknown_file (
+
+s1SugestaoTroca2-invoke(Ljava/lang/Object;[Ljava/lang/Object;)*
+9*µ
+11
+ŸE Ÿ(Oúô
+
+Ÿ- Ÿ(P
+%72java.lang.reflect.Method"Yjava.lang.Class#getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;*4
+
+__unknown_file (
+
+%71java.lang.Class*(
+
+__unknown_file (
+
+getScore2/getMethod(Ljava/lang/String;[Ljava/lang/Class;)*
+10*≠
+12
+Ÿ- Ÿ(/îë
+
+Ÿ- Ÿ(:
+%71java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*1
+
+__unknown_file (
+
+s1SugestaoTroca2
+getClass()*
+11:!
+
+◊ ◊(
+s1SugestaoTroca:!
+
+◊ ◊(
+s2SugestaoTrocaB
+java.util.Comparator

@@ -7,55 +7,82 @@ import org.locationtech.jts.io.WKTReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Classe responsável por ler um ficheiro CSV contendo dados de propriedades geográficas
+ * e converter essas informações em objetos {@link Propriedade}.
+ */
 public class CSVHandler {
     private String csvFileName;
-
 
     /**
      * Construtor da classe CSVHandler.
      *
      * @param csvFileName nome (ou caminho) do ficheiro CSV a ser lido
      */
-<span class="fc" id="L21">    public CSVHandler(String csvFileName) {</span>
-<span class="fc" id="L22">        this.csvFileName = csvFileName;</span>
-<span class="fc" id="L23">    }</span>
-
+<span class="fc" id="L25">    public CSVHandler(String csvFileName) {</span>
+<span class="fc" id="L26">        this.csvFileName = csvFileName;</span>
+<span class="fc" id="L27">    }</span>
 
     /**
      * Lê o ficheiro CSV e retorna uma lista de objetos {@link Propriedade}.
      *
      * @return lista de propriedades lidas do ficheiro CSV
      */
-    public List&lt;Propriedade&gt; getPropriedades(){
-<span class="fc" id="L32">        List&lt;Propriedade&gt; propriedades = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L33">            try(CSVParser parser = CSVFormat.DEFAULT.withFirstRecordAsHeader().withDelimiter(';').parse(new FileReader(csvFileName))){</span>
-<span class="fc" id="L34">                WKTReader reader = new WKTReader();</span>
-<span class="fc bfc" id="L35" title="All 2 branches covered.">                for(CSVRecord record : parser){</span>
-                    try{
-<span class="fc" id="L37">                        int objectId = Integer.parseInt(record.get(&quot;OBJECTID&quot;));</span>
-<span class="fc" id="L38">                        int par_id = (int) Double.parseDouble(record.get(&quot;PAR_ID&quot;));</span>
-<span class="fc" id="L39">                        long par_num = (long) Double.parseDouble(record.get(&quot;PAR_NUM&quot;).replace(&quot;,&quot;, &quot;.&quot;));</span>
-<span class="fc" id="L40">                        double shapeLenght = Double.parseDouble(record.get(&quot;Shape_Length&quot;));</span>
-<span class="fc" id="L41">                        double shapeArea = Double.parseDouble(record.get(&quot;Shape_Area&quot;));</span>
-<span class="fc" id="L42">                        Geometry geometry = reader.read(record.get(&quot;geometry&quot;));</span>
-<span class="fc" id="L43">                        String owner = record.get(&quot;OWNER&quot;);</span>
-<span class="fc" id="L44">                        String freguesia = record.get(&quot;Freguesia&quot;);</span>
-<span class="fc" id="L45">                        String municipio = record.get(&quot;Municipio&quot;);</span>
-<span class="fc" id="L46">                        String ilha = record.get(&quot;Ilha&quot;);</span>
-<span class="fc" id="L47">                        propriedades.add(new Propriedade(objectId, par_id, par_num, shapeArea, shapeLenght, geometry , owner, freguesia, municipio, ilha));</span>
-<span class="nc" id="L48">                    }catch (ParseException e) {</span>
-<span class="nc" id="L49">                        throw new RuntimeException(e);</span>
-<span class="fc" id="L50">                    }</span>
-<span class="fc" id="L51">                }</span>
-<span class="nc" id="L52">            }catch(IOException e){</span>
-<span class="nc" id="L53">                System.out.println(&quot;falha ao carregar propriedades&quot;);</span>
+    public List&lt;Propriedade&gt; getPropriedades() {
+<span class="fc" id="L35">        List&lt;Propriedade&gt; propriedades = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L36">        try (CSVParser parser = CSVFormat.DEFAULT.withFirstRecordAsHeader().withDelimiter(';').parse(new FileReader(csvFileName))) {</span>
+<span class="fc" id="L37">            WKTReader reader = new WKTReader();</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">            for (CSVRecord record : parser) {</span>
+                try {
+<span class="fc" id="L40">                    int objectId = Integer.parseInt(record.get(&quot;OBJECTID&quot;));</span>
+<span class="fc" id="L41">                    int par_id = (int) Double.parseDouble(record.get(&quot;PAR_ID&quot;));</span>
+<span class="fc" id="L42">                    long par_num = (long) Double.parseDouble(record.get(&quot;PAR_NUM&quot;).replace(&quot;,&quot;, &quot;.&quot;));</span>
+<span class="fc" id="L43">                    double shapeLenght = Double.parseDouble(record.get(&quot;Shape_Length&quot;));</span>
+<span class="fc" id="L44">                    double shapeArea = Double.parseDouble(record.get(&quot;Shape_Area&quot;));</span>
+<span class="fc" id="L45">                    Geometry geometry = reader.read(record.get(&quot;geometry&quot;));</span>
+<span class="fc" id="L46">                    String owner = record.get(&quot;OWNER&quot;);</span>
+<span class="fc" id="L47">                    String freguesia = record.get(&quot;Freguesia&quot;);</span>
+<span class="fc" id="L48">                    String municipio = record.get(&quot;Municipio&quot;);</span>
+<span class="fc" id="L49">                    String ilha = record.get(&quot;Ilha&quot;);</span>
+<span class="fc" id="L50">                    propriedades.add(new Propriedade(objectId, par_id, par_num, shapeArea, shapeLenght, geometry, owner, freguesia, municipio, ilha));</span>
+<span class="nc" id="L51">                } catch (ParseException e) {</span>
+<span class="nc" id="L52">                    throw new RuntimeException(e);</span>
+<span class="fc" id="L53">                }</span>
 <span class="fc" id="L54">            }</span>
-<span class="fc" id="L55">            return propriedades;</span>
+<span class="nc" id="L55">        } catch (IOException e) {</span>
+<span class="nc" id="L56">            System.out.println(&quot;falha ao carregar propriedades&quot;);</span>
+<span class="fc" id="L57">        }</span>
+<span class="fc" id="L58">        return propriedades;</span>
     }
 
 
-
+    /**
+     * Obtém um mapa de preços médios por metro quadrado para cada freguesia,
+     * lendo os dados de um ficheiro CSV e gerando valores aleatórios entre 200 e 2000 euros.
+     * Cada freguesia terá um preço único gerado uma única vez durante a leitura.
+     *
+     * @return HashMap onde a chave é o nome da freguesia e o valor é o preço médio por metro quadrado arredondado a duas casas decimais.
+     */
+    public HashMap&lt;String, Double&gt; getPrecosFreguesia() {
+<span class="fc" id="L70">        HashMap&lt;String, Double&gt; precos = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L71">        java.util.Random random = new java.util.Random();</span>
+<span class="fc" id="L72">        try (CSVParser parser = CSVFormat.DEFAULT.withFirstRecordAsHeader().withDelimiter(';').parse(new FileReader(csvFileName))) {</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">            for (CSVRecord record : parser) {</span>
+<span class="fc" id="L74">                String freguesia = record.get(&quot;Freguesia&quot;);</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">                if (!precos.containsKey(freguesia)) {</span>
+                    // Preço por metro quadrado entre 200 e 2000 euros
+<span class="fc" id="L77">                    double preco = 200 + (1800 * random.nextDouble());</span>
+<span class="fc" id="L78">                    preco = Math.round(preco * 100.0) / 100.0; // arredonda para 2 casas decimais</span>
+<span class="fc" id="L79">                    precos.put(freguesia, preco);</span>
+                }
+<span class="fc" id="L81">            }</span>
+<span class="nc" id="L82">        } catch (IOException e) {</span>
+<span class="nc" id="L83">            System.out.println(&quot;falha ao carregar preços&quot;);</span>
+<span class="fc" id="L84">        }</span>
+<span class="fc" id="L85">        return precos;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

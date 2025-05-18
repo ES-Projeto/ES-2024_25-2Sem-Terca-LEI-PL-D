@@ -1,267 +1,7 @@
 
-(Propriedade#toString()Ljava/lang/String;j
-`C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Propriedade.javax x("1*¬
-1y y(g
-e
-y z(
-%0java.lang.String"__concat*
-y y(
-Propriedade{*
-z z(
-	Objectid=h
-f
-y z(&
-%1java.lang.String"__concat*$
-y z(
-
-%0java.lang.String*
-z z(&
-""o
-m
-y {(
-%2java.lang.String"__concat*$
-y z(&
-
-%1java.lang.String*
-{ {(
-	, par_id=h
-f
-y {($
-%3java.lang.String"__concat*$
-y {(
-
-%2java.lang.String*
-{ {($
-""p
-n
-y |(
-%4java.lang.String"__concat*$
-y {($
-
-%3java.lang.String*
-| |(
-
-, par_num=h
-f
-y |(&
-%5java.lang.String"__concat*$
-y |(
-
-%4java.lang.String*
-| |(&
-""r
-p
-y }(
-%6java.lang.String"__concat*$
-y |(&
-
-%5java.lang.String*
-} }(
-, shapeArea=h
-f
-y }(*
-%7java.lang.String"__concat*$
-y }(
-
-%6java.lang.String*
-}! }(*
-""t
-r
-y ~( 
-%8java.lang.String"__concat*$
-y }(*
-
-%7java.lang.String*
-~ ~( 
-, shapeLength=h
-f
-y ~(.
-%9java.lang.String"__concat*$
-y ~( 
-
-%8java.lang.String*
-~# ~(.
-""r
-p
-y (
-%10java.lang.String"__concat*$
-y ~(.
-
-%9java.lang.String*
- (
-, geometry=x
-v
-  (()
-%11"org.locationtech.jts.geom.Geometry"__id*9
-
-__unknown_file (*
-Propriedade"
-
-geometryê
-ç
-y ((
-%12java.lang.String"__concat*%
-y (
-
-%10java.lang.String*7
-  ((+
-)
-%11"org.locationtech.jts.geom.Geometryt
-r
-	y Ä(
-%13java.lang.String"__concat*%
-y ((
-
-%12java.lang.String*
-
-Ä Ä(
-	, owner='e
-c
-
-Ä Ä(#
-%14java.lang.String"__id*6
-
-__unknown_file (*
-Propriedade"
-ownerÅ
-
-	y Ä(#
-%15java.lang.String"__concat*&
-	y Ä(
-
-%13java.lang.String*'
-
-Ä Ä(#
-
-%14java.lang.Stringn
-l
-	y Ä(*
-%16java.lang.String"__concat*&
-	y Ä(#
-
-%15java.lang.String*
-
-Ä& Ä(*
-\'y
-w
-	y Å(
-%17java.lang.String"__concat*&
-	y Ä(*
-
-%16java.lang.String*
-
-Å Å(
-, freguesia='i
-g
-
-Å" Å(+
-%18java.lang.String"__id*:
-
-__unknown_file (*
-Propriedade"
-	freguesiaÅ
-
-	y Å(+
-%19java.lang.String"__concat*&
-	y Å(
-
-%17java.lang.String*'
-
-Å" Å(+
-
-%18java.lang.Stringn
-l
-	y Å(2
-%20java.lang.String"__concat*&
-	y Å(+
-
-%19java.lang.String*
-
-Å. Å(2
-\'y
-w
-	y Ç(
-%21java.lang.String"__concat*&
-	y Å(2
-
-%20java.lang.String*
-
-Ç Ç(
-, municipio='i
-g
-
-Ç" Ç(+
-%22java.lang.String"__id*:
-
-__unknown_file (*
-Propriedade"
-	municipioÅ
-
-	y Ç(+
-%23java.lang.String"__concat*&
-	y Ç(
-
-%21java.lang.String*'
-
-Ç" Ç(+
-
-%22java.lang.Stringn
-l
-	y Ç(2
-%24java.lang.String"__concat*&
-	y Ç(+
-
-%23java.lang.String*
-
-Ç. Ç(2
-\'t
-r
-	y É(
-%25java.lang.String"__concat*&
-	y Ç(2
-
-%24java.lang.String*
-
-É É(
-
-, ilha='d
-b
-
-É É(!
-%26java.lang.String"__id*5
-
-__unknown_file (*
-Propriedade"
-ilhaÅ
-
-	y É(!
-%27java.lang.String"__concat*&
-	y É(
-
-%25java.lang.String*'
-
-É É(!
-
-%26java.lang.Stringn
-l
-	y É((
-%28java.lang.String"__concat*&
-	y É(!
-
-%27java.lang.String*
-
-É$ É((
-\'m
-k
-	y Ñ(
-%29java.lang.String"__concat*&
-	y É((
-
-%28java.lang.String*
-
-Ñ Ñ(
-}"&
-	y Ñ(
-
-%29java.lang.StringB
-PropriedadeH
+Propriedade#getShapeLength()Dj
+`C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Propriedade.javaS S( "1*!
+1T T("
+T T(
+""B
+PropriedadeHX

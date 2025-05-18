@@ -1,48 +1,95 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SugestaoTroca.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CSVHandler</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">SugestaoTroca.java</span></div><h1>SugestaoTroca.java</h1><pre class="source lang-java linenums">public class SugestaoTroca {
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SugestaoTroca.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CSVHandler</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">SugestaoTroca.java</span></div><h1>SugestaoTroca.java</h1><pre class="source lang-java linenums">/**
+ * Representa uma sugestão de troca de propriedades entre dois proprietários,
+ * com avaliação do ganho de área média unificada e do potencial da troca.
+ */
+public class SugestaoTroca {
 
     private Propriedade propA;
     private Propriedade propB;
     private double ganhoTotal;
     private double potencial;
 
-<span class="fc" id="L8">    public SugestaoTroca(Propriedade propA, Propriedade propB, double ganhoTotal, double potencial) {</span>
-<span class="fc" id="L9">        this.propA = propA;</span>
-<span class="fc" id="L10">        this.propB = propB;</span>
-<span class="fc" id="L11">        this.ganhoTotal = ganhoTotal;</span>
-<span class="fc" id="L12">        this.potencial = potencial;</span>
-<span class="fc" id="L13">    }</span>
+    /**
+     * Construtor da classe SugestaoTroca.
+     *
+     * @param propA        propriedade proposta pelo primeiro proprietário
+     * @param propB        propriedade proposta pelo segundo proprietário
+     * @param ganhoTotal   ganho total médio de área unificada resultante da troca
+     * @param potencial    valor representando a viabilidade da troca (quanto menor a diferença de áreas, maior o potencial)
+     */
+<span class="fc" id="L20">    public SugestaoTroca(Propriedade propA, Propriedade propB, double ganhoTotal, double potencial) {</span>
+<span class="fc" id="L21">        this.propA = propA;</span>
+<span class="fc" id="L22">        this.propB = propB;</span>
+<span class="fc" id="L23">        this.ganhoTotal = ganhoTotal;</span>
+<span class="fc" id="L24">        this.potencial = potencial;</span>
+<span class="fc" id="L25">    }</span>
 
+    /**
+     * Retorna a propriedade proposta pelo primeiro proprietário.
+     *
+     * @return objeto {@link Propriedade} do primeiro participante
+     */
     public Propriedade getPropA() {
-<span class="fc" id="L16">        return propA;</span>
+<span class="fc" id="L33">        return propA;</span>
     }
 
+    /**
+     * Retorna a propriedade proposta pelo segundo proprietário.
+     *
+     * @return objeto {@link Propriedade} do segundo participante
+     */
     public Propriedade getPropB() {
-<span class="fc" id="L20">        return propB;</span>
+<span class="fc" id="L42">        return propB;</span>
     }
 
+    /**
+     * Retorna o ganho total médio obtido com a troca.
+     *
+     * @return valor numérico do ganho de área média
+     */
     public double getGanhoTotal() {
-<span class="fc" id="L24">        return ganhoTotal;</span>
+<span class="fc" id="L51">        return ganhoTotal;</span>
     }
 
+    /**
+     * Retorna o potencial da troca, com base na proximidade das áreas das propriedades.
+     *
+     * @return valor de potencial da troca (entre 0 e 1)
+     */
     public double getPotencial() {
-<span class="fc" id="L28">        return potencial;</span>
+<span class="fc" id="L60">        return potencial;</span>
     }
 
+    /**
+     * Altera o proprietário da propriedade A.
+     *
+     * @param newOwner novo nome do proprietário
+     */
     public void setOwnerA(String newOwner) {
-<span class="fc" id="L32">        this.propA.setOwner(newOwner);</span>
-<span class="fc" id="L33">    }</span>
+<span class="fc" id="L69">        this.propA.setOwner(newOwner);</span>
+<span class="fc" id="L70">    }</span>
 
+    /**
+     * Altera o proprietário da propriedade B.
+     *
+     * @param newOwner novo nome do proprietário
+     */
     public void setOwnerB(String newOwner) {
-<span class="fc" id="L36">        this.propB.setOwner(newOwner);</span>
-<span class="fc" id="L37">    }</span>
+<span class="fc" id="L78">        this.propB.setOwner(newOwner);</span>
+<span class="fc" id="L79">    }</span>
 
+    /**
+     * Retorna uma descrição textual da sugestão de troca, incluindo informações dos dois proprietários,
+     * áreas das propriedades e os indicadores de ganho e potencial.
+     *
+     * @return descrição detalhada da sugestão
+     */
     @Override
     public String toString() {
-<span class="fc" id="L41">        return String.format(&quot;Troca sugerida:\n - Proprietário %s troca parcela %d (%.2f m²)\n - Proprietário %s troca parcela %d (%.2f m²)\n - Ganho médio total: %.2f\n - Potencial de troca: %.2f&quot;,</span>
-<span class="fc" id="L42">                propA.getOwner(), propA.getPar_id(), propA.getShapeArea(),</span>
-<span class="fc" id="L43">                propB.getOwner(), propB.getPar_id(), propB.getShapeArea(),</span>
-<span class="fc" id="L44">                ganhoTotal, potencial);</span>
+<span class="fc" id="L89">        return String.format(&quot;Troca sugerida:\n - Proprietário %s troca parcela %d (%.2f m²)\n - Proprietário %s troca parcela %d (%.2f m²)\n - Ganho médio total: %.2f\n - Potencial de troca: %.2f&quot;,</span>
+<span class="fc" id="L90">                propA.getOwner(), propA.getPar_id(), propA.getShapeArea(),</span>
+<span class="fc" id="L91">                propB.getOwner(), propB.getPar_id(), propB.getShapeArea(),</span>
+<span class="fc" id="L92">                ganhoTotal, potencial);</span>
     }
-
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

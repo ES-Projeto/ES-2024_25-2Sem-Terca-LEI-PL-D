@@ -3,5 +3,5 @@ projectKey=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D
 serverUrl=https://sonarcloud.io
 serverVersion=8.0.0.63405
 dashboardUrl=https://sonarcloud.io/dashboard?id=ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-D
-ceTaskId=AZbk-IbYPewl7K6qWa5e
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZbk-IbYPewl7K6qWa5e
+ceTaskId=AZblqBycBwRdY9Db_I7b
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZblqBycBwRdY9Db_I7b

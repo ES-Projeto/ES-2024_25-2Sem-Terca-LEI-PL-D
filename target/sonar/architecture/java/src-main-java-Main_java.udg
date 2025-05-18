@@ -1,6 +1,5 @@
 
-1.0)ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-DJavaFrontend"1747598205788*java2.Bè
-
+1.0)ES-Projeto_ES-2024_25-2Sem-Terca-LEI-PL-DJavaFrontend"1747609710978*java2.B‹
 
 src/main/java/Main.java2
 	
@@ -40,116 +39,126 @@ CSVHandler14
 references21
 2
 ,CSVHandler#getPropriedades()Ljava/util/List;23
+8
+2CSVHandler#getPrecosFreguesia()Ljava/util/HashMap;25
 
-Grafo25
+Grafo27
 
-org.jgrapht.Graph27
+org.jgrapht.Graph29
 #
-org.jgrapht.graph.DefaultEdge29
+org.jgrapht.graph.DefaultEdge31
 
-returns30
+returns32
 ,
-&Grafo#propriedade()Lorg/jgrapht/Graph;32
+&Grafo#propriedade()Lorg/jgrapht/Graph;34
 F
-@Grafo#grafoProprietarios(Lorg/jgrapht/Graph;)Lorg/jgrapht/Graph;34
+@Grafo#grafoProprietarios(Lorg/jgrapht/Graph;)Lorg/jgrapht/Graph;36
 #
-org.jgrapht.graph.SimpleGraph36
+org.jgrapht.graph.SimpleGraph38
 2
-,org.jgrapht.Graph#vertexSet()Ljava/util/Set;38
+,org.jgrapht.Graph#vertexSet()Ljava/util/Set;40
 6
-0org.jgrapht.Graph#addVertex(Ljava/lang/Object;)Z40
+0org.jgrapht.Graph#addVertex(Ljava/lang/Object;)Z42
 0
-*org.jgrapht.Graph#edgeSet()Ljava/util/Set;42
+*org.jgrapht.Graph#edgeSet()Ljava/util/Set;44
 K
-Eorg.jgrapht.Graph#getEdgeSource(Ljava/lang/Object;)Ljava/lang/Object;44
+Eorg.jgrapht.Graph#getEdgeSource(Ljava/lang/Object;)Ljava/lang/Object;46
 K
-Eorg.jgrapht.Graph#getEdgeTarget(Ljava/lang/Object;)Ljava/lang/Object;46
+Eorg.jgrapht.Graph#getEdgeTarget(Ljava/lang/Object;)Ljava/lang/Object;48
 ;
-5org.jgrapht.Graph#containsVertex(Ljava/lang/Object;)Z48
+5org.jgrapht.Graph#containsVertex(Ljava/lang/Object;)Z50
 W
-Qorg.jgrapht.Graph#addEdge(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;50
+Qorg.jgrapht.Graph#addEdge(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;52
 
-GrafoVisual52
+GrafoVisual54
 1
-+GrafoVisual#visualize(Lorg/jgrapht/Graph;)V54
++GrafoVisual#visualize(Lorg/jgrapht/Graph;)V56
 L
-FGrafo#areaMedia(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D56
+FGrafo#areaMedia(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D58
 U
-OGrafo#areaMediaUnificada(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D58
+OGrafo#areaMediaUnificada(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D60
 
-SugestaoTroca60
+SugestaoTroca62
 _
-YGrafo#sugerirTrocas(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;62J
+YGrafo#sugerirTrocas(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;64
+g
+aGrafo#sugerirTrocasAvancado(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;66J
 
 1
-12j¨
+12jÐ
+
+53
+535415
 
 24
 242515
 
-57
-575815
-
-19
-192015
-
-28
-282915
-
-51
-515215
-
-35
-353615
-
-59
-596015
-
-39
-394015
-
-33
-333415
-
-41
-414215
-
-37
-373815
-
-49
-495015
-
 61
 616215
-
-22
-222315
-
-45
-454615
-
-47
-474815
-
-55
-555615
-
-13
-131415
 
 43
 434415
 
-31
-313215
+51
+515215
+
+63
+636415
+
+22
+222315
+
+49
+495015
+
+13
+131415
+
+33
+333415
 
 26
 262715
+
+59
+596015
+
+19
+192015
+
+30
+303115
+
+37
+373815
+
+41
+414215
+
+35
+353615
+
+65
+656615
+
+39
+394015
+
+47
+474815
+
+57
+575815
+
+45
+454615
+
+28
+282915
 9
 94
 91011 *
-1	 	(23B
+1 (23B
 
 6
 7
@@ -159,7 +168,7 @@ YGrafo#sugerirTrocas(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/
 3
 3.
 345 *
-1 (B
+1 (B
 
 6
 7
@@ -167,182 +176,200 @@ YGrafo#sugerirTrocas(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/
 8
 4
 
-53
-535415rþ
+55
+555615rš
 
 91316*
-1 (
+1! !(
 
 91317*
-1	 (
+1!	 !(
 
 91318*
-1  (*
+1!  !(*
 
 91917*
-1 (
+1" "(
 
 91321*
-1* (/
+1"* "(/
 
 92218*
-10 (?
+1"0 "(?
 
-92416*
-1 (
-
-92417*
-1	 (
+91321*
+1#) #(.
 
 92418*
-1 (
+1#/ #(A
 
 92616*
-1) (9
+1$ $(
 
 92617*
-1	 (
+1$	 $(
 
-91917*
-1 (
-
-92817*
-1 ('
-
-92630*
-1< (@
-
-92421*
-1< (@
-
-93118*
-1A (L
-
-92616*
-1$ (6
-
-92617*
-1	 (
-
-92817*
-1 ("
-
-92630*
-19 (=
-
-92421*
-19 (=
-
-93318*
-1> (P
-
-92616*
-1$ (,
-
-92617*
-1	 (
-
-92817*
-1 ("
-
-93518*
-13 (>
-
-92817*
-1A (L
-
-92621*
-1 (/
-
-93718*
-10 (9
-
-92621*
-1 (
-
-93918*
-1 (
+92618*
+1$ $(
 
 92816*
-1 (
+1') '(9
 
 92817*
-1 (
+1'	 '(
+
+91917*
+1' '(
+
+93017*
+1' '('
+
+92832*
+1'< '(@
 
 92621*
-1! (3
+1'< '(@
+
+93318*
+1'A '(L
+
+92816*
+1*$ *(6
+
+92817*
+1*	 *(
+
+93017*
+1* *("
+
+92832*
+1*9 *(=
+
+92621*
+1*9 *(=
+
+93518*
+1*> *(P
+
+92816*
+1-$ -(,
+
+92817*
+1-	 -(
+
+93017*
+1- -("
+
+93718*
+1-3 -(>
+
+93017*
+1-A -(L
+
+92821*
+1/ /(/
+
+93918*
+1/0 /(9
+
+92821*
+10 0(
 
 94118*
-14 (;
+10 0(
 
-92621*
-1 (,
+93016*
+15 5(
+
+93017*
+15 5(
+
+92821*
+15! 5(3
 
 94318*
-1- (:
+154 5(;
 
-92621*
-1 (,
+92821*
+16 6(,
 
 94518*
-1- (:
+16- 6(:
 
-92621*
-1   (
-
-94718*
-1   ((
-
-92621*
-1 1  (9
+92821*
+17 7(,
 
 94718*
-1 :  (H
+17- 7(:
 
-92830*
-1! !(
-
-92621*
-1! !(
+92821*
+19 9(
 
 94918*
-1! !(!
+19 9((
 
-95121*
-1%	 %(
+92821*
+191 9(9
 
-95318*
-1% %(
+94918*
+19: 9(H
 
-95117*
-1%	 %(
+93032*
+1: :(
 
-92421*
-1( ((
+92821*
+1: :(
+
+95118*
+1: :(!
+
+95321*
+1?	 ?(
 
 95518*
-1( (('
+1? ?(
 
-92417*
-1( ((
+95317*
+1?	 ?(
 
-92421*
-1+! +(&
+92621*
+1C C(
 
 95718*
-1+' +(9
+1C C('
 
-92417*
-1+! +(&
+92617*
+1C C(
 
-95917*
-1. .(
+92621*
+1F! F(&
 
-92421*
-1.& .(+
+95918*
+1F' F(9
 
-96118*
-1., .(9
+92617*
+1F! F(&
 
-92417*
-1.& .(+
+96117*
+1J J(
+
+92621*
+1J& J(+
+
+96318*
+1J, J(9
+
+92617*
+1J& J(+
+
+96117*
+1U U(
+
+92621*
+1U/ U(4
+
+96518*
+1U5 U(J
+
+92617*
+1U/ U(4

@@ -32,6 +32,15 @@ public class PropriedadeTest {
     }
 
     @Test
+    void testIsLoteavelAndQualidadeAcessoAreWithinValidRange() {
+        Boolean isLoteavel = propriedade.getIsLoteavel();
+        int qualidade = propriedade.getQualidadeAcesso();
+
+        assertNotNull(isLoteavel);
+        assertTrue(qualidade >= 1 && qualidade <= 10);
+    }
+
+    @Test
     void testSetOwner() {
         propriedade.setOwner("João");
         assertEquals("João", propriedade.getOwner());
@@ -41,7 +50,7 @@ public class PropriedadeTest {
     void testToStringContainsKeyInfo() {
         String output = propriedade.toString();
         assertTrue(output.contains("Objectid=1"));
-        assertTrue(output.contains("owner='Maria'"));
+        assertTrue(output.contains("owner='Maria'")); // valor original no construtor
         assertTrue(output.contains("ilha='Madeira'"));
     }
 }

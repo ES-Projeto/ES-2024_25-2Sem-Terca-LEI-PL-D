@@ -1,5 +1,5 @@
-SugestaoTroca#setOwnerB(Ljava/lang/String;)V
+SugestaoTroca#setOwnerA(Ljava/lang/String;)V
 false
-7ce6e6300122c8ff4026c8e2109944a8
+4032e3dfb787a7608a6b41ec8be9bcc0
 ==
 setOwner Propriedade#setOwner(Ljava/lang/String;)V

@@ -1,3 +1,8 @@
-CSVHandler#instance-init#
+SugestaoTroca#toString()Ljava/lang/String;
 false
-453c78953a0df3e7f86e28bcfefa04ad
+aea9a7a1ebc820a6b3231f20d224fac8
+java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+==
+getOwner Propriedade#getOwner()Ljava/lang/String;
+getPar_id Propriedade#getPar_id()I
+getShapeArea Propriedade#getShapeArea()D

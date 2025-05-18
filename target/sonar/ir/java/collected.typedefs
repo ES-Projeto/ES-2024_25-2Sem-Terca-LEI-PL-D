@@ -266,7 +266,8 @@ checkStateicom.google.common.base.Preconditions#checkState(ZLjava/lang/String;L
 
 checkState{com.google.common.base.Preconditions#checkState(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V*ú
 
-checkStateçcom.google.common.base.Preconditions#checkState(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)VËGrafojava.lang.Object*)
+checkStateçcom.google.common.base.Preconditions#checkState(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V¢Grafojava.lang.Object*<
+<init>2Grafo#<init>(Ljava/util/List;Ljava/util/HashMap;)V*)
 <init>Grafo#<init>(Ljava/util/List;)V*S
 	areaMediaFGrafo#areaMedia(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D*e
 areaMediaUnificadaOGrafo#areaMediaUnificada(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D*W
@@ -274,8 +275,9 @@ checkStateçcom.google.common.base.Preconditions#checkState(ZLjava/lang/String;
 grafoProprietarios@Grafo#grafoProprietarios(Lorg/jgrapht/Graph;)Lorg/jgrapht/Graph;*2
 	printText%Grafo#printText(Lorg/jgrapht/Graph;)V*5
 propriedade&Grafo#propriedade()Lorg/jgrapht/Graph;*j
-sugerirTrocasYGrafo#sugerirTrocas(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;*\
-unirGeometriasPorDonoCGrafo#unirGeometriasPorDono(Ljava/util/Collection;)Ljava/util/List;(java.lang.Iterablejava.lang.Object>java.util.Collectionjava.lang.Iterablejava.lang.ObjectIjava.util.SequencedCollectionjava.util.Collectionjava.lang.ObjectCjava.util.Listjava.util.SequencedCollectionjava.lang.Object'org.jgrapht.Graphjava.lang.Object)java.lang.Cloneablejava.lang.ObjectHorg.jgrapht.graph.AbstractGraphorg.jgrapht.Graphjava.lang.ObjectÜ#org.jgrapht.graph.AbstractBaseGraphorg.jgrapht.Graphjava.lang.Cloneablejava.io.Serializableorg.jgrapht.graph.AbstractGraph˜org.jgrapht.graph.SimpleGraph#org.jgrapht.graph.AbstractBaseGraph*B
+sugerirTrocasYGrafo#sugerirTrocas(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;*z
+sugerirTrocasAvancadoaGrafo#sugerirTrocasAvancado(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;*\
+unirGeometriasPorDonoCGrafo#unirGeometriasPorDono(Ljava/util/Collection;)Ljava/util/List;(java.lang.Iterablejava.lang.Object>java.util.Collectionjava.lang.Iterablejava.lang.ObjectIjava.util.SequencedCollectionjava.util.Collectionjava.lang.ObjectCjava.util.Listjava.util.SequencedCollectionjava.lang.Object#java.util.Mapjava.lang.Object)java.lang.Cloneablejava.lang.Object:java.util.AbstractMapjava.util.Mapjava.lang.Objectfjava.util.HashMapjava.util.Mapjava.lang.Cloneablejava.io.Serializablejava.util.AbstractMap'org.jgrapht.Graphjava.lang.ObjectHorg.jgrapht.graph.AbstractGraphorg.jgrapht.Graphjava.lang.ObjectÜ#org.jgrapht.graph.AbstractBaseGraphorg.jgrapht.Graphjava.lang.Cloneablejava.io.Serializableorg.jgrapht.graph.AbstractGraph˜org.jgrapht.graph.SimpleGraph#org.jgrapht.graph.AbstractBaseGraph*B
 <init>8org.jgrapht.graph.SimpleGraph#<init>(Ljava/lang/Class;)V*l
 <init>borg.jgrapht.graph.SimpleGraph#<init>(Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V*w
 createBuilderforg.jgrapht.graph.SimpleGraph#createBuilder(Ljava/lang/Class;)Lorg/jgrapht/graph/builder/GraphBuilder;*É
@@ -382,7 +384,7 @@ replaceAllCjava.util.ArrayList#replaceAll(Ljava/util/function/UnaryOperator;)V*
 toArrayCjava.util.ArrayList#toArray([Ljava/lang/Object;)[Ljava/lang/Object;*/
 
 trimToSize!java.util.ArrayList#trimToSize()V*M
-writeObject>java.util.ArrayList#writeObject(Ljava/io/ObjectOutputStream;)V#java.util.Mapjava.lang.Objectjava.lang.Object|GrafoVisualjava.lang.Object*
+writeObject>java.util.ArrayList#writeObject(Ljava/io/ObjectOutputStream;)Vjava.lang.Object|GrafoVisualjava.lang.Object*
 <init>GrafoVisual#<init>()V*8
 	visualize+GrafoVisual#visualize(Lorg/jgrapht/Graph;)V'org.jgrapht.Graphjava.lang.Object
 null booleanjava.lang.Boolean'java.lang.Booleanjava.lang.Object9java.util.Setjava.util.Collectionjava.lang.Object>java.util.Collectionjava.lang.Iterablejava.lang.Object(java.lang.Iterablejava.lang.Objectojava.lang.Systemjava.lang.Object*$
@@ -782,7 +784,7 @@ swapBounds9com.mxgraph.view.mxGraph#swapBounds(Ljava/lang/Object;Z)V*t
 updateGroupBoundsTcom.mxgraph.view.mxGraph#updateGroupBounds([Ljava/lang/Object;IZ)[Ljava/lang/Object;*8
 updateOrigin(com.mxgraph.view.mxGraph#updateOrigin()V*p
 validateCell`com.mxgraph.view.mxGraph#validateCell(Ljava/lang/Object;Ljava/util/Hashtable;)Ljava/lang/String;*
-validateEdgeocom.mxgraph.view.mxGraph#validateEdge(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;#java.util.Mapjava.lang.Object)java.lang.Cloneablejava.lang.Object:java.util.AbstractMapjava.util.Mapjava.lang.Objectâ#java.util.HashMapjava.util.Mapjava.lang.Cloneablejava.io.Serializablejava.util.AbstractMap*%
+validateEdgeocom.mxgraph.view.mxGraph#validateEdge(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;â#java.util.HashMapjava.util.Mapjava.lang.Cloneablejava.io.Serializablejava.util.AbstractMap*%
 <init>java.util.HashMap#<init>()V*&
 <init>java.util.HashMap#<init>(I)V*4
 <init>*java.util.HashMap#<init>(Ljava/util/Map;)V*'
@@ -844,7 +846,7 @@ replaceAll>java.util.HashMap#replaceAll(Ljava/util/function/BiFunction;)V*~
 treeifyBin9java.util.HashMap#treeifyBin([Ljava/util/HashMap$Node;I)V*:
 values0java.util.HashMap#values()Ljava/util/Collection;*X
 valuesToArrayGjava.util.HashMap#valuesToArray([Ljava/lang/Object;)[Ljava/lang/Object;*K
-writeObject<java.util.HashMap#writeObject(Ljava/io/ObjectOutputStream;)V5com.mxgraph.model.mxIGraphModeljava.lang.Objectjava.lang.Object÷SugestaoTrocajava.lang.Object*=
+writeObject<java.util.HashMap#writeObject(Ljava/io/ObjectOutputStream;)V#java.util.Mapjava.lang.Object)java.lang.Cloneablejava.lang.Object:java.util.AbstractMapjava.util.Mapjava.lang.Object5com.mxgraph.model.mxIGraphModeljava.lang.Objectjava.lang.Object÷SugestaoTrocajava.lang.Object*=
 <init>3SugestaoTroca#<init>(LPropriedade;LPropriedade;DD)V*/
 getGanhoTotalSugestaoTroca#getGanhoTotal()D*-
 getPotencialSugestaoTroca#getPotencial()D*1
@@ -859,9 +861,10 @@ treeifyBin9java.util.HashMap#treeifyBin([Ljava/util/HashMap$Node;I)V*:
 parseInt0java.lang.Integer#parseInt(Ljava/lang/String;I)I*T
 parseUnsignedInt@java.lang.Integer#parseUnsignedInt(Ljava/lang/CharSequence;III)I*K
 parseUnsignedInt7java.lang.Integer#parseUnsignedInt(Ljava/lang/String;)I*L
-parseUnsignedInt8java.lang.Integer#parseUnsignedInt(Ljava/lang/String;I)Ijava.lang.Objectì
+parseUnsignedInt8java.lang.Integer#parseUnsignedInt(Ljava/lang/String;I)Ijava.lang.Object›
 CSVHandlerjava.lang.Object*0
-<init>&CSVHandler#<init>(Ljava/lang/String;)V*?
+<init>&CSVHandler#<init>(Ljava/lang/String;)V*H
+getPrecosFreguesia2CSVHandler#getPrecosFreguesia()Ljava/util/HashMap;*?
 getPropriedades,CSVHandler#getPropriedades()Ljava/util/List;©java.lang.Stringjava.io.Serializablejava.lang.Comparablejava.lang.CharSequencejava.lang.constant.Constablejava.lang.constant.ConstantDescjava.lang.Object*java.io.Serializablejava.lang.Object*java.lang.Comparablejava.lang.Object,java.lang.CharSequencejava.lang.Object2java.lang.constant.Constablejava.lang.Object5java.lang.constant.ConstantDescjava.lang.Objectvoid∫"java.util.ArrayListjava.util.Listjava.util.RandomAccessjava.lang.Cloneablejava.io.Serializablejava.util.AbstractList*'
 <init>java.util.ArrayList#<init>()V*(
 <init>java.util.ArrayList#<init>(I)V*=
@@ -934,17 +937,86 @@ replaceAllCjava.util.ArrayList#replaceAll(Ljava/util/function/UnaryOperator;)V*
 toArrayCjava.util.ArrayList#toArray([Ljava/lang/Object;)[Ljava/lang/Object;*/
 
 trimToSize!java.util.ArrayList#trimToSize()V*M
-writeObject>java.util.ArrayList#writeObject(Ljava/io/ObjectOutputStream;)VCjava.util.Listjava.util.SequencedCollectionjava.lang.ObjectIjava.util.SequencedCollectionjava.util.Collectionjava.lang.Object>java.util.Collectionjava.lang.Iterablejava.lang.Object(java.lang.Iterablejava.lang.Object,java.util.RandomAccessjava.lang.Object)java.lang.Cloneablejava.lang.ObjectHjava.util.AbstractListjava.util.Listjava.util.AbstractCollectionHjava.util.AbstractCollectionjava.util.Collectionjava.lang.ObjectØPropriedadejava.lang.Object*ë
+writeObject>java.util.ArrayList#writeObject(Ljava/io/ObjectOutputStream;)VCjava.util.Listjava.util.SequencedCollectionjava.lang.ObjectIjava.util.SequencedCollectionjava.util.Collectionjava.lang.Object>java.util.Collectionjava.lang.Iterablejava.lang.Object(java.lang.Iterablejava.lang.Object,java.util.RandomAccessjava.lang.Object)java.lang.Cloneablejava.lang.ObjectHjava.util.AbstractListjava.util.Listjava.util.AbstractCollectionHjava.util.AbstractCollectionjava.util.Collectionjava.lang.Objectâ#java.util.HashMapjava.util.Mapjava.lang.Cloneablejava.io.Serializablejava.util.AbstractMap*%
+<init>java.util.HashMap#<init>()V*&
+<init>java.util.HashMap#<init>(I)V*4
+<init>*java.util.HashMap#<init>(Ljava/util/Map;)V*'
+<init>java.util.HashMap#<init>(IF)V*O
+afterNodeAccess<java.util.HashMap#afterNodeAccess(Ljava/util/HashMap$Node;)V*>
+afterNodeInsertion(java.util.HashMap#afterNodeInsertion(Z)V*Q
+afterNodeRemoval=java.util.HashMap#afterNodeRemoval(Ljava/util/HashMap$Node;)V*J
+calculateHashMapCapacity.java.util.HashMap#calculateHashMapCapacity(I)I*)
+capacityjava.util.HashMap#capacity()I*#
+clearjava.util.HashMap#clear()V*4
+clone+java.util.HashMap#clone()Ljava/lang/Object;*_
+comparableClassForIjava.util.HashMap#comparableClassFor(Ljava/lang/Object;)Ljava/lang/Class;*r
+compareComparables\java.util.HashMap#compareComparables(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)I*i
+compute^java.util.HashMap#compute(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;*w
+computeIfAbsentdjava.util.HashMap#computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;*{
+computeIfPresentgjava.util.HashMap#computeIfPresent(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;*A
+containsKey2java.util.HashMap#containsKey(Ljava/lang/Object;)Z*E
+containsValue4java.util.HashMap#containsValue(Ljava/lang/Object;)Z*7
+entrySet+java.util.HashMap#entrySet()Ljava/util/Set;*F
+forEach;java.util.HashMap#forEach(Ljava/util/function/BiConsumer;)V*B
+get;java.util.HashMap#get(Ljava/lang/Object;)Ljava/lang/Object;*P
+getNodeEjava.util.HashMap#getNode(Ljava/lang/Object;)Ljava/util/HashMap$Node;*f
+getOrDefaultVjava.util.HashMap#getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;*3
+hash+java.util.HashMap#hash(Ljava/lang/Object;)I*]
+internalWriteEntriesEjava.util.HashMap#internalWriteEntries(Ljava/io/ObjectOutputStream;)V*'
+isEmptyjava.util.HashMap#isEmpty()Z*3
+keySet)java.util.HashMap#keySet()Ljava/util/Set;*T
+keysToArrayEjava.util.HashMap#keysToArray([Ljava/lang/Object;)[Ljava/lang/Object;*-
+
+loadFactorjava.util.HashMap#loadFactor()F*w
+mergenjava.util.HashMap#merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;*@
+
+newHashMap2java.util.HashMap#newHashMap(I)Ljava/util/HashMap;*{
+newNodepjava.util.HashMap#newNode(ILjava/lang/Object;Ljava/lang/Object;Ljava/util/HashMap$Node;)Ljava/util/HashMap$Node;*á
+newTreeNodexjava.util.HashMap#newTreeNode(ILjava/lang/Object;Ljava/lang/Object;Ljava/util/HashMap$Node;)Ljava/util/HashMap$TreeNode;*V
+prepareArrayFjava.util.HashMap#prepareArray([Ljava/lang/Object;)[Ljava/lang/Object;*T
+putMjava.util.HashMap#put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;*4
+putAll*java.util.HashMap#putAll(Ljava/util/Map;)V*d
+putIfAbsentUjava.util.HashMap#putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;*C
+putMapEntries2java.util.HashMap#putMapEntries(Ljava/util/Map;Z)V*]
+putValSjava.util.HashMap#putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object;*H
+
+readObject:java.util.HashMap#readObject(Ljava/io/ObjectInputStream;)V*1
+reinitialize!java.util.HashMap#reinitialize()V*H
+remove>java.util.HashMap#remove(Ljava/lang/Object;)Ljava/lang/Object;*I
+remove?java.util.HashMap#remove(Ljava/lang/Object;Ljava/lang/Object;)Z*k
+
+removeNode]java.util.HashMap#removeNode(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/util/HashMap$Node;*\
+replaceQjava.util.HashMap#replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;*]
+replaceRjava.util.HashMap#replace(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z*L
+
+replaceAll>java.util.HashMap#replaceAll(Ljava/util/function/BiFunction;)V*~
+replacementNodekjava.util.HashMap#replacementNode(Ljava/util/HashMap$Node;Ljava/util/HashMap$Node;)Ljava/util/HashMap$Node;*ä
+replacementTreeNodesjava.util.HashMap#replacementTreeNode(Ljava/util/HashMap$Node;Ljava/util/HashMap$Node;)Ljava/util/HashMap$TreeNode;*=
+resize3java.util.HashMap#resize()[Ljava/util/HashMap$Node;*!
+sizejava.util.HashMap#size()I*2
+tableSizeFor"java.util.HashMap#tableSizeFor(I)I*G
+
+treeifyBin9java.util.HashMap#treeifyBin([Ljava/util/HashMap$Node;I)V*:
+values0java.util.HashMap#values()Ljava/util/Collection;*X
+valuesToArrayGjava.util.HashMap#valuesToArray([Ljava/lang/Object;)[Ljava/lang/Object;*K
+writeObject<java.util.HashMap#writeObject(Ljava/io/ObjectOutputStream;)V#java.util.Mapjava.lang.Object:java.util.AbstractMapjava.util.Mapjava.lang.Object˜java.util.Randomjava.lang.Object*$
+<init>java.util.Random#<init>()V*.
+nextBooleanjava.util.Random#nextBoolean()Z*&
+nextIntjava.util.Random#nextInt()I*'
+nextIntjava.util.Random#nextInt(I)I*(
+nextLongjava.util.Random#nextLong()J©Propriedadejava.lang.Object*ë
 <init>ÜPropriedade#<init>(IIJDDLorg/locationtech/jts/geom/Geometry;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V*<
 getFreguesia,Propriedade#getFreguesia()Ljava/lang/String;*L
 getGeometry=Propriedade#getGeometry()Lorg/locationtech/jts/geom/Geometry;*2
-getIlha'Propriedade#getIlha()Ljava/lang/String;*<
+getIlha'Propriedade#getIlha()Ljava/lang/String;*?
+getIsLoteavel.Propriedade#getIsLoteavel()Ljava/lang/Boolean;*<
 getMunicipio,Propriedade#getMunicipio()Ljava/lang/String;*)
 getObjectidPropriedade#getObjectid()I*4
 getOwner(Propriedade#getOwner()Ljava/lang/String;*%
 	getPar_idPropriedade#getPar_id()I*'
 
-getPar_numPropriedade#getPar_num()J*+
+getPar_numPropriedade#getPar_num()J*7
+getQualidadeAcesso!Propriedade#getQualidadeAcesso()I*+
 getShapeAreaPropriedade#getShapeArea()D*/
 getShapeLengthPropriedade#getShapeLength()D*5
 setOwner)Propriedade#setOwner(Ljava/lang/String;)V*4
@@ -962,12 +1034,81 @@ getPar_numPropriedade#getPar_num()J*+
 	parseLong.java.lang.Long#parseLong(Ljava/lang/String;I)J*S
 parseUnsignedLong>java.lang.Long#parseUnsignedLong(Ljava/lang/CharSequence;III)J*J
 parseUnsignedLong5java.lang.Long#parseUnsignedLong(Ljava/lang/String;)J*K
-parseUnsignedLong6java.lang.Long#parseUnsignedLong(Ljava/lang/String;I)Jdoublejava.lang.Double&java.lang.Doublejava.lang.Numbery"org.locationtech.jts.geom.Geometryjava.lang.Cloneablejava.lang.Comparablejava.io.Serializablejava.lang.Object)java.lang.Cloneablejava.lang.Object*java.lang.Comparablejava.lang.Object*java.io.Serializablejava.lang.Object©java.lang.Stringjava.io.Serializablejava.lang.Comparablejava.lang.CharSequencejava.lang.constant.Constablejava.lang.constant.ConstantDescjava.lang.Object,java.lang.CharSequencejava.lang.Object2java.lang.constant.Constablejava.lang.Object5java.lang.constant.ConstantDescjava.lang.Objectvoidcharjava.lang.Character)java.lang.Characterjava.lang.Objectjava.lang.Object]Mainjava.lang.Object*
+parseUnsignedLong6java.lang.Long#parseUnsignedLong(Ljava/lang/String;I)Jdoublejava.lang.Double&java.lang.Doublejava.lang.Numbery"org.locationtech.jts.geom.Geometryjava.lang.Cloneablejava.lang.Comparablejava.io.Serializablejava.lang.Object)java.lang.Cloneablejava.lang.Object*java.lang.Comparablejava.lang.Object*java.io.Serializablejava.lang.Object©java.lang.Stringjava.io.Serializablejava.lang.Comparablejava.lang.CharSequencejava.lang.constant.Constablejava.lang.constant.ConstantDescjava.lang.Object,java.lang.CharSequencejava.lang.Object2java.lang.constant.Constablejava.lang.Object5java.lang.constant.ConstantDescjava.lang.Object˜java.util.Randomjava.lang.Object*$
+<init>java.util.Random#<init>()V*.
+nextBooleanjava.util.Random#nextBoolean()Z*&
+nextIntjava.util.Random#nextInt()I*'
+nextIntjava.util.Random#nextInt(I)I*(
+nextLongjava.util.Random#nextLong()Jbooleanjava.lang.Boolean'java.lang.Booleanjava.lang.Objectvoidcharjava.lang.Character)java.lang.Characterjava.lang.Objectjava.lang.Object]Mainjava.lang.Object*
 <init>Main#<init>()V*'
-mainMain#main([Ljava/lang/String;)V*java.lang.String[]java.lang.Object ©java.lang.Stringjava.io.Serializablejava.lang.Comparablejava.lang.CharSequencejava.lang.constant.Constablejava.lang.constant.ConstantDescjava.lang.Object*java.io.Serializablejava.lang.Object*java.lang.Comparablejava.lang.Object,java.lang.CharSequencejava.lang.Object2java.lang.constant.Constablejava.lang.Object5java.lang.constant.ConstantDescjava.lang.Objectì
+mainMain#main([Ljava/lang/String;)V*java.lang.String[]java.lang.Object ©java.lang.Stringjava.io.Serializablejava.lang.Comparablejava.lang.CharSequencejava.lang.constant.Constablejava.lang.constant.ConstantDescjava.lang.Object*java.io.Serializablejava.lang.Object*java.lang.Comparablejava.lang.Object,java.lang.CharSequencejava.lang.Object2java.lang.constant.Constablejava.lang.Object5java.lang.constant.ConstantDescjava.lang.Object›
 CSVHandlerjava.lang.Object*0
-<init>&CSVHandler#<init>(Ljava/lang/String;)V*?
-getPropriedades,CSVHandler#getPropriedades()Ljava/util/List;Cjava.util.Listjava.util.SequencedCollectionjava.lang.ObjectIjava.util.SequencedCollectionjava.util.Collectionjava.lang.Object>java.util.Collectionjava.lang.Iterablejava.lang.Object(java.lang.Iterablejava.lang.ObjectËGrafojava.lang.Object*)
+<init>&CSVHandler#<init>(Ljava/lang/String;)V*H
+getPrecosFreguesia2CSVHandler#getPrecosFreguesia()Ljava/util/HashMap;*?
+getPropriedades,CSVHandler#getPropriedades()Ljava/util/List;Cjava.util.Listjava.util.SequencedCollectionjava.lang.ObjectIjava.util.SequencedCollectionjava.util.Collectionjava.lang.Object>java.util.Collectionjava.lang.Iterablejava.lang.Object(java.lang.Iterablejava.lang.Objectâ#java.util.HashMapjava.util.Mapjava.lang.Cloneablejava.io.Serializablejava.util.AbstractMap*%
+<init>java.util.HashMap#<init>()V*&
+<init>java.util.HashMap#<init>(I)V*4
+<init>*java.util.HashMap#<init>(Ljava/util/Map;)V*'
+<init>java.util.HashMap#<init>(IF)V*O
+afterNodeAccess<java.util.HashMap#afterNodeAccess(Ljava/util/HashMap$Node;)V*>
+afterNodeInsertion(java.util.HashMap#afterNodeInsertion(Z)V*Q
+afterNodeRemoval=java.util.HashMap#afterNodeRemoval(Ljava/util/HashMap$Node;)V*J
+calculateHashMapCapacity.java.util.HashMap#calculateHashMapCapacity(I)I*)
+capacityjava.util.HashMap#capacity()I*#
+clearjava.util.HashMap#clear()V*4
+clone+java.util.HashMap#clone()Ljava/lang/Object;*_
+comparableClassForIjava.util.HashMap#comparableClassFor(Ljava/lang/Object;)Ljava/lang/Class;*r
+compareComparables\java.util.HashMap#compareComparables(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)I*i
+compute^java.util.HashMap#compute(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;*w
+computeIfAbsentdjava.util.HashMap#computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;*{
+computeIfPresentgjava.util.HashMap#computeIfPresent(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;*A
+containsKey2java.util.HashMap#containsKey(Ljava/lang/Object;)Z*E
+containsValue4java.util.HashMap#containsValue(Ljava/lang/Object;)Z*7
+entrySet+java.util.HashMap#entrySet()Ljava/util/Set;*F
+forEach;java.util.HashMap#forEach(Ljava/util/function/BiConsumer;)V*B
+get;java.util.HashMap#get(Ljava/lang/Object;)Ljava/lang/Object;*P
+getNodeEjava.util.HashMap#getNode(Ljava/lang/Object;)Ljava/util/HashMap$Node;*f
+getOrDefaultVjava.util.HashMap#getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;*3
+hash+java.util.HashMap#hash(Ljava/lang/Object;)I*]
+internalWriteEntriesEjava.util.HashMap#internalWriteEntries(Ljava/io/ObjectOutputStream;)V*'
+isEmptyjava.util.HashMap#isEmpty()Z*3
+keySet)java.util.HashMap#keySet()Ljava/util/Set;*T
+keysToArrayEjava.util.HashMap#keysToArray([Ljava/lang/Object;)[Ljava/lang/Object;*-
+
+loadFactorjava.util.HashMap#loadFactor()F*w
+mergenjava.util.HashMap#merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;*@
+
+newHashMap2java.util.HashMap#newHashMap(I)Ljava/util/HashMap;*{
+newNodepjava.util.HashMap#newNode(ILjava/lang/Object;Ljava/lang/Object;Ljava/util/HashMap$Node;)Ljava/util/HashMap$Node;*á
+newTreeNodexjava.util.HashMap#newTreeNode(ILjava/lang/Object;Ljava/lang/Object;Ljava/util/HashMap$Node;)Ljava/util/HashMap$TreeNode;*V
+prepareArrayFjava.util.HashMap#prepareArray([Ljava/lang/Object;)[Ljava/lang/Object;*T
+putMjava.util.HashMap#put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;*4
+putAll*java.util.HashMap#putAll(Ljava/util/Map;)V*d
+putIfAbsentUjava.util.HashMap#putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;*C
+putMapEntries2java.util.HashMap#putMapEntries(Ljava/util/Map;Z)V*]
+putValSjava.util.HashMap#putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object;*H
+
+readObject:java.util.HashMap#readObject(Ljava/io/ObjectInputStream;)V*1
+reinitialize!java.util.HashMap#reinitialize()V*H
+remove>java.util.HashMap#remove(Ljava/lang/Object;)Ljava/lang/Object;*I
+remove?java.util.HashMap#remove(Ljava/lang/Object;Ljava/lang/Object;)Z*k
+
+removeNode]java.util.HashMap#removeNode(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/util/HashMap$Node;*\
+replaceQjava.util.HashMap#replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;*]
+replaceRjava.util.HashMap#replace(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z*L
+
+replaceAll>java.util.HashMap#replaceAll(Ljava/util/function/BiFunction;)V*~
+replacementNodekjava.util.HashMap#replacementNode(Ljava/util/HashMap$Node;Ljava/util/HashMap$Node;)Ljava/util/HashMap$Node;*ä
+replacementTreeNodesjava.util.HashMap#replacementTreeNode(Ljava/util/HashMap$Node;Ljava/util/HashMap$Node;)Ljava/util/HashMap$TreeNode;*=
+resize3java.util.HashMap#resize()[Ljava/util/HashMap$Node;*!
+sizejava.util.HashMap#size()I*2
+tableSizeFor"java.util.HashMap#tableSizeFor(I)I*G
+
+treeifyBin9java.util.HashMap#treeifyBin([Ljava/util/HashMap$Node;I)V*:
+values0java.util.HashMap#values()Ljava/util/Collection;*X
+valuesToArrayGjava.util.HashMap#valuesToArray([Ljava/lang/Object;)[Ljava/lang/Object;*K
+writeObject<java.util.HashMap#writeObject(Ljava/io/ObjectOutputStream;)V#java.util.Mapjava.lang.Object)java.lang.Cloneablejava.lang.Object:java.util.AbstractMapjava.util.Mapjava.lang.Object¢Grafojava.lang.Object*<
+<init>2Grafo#<init>(Ljava/util/List;Ljava/util/HashMap;)V*)
 <init>Grafo#<init>(Ljava/util/List;)V*S
 	areaMediaFGrafo#areaMedia(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D*e
 areaMediaUnificadaOGrafo#areaMediaUnificada(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D*W
@@ -975,12 +1116,13 @@ CSVHandlerjava.lang.Object*0
 grafoProprietarios@Grafo#grafoProprietarios(Lorg/jgrapht/Graph;)Lorg/jgrapht/Graph;*2
 	printText%Grafo#printText(Lorg/jgrapht/Graph;)V*5
 propriedade&Grafo#propriedade()Lorg/jgrapht/Graph;*j
-sugerirTrocasYGrafo#sugerirTrocas(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;*\
+sugerirTrocasYGrafo#sugerirTrocas(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;*z
+sugerirTrocasAvancadoaGrafo#sugerirTrocasAvancado(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;*\
 unirGeometriasPorDonoCGrafo#unirGeometriasPorDono(Ljava/util/Collection;)Ljava/util/List;'org.jgrapht.Graphjava.lang.Object˜org.jgrapht.graph.SimpleGraph#org.jgrapht.graph.AbstractBaseGraph*B
 <init>8org.jgrapht.graph.SimpleGraph#<init>(Ljava/lang/Class;)V*l
 <init>borg.jgrapht.graph.SimpleGraph#<init>(Ljava/util/function/Supplier;Ljava/util/function/Supplier;Z)V*w
 createBuilderforg.jgrapht.graph.SimpleGraph#createBuilder(Ljava/lang/Class;)Lorg/jgrapht/graph/builder/GraphBuilder;*É
-createBuilderrorg.jgrapht.graph.SimpleGraph#createBuilder(Ljava/util/function/Supplier;)Lorg/jgrapht/graph/builder/GraphBuilder;Ü#org.jgrapht.graph.AbstractBaseGraphorg.jgrapht.Graphjava.lang.Cloneablejava.io.Serializableorg.jgrapht.graph.AbstractGraph)java.lang.Cloneablejava.lang.ObjectHorg.jgrapht.graph.AbstractGraphorg.jgrapht.Graphjava.lang.Object
+createBuilderrorg.jgrapht.graph.SimpleGraph#createBuilder(Ljava/util/function/Supplier;)Lorg/jgrapht/graph/builder/GraphBuilder;Ü#org.jgrapht.graph.AbstractBaseGraphorg.jgrapht.Graphjava.lang.Cloneablejava.io.Serializableorg.jgrapht.graph.AbstractGraphHorg.jgrapht.graph.AbstractGraphorg.jgrapht.Graphjava.lang.Object
 null intjava.lang.Integeríjava.lang.Integerjava.lang.Numberjava.lang.Object*%
 <init>java.lang.Integer#<init>()V*D
 parseInt8java.lang.Integer#parseInt(Ljava/lang/CharSequence;III)I*;

@@ -1,7 +1,236 @@
 
-Propriedade#getShapeLength()Dj
-`C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Propriedade.javaM M( "1*!
-1N N("
-N N(
-""B
-PropriedadeHX
+2CSVHandler#getPrecosFreguesia()Ljava/util/HashMap;i
+_C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/CSVHandler.javaE# E(5"16*Ó
+13Ht H(g
+e
+Ht H(
+%7java.lang.String"__id*;
+
+__unknown_file (*
+
+CSVHandler"
+csvFileName:8
+Hi H(s
+%8java.io.FileReader"java.io.FileReader≤
+Ø
+	He H(Ä
+%9".java.io.FileReader#<init>(Ljava/lang/String;)V*6
+
+__unknown_file (
+
+%8java.io.FileReader*4
+
+__unknown_file (
+
+%7java.lang.String*
+12*ú
+14HZ H(]ÖÇ
+H  H(^&
+%6 org.apache.commons.csv.CSVFormat"Sorg.apache.commons.csv.CSVFormat#withDelimiter(C)Lorg/apache/commons/csv/CSVFormat;*D
+
+__unknown_file ((
+&
+%5 org.apache.commons.csv.CSVFormat*!
+
+__unknown_file (
+;2withDelimiter(C)*
+13*Î
+15H  H()^
+\
+H  H(1&
+%4 org.apache.commons.csv.CSVFormat"__id*"
+
+__unknown_file (
+""ÙÒ
+H  H(K&
+%5 org.apache.commons.csv.CSVFormat"\org.apache.commons.csv.CSVFormat#withFirstRecordAsHeader()Lorg/apache/commons/csv/CSVFormat;*D
+
+__unknown_file ((
+&
+%4 org.apache.commons.csv.CSVFormat2withFirstRecordAsHeader()*
+14*¢
+16F) F(886
+F- F(6
+%0java.util.HashMap"java.util.HashMapf
+d
+F) F(8
+%1"java.util.HashMap#<init>()V*5
+
+__unknown_file (
+
+%0java.util.HashMapf
+d
+F F(9
+precosjava.util.HashMap"__id*5
+
+__unknown_file (
+
+%0java.util.HashMap64
+G& G(6
+%2java.util.Random"java.util.Randomd
+b
+G" G(8
+%3"java.util.Random#<init>()V*4
+
+__unknown_file (
+
+%2java.util.Randomd
+b
+G G(9
+randomjava.util.Random"__id*4
+
+__unknown_file (
+
+%2java.util.Random*
+15*8
+1U U(")
+U U(
+
+precosjava.util.HashMap*Ø
+3I I(!b
+`
+I I(!*
+record org.apache.commons.csv.CSVRecord"__id*"
+
+__unknown_file (
+""≥
+∞
+I I(!*
+record org.apache.commons.csv.CSVRecord"
+__arrayGet*H
+
+__unknown_file (,
+*
+parser org.apache.commons.csv.CSVParser*"
+
+__unknown_file (
+""*
+9
+1*Õ
+4N8 N(=j
+h
+N N(=
+%18double"__calculate*
+N6 N(7
+/*
+N N(5
+
+%17long*
+N8 N(=
+""Ã
+…
+O O(0
+%19java.lang.Double"__mapSet*9
+
+__unknown_file (
+
+precosjava.util.HashMap*;
+
+__unknown_file (
+
+	freguesiajava.lang.String*"
+
+__unknown_file (
+""*
+3*Â
+5M* M(Dk
+i
+M* M(D
+%14double"__calculate*
+M/ M(0
+**
+M* M(.2à*
+M1 M(D
+
+%13doublek
+i
+M# M(E
+%15double"__calculate*
+M' M((
++*
+M# M(&2»*
+M) M(E
+
+%14doublec
+a
+N' N(4
+%16double"__calculate*
+N- N(.
+**
+N' N(,
+""*
+N/ N(4
+""ë
+é
+N N(5
+%17long"java.lang.Math#round(D)J*.
+
+__unknown_file ("
+java.lang.Math*+
+
+__unknown_file (
+
+%16double*
+4*ô
+6M# M(&ÑÅ
+M1 M(D
+%13double"java.util.Random#nextDouble()D*8
+
+__unknown_file (
+
+randomjava.util.Random2nextDouble()*
+5*Ï
+8J J(;h
+f
+J J(;
+	freguesiajava.lang.String"__id*5
+
+__unknown_file (
+
+%11java.lang.StringÍÁ
+K K(2
+%12boolean"2java.util.HashMap#containsKey(Ljava/lang/Object;)Z*9
+
+__unknown_file (
+
+precosjava.util.HashMap*;
+
+__unknown_file (
+
+	freguesiajava.lang.String2containsKey(Ljava/lang/Object;)*
+3
+6*ï
+9J# J()Ä˝
+J# J(:
+%11java.lang.String"Jorg.apache.commons.csv.CSVRecord#get(Ljava/lang/String;)Ljava/lang/String;*H
+
+__unknown_file (,
+*
+record org.apache.commons.csv.CSVRecord*)
+
+__unknown_file (
+	Freguesia2get(Ljava/lang/String;)*
+8*û
+11	H H(Åá
+Ñ
+	H H(Å*
+parser org.apache.commons.csv.CSVParser"__id*E
+
+__unknown_file ()
+'
+%10 org.apache.commons.csv.CSVParser*
+3*¬
+12	H  H(Å™ß
+	H  H(Å'
+%10 org.apache.commons.csv.CSVParser"Zorg.apache.commons.csv.CSVFormat#parse(Ljava/io/Reader;)Lorg/apache/commons/csv/CSVParser;*D
+
+__unknown_file ((
+&
+%6 org.apache.commons.csv.CSVFormat*6
+
+__unknown_file (
+
+%8java.io.FileReader2parse(Ljava/io/Reader;)*
+11B
+
+CSVHandlerH

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Propriedade.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CSVHandler</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Propriedade.java</span></div><h1>Propriedade.java</h1><pre class="source lang-java linenums">import org.locationtech.jts.geom.Geometry;
 
+/**
+ * Representa uma propriedade geométrica e administrativa.
+ * Esta classe armazena informações como o identificador, área, perímetro,
+ * localização administrativa (freguesia, município, ilha), proprietário e geometria espacial.
+ */
 public class Propriedade {
 
     private int Objectid;
@@ -12,8 +17,8 @@ public class Propriedade {
     private String freguesia;
     private String municipio;
     private String ilha;
-
-
+    private Boolean isLoteavel;
+    private int qualidadeAcesso;
 
     /**
      * Construtor da classe Propriedade.
@@ -29,88 +34,103 @@ public class Propriedade {
      * @param municipio    município onde está localizada
      * @param ilha         ilha onde está localizada
      */
-<span class="fc" id="L32">    public Propriedade(int ObjectId, int par_id, long par_num, double shapeArea, double shapeLength, Geometry geometry, String owner,  String freguesia, String municipio, String ilha) {</span>
-<span class="fc" id="L33">        this.Objectid = ObjectId;</span>
-<span class="fc" id="L34">        this.par_id = par_id;</span>
-<span class="fc" id="L35">        this.par_num = par_num;</span>
-<span class="fc" id="L36">        this.shapeArea = shapeArea;</span>
-<span class="fc" id="L37">        this.shapeLength = shapeLength;</span>
-<span class="fc" id="L38">        this.geometry = geometry;</span>
-<span class="fc" id="L39">        this.owner = owner;</span>
-<span class="fc" id="L40">        this.freguesia = freguesia;</span>
-<span class="fc" id="L41">        this.municipio = municipio;</span>
-<span class="fc" id="L42">        this.ilha = ilha;</span>
-<span class="fc" id="L43">    }</span>
-
+<span class="fc" id="L37">    public Propriedade(int ObjectId, int par_id, long par_num, double shapeArea, double shapeLength, Geometry geometry, String owner,  String freguesia, String municipio, String ilha) {</span>
+<span class="fc" id="L38">        this.Objectid = ObjectId;</span>
+<span class="fc" id="L39">        this.par_id = par_id;</span>
+<span class="fc" id="L40">        this.par_num = par_num;</span>
+<span class="fc" id="L41">        this.shapeArea = shapeArea;</span>
+<span class="fc" id="L42">        this.shapeLength = shapeLength;</span>
+<span class="fc" id="L43">        this.geometry = geometry;</span>
+<span class="fc" id="L44">        this.owner = owner;</span>
+<span class="fc" id="L45">        this.freguesia = freguesia;</span>
+<span class="fc" id="L46">        this.municipio = municipio;</span>
+<span class="fc" id="L47">        this.ilha = ilha;</span>
+<span class="fc" id="L48">        this.isLoteavel = new java.util.Random().nextBoolean();</span>
+<span class="fc" id="L49">        this.qualidadeAcesso = 1 + new java.util.Random().nextInt(10);</span>
+<span class="fc" id="L50">    }</span>
 
     /**
      * @return identificador do objeto
      */
     public int getObjectid() {
-<span class="fc" id="L50">        return Objectid;</span>
+<span class="fc" id="L56">        return Objectid;</span>
     }
 
     /**
      * @return identificador do parcelamento
      */
     public int getPar_id() {
-<span class="fc" id="L57">        return par_id;</span>
+<span class="fc" id="L63">        return par_id;</span>
     }
 
     /**
      * @return número do parcelamento
      */
     public long getPar_num() {
-<span class="fc" id="L64">        return par_num;</span>
+<span class="fc" id="L70">        return par_num;</span>
     }
 
     /**
      * @return área da forma geométrica
      */
     public double getShapeArea() {
-<span class="fc" id="L71">        return shapeArea;</span>
+<span class="fc" id="L77">        return shapeArea;</span>
     }
 
     /**
      * @return perímetro da forma geométrica
      */
     public double getShapeLength() {
-<span class="fc" id="L78">        return shapeLength;</span>
+<span class="fc" id="L84">        return shapeLength;</span>
     }
 
     /**
      * @return geometria da propriedade
      */
     public Geometry getGeometry() {
-<span class="fc" id="L85">        return geometry;</span>
+<span class="fc" id="L91">        return geometry;</span>
     }
 
     /**
      * @return nome do proprietário
      */
     public String getOwner() {
-<span class="fc" id="L92">        return owner;</span>
+<span class="fc" id="L98">        return owner;</span>
     }
 
     /**
      * @return freguesia onde está localizada a propriedade
      */
     public String getFreguesia() {
-<span class="fc" id="L99">        return freguesia;</span>
+<span class="fc" id="L105">        return freguesia;</span>
     }
 
     /**
      * @return município onde está localizada a propriedade
      */
     public String getMunicipio() {
-<span class="fc" id="L106">        return municipio;</span>
+<span class="fc" id="L112">        return municipio;</span>
     }
 
     /**
      * @return ilha onde está localizada a propriedade
      */
     public String getIlha() {
-<span class="fc" id="L113">        return ilha;</span>
+<span class="fc" id="L119">        return ilha;</span>
+    }
+
+    /**
+     * @return se a propriedade é loteável
+     */
+    public Boolean getIsLoteavel() {
+<span class="fc" id="L126">        return isLoteavel;</span>
+    }
+
+    /**
+     * @return qualidade de acesso da propriedade
+     */
+    public int getQualidadeAcesso() {
+<span class="fc" id="L133">        return qualidadeAcesso;</span>
     }
 
     /**
@@ -118,7 +138,7 @@ public class Propriedade {
      */
     @Override
     public String toString() {
-<span class="fc" id="L121">        return &quot;Propriedade{&quot; +</span>
+<span class="fc" id="L141">        return &quot;Propriedade{&quot; +</span>
                 &quot;Objectid=&quot; + Objectid +
                 &quot;, par_id=&quot; + par_id +
                 &quot;, par_num=&quot; + par_num +
@@ -129,12 +149,17 @@ public class Propriedade {
                 &quot;, freguesia='&quot; + freguesia + '\'' +
                 &quot;, municipio='&quot; + municipio + '\'' +
                 &quot;, ilha='&quot; + ilha + '\'' +
+                &quot;, isLoteavel=&quot; + isLoteavel +
+                &quot;, qualidadeAcesso=&quot; + qualidadeAcesso +
                 '}';
     }
 
     public void setOwner(String owner) {
-<span class="fc" id="L136">        this.owner = owner;</span>
-<span class="fc" id="L137">    }</span>
+<span class="fc" id="L158">        this.owner = owner;</span>
+<span class="fc" id="L159">    }</span>
+
+
+
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

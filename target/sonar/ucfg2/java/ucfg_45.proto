@@ -1,0 +1,386 @@
+
+(Propriedade#toString()Ljava/lang/String;l
+`C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Propriedade.javaå å("1*ï!
+1
+ç ç(m
+k
+
+ç é(
+%0java.lang.String"__concat*
+
+ç ç(
+Propriedade{*
+
+é é(
+	Objectid=n
+l
+
+ç é(&
+%1java.lang.String"__concat*&
+
+ç é(
+
+%0java.lang.String*
+
+é é(&
+""u
+s
+
+ç è(
+%2java.lang.String"__concat*&
+
+ç é(&
+
+%1java.lang.String*
+
+è è(
+	, par_id=n
+l
+
+ç è($
+%3java.lang.String"__concat*&
+
+ç è(
+
+%2java.lang.String*
+
+è è($
+""v
+t
+
+ç ê(
+%4java.lang.String"__concat*&
+
+ç è($
+
+%3java.lang.String*
+
+ê ê(
+
+, par_num=n
+l
+
+ç ê(&
+%5java.lang.String"__concat*&
+
+ç ê(
+
+%4java.lang.String*
+
+ê ê(&
+""x
+v
+
+ç ë(
+%6java.lang.String"__concat*&
+
+ç ê(&
+
+%5java.lang.String*
+
+ë ë(
+, shapeArea=n
+l
+
+ç ë(*
+%7java.lang.String"__concat*&
+
+ç ë(
+
+%6java.lang.String*
+
+ë! ë(*
+""z
+x
+
+ç í( 
+%8java.lang.String"__concat*&
+
+ç ë(*
+
+%7java.lang.String* 
+
+í í( 
+, shapeLength=n
+l
+
+ç í(.
+%9java.lang.String"__concat*&
+
+ç í( 
+
+%8java.lang.String*
+
+í# í(.
+""x
+v
+
+ç ì(
+%10java.lang.String"__concat*&
+
+ç í(.
+
+%9java.lang.String*
+
+ì ì(
+, geometry=z
+x
+
+ì  ì(()
+%11"org.locationtech.jts.geom.Geometry"__id*9
+
+__unknown_file (*
+Propriedade"
+
+geometryñ
+ì
+
+ç ì((
+%12java.lang.String"__concat*'
+
+ç ì(
+
+%10java.lang.String*9
+
+ì  ì((+
+)
+%11"org.locationtech.jts.geom.Geometryw
+u
+
+ç î(
+%13java.lang.String"__concat*'
+
+ç ì((
+
+%12java.lang.String*
+
+î î(
+	, owner='e
+c
+
+î î(#
+%14java.lang.String"__id*6
+
+__unknown_file (*
+Propriedade"
+ownerÑ
+Å
+
+ç î(#
+%15java.lang.String"__concat*'
+
+ç î(
+
+%13java.lang.String*'
+
+î î(#
+
+%14java.lang.Stringp
+n
+
+ç î(*
+%16java.lang.String"__concat*'
+
+ç î(#
+
+%15java.lang.String*
+
+î& î(*
+\'{
+y
+
+ç ï(
+%17java.lang.String"__concat*'
+
+ç î(*
+
+%16java.lang.String*
+
+ï ï(
+, freguesia='i
+g
+
+ï" ï(+
+%18java.lang.String"__id*:
+
+__unknown_file (*
+Propriedade"
+	freguesiaÑ
+Å
+
+ç ï(+
+%19java.lang.String"__concat*'
+
+ç ï(
+
+%17java.lang.String*'
+
+ï" ï(+
+
+%18java.lang.Stringp
+n
+
+ç ï(2
+%20java.lang.String"__concat*'
+
+ç ï(+
+
+%19java.lang.String*
+
+ï. ï(2
+\'{
+y
+
+ç ñ(
+%21java.lang.String"__concat*'
+
+ç ï(2
+
+%20java.lang.String*
+
+ñ ñ(
+, municipio='i
+g
+
+ñ" ñ(+
+%22java.lang.String"__id*:
+
+__unknown_file (*
+Propriedade"
+	municipioÑ
+Å
+
+ç ñ(+
+%23java.lang.String"__concat*'
+
+ç ñ(
+
+%21java.lang.String*'
+
+ñ" ñ(+
+
+%22java.lang.Stringp
+n
+
+ç ñ(2
+%24java.lang.String"__concat*'
+
+ç ñ(+
+
+%23java.lang.String*
+
+ñ. ñ(2
+\'v
+t
+
+ç ó(
+%25java.lang.String"__concat*'
+
+ç ñ(2
+
+%24java.lang.String*
+
+ó ó(
+
+, ilha='d
+b
+
+ó ó(!
+%26java.lang.String"__id*5
+
+__unknown_file (*
+Propriedade"
+ilhaÑ
+Å
+
+ç ó(!
+%27java.lang.String"__concat*'
+
+ç ó(
+
+%25java.lang.String*'
+
+ó ó(!
+
+%26java.lang.Stringp
+n
+
+ç ó((
+%28java.lang.String"__concat*'
+
+ç ó(!
+
+%27java.lang.String*
+
+ó$ ó((
+\'{
+y
+
+ç ò(
+%29java.lang.String"__concat*'
+
+ç ó((
+
+%28java.lang.String*
+
+ò ò(
+, isLoteavel=k
+i
+
+ò" ò(,
+%30java.lang.Boolean"__id*;
+
+__unknown_file (*
+Propriedade"
+
+isLoteavelÖ
+Ç
+
+ç ò(,
+%31java.lang.String"__concat*'
+
+ç ò(
+
+%29java.lang.String*(
+
+ò" ò(,
+
+%30java.lang.BooleanÄ
+~
+
+ç ô($
+%32java.lang.String"__concat*'
+
+ç ò(,
+
+%31java.lang.String*$
+
+ô ô($
+, qualidadeAcesso=p
+n
+
+ç ô(6
+%33java.lang.String"__concat*'
+
+ç ô($
+
+%32java.lang.String*
+
+ô' ô(6
+""o
+m
+
+ç ö(
+%34java.lang.String"__concat*'
+
+ç ô(6
+
+%33java.lang.String*
+
+ö ö(
+}"'
+
+ç ö(
+
+%34java.lang.StringB
+PropriedadeH

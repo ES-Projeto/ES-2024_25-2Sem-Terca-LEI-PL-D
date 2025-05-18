@@ -1,0 +1,33 @@
+Main#main([Ljava/lang/String;)V
+false
+c2dfb026e88e772cd0c947fd7e5bf58b
+CSVHandler#<init>(Ljava/lang/String;)V
+CSVHandler#instance-init#
+Grafo#<init>(Ljava/util/List;Ljava/util/HashMap;)V
+Grafo#areaMedia(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D
+Grafo#areaMediaUnificada(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D
+Grafo#instance-init#
+Grafo#sugerirTrocas(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+Grafo#sugerirTrocasAvancado(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+GrafoVisual#visualize(Lorg/jgrapht/Graph;)V
+org.jgrapht.graph.SimpleGraph#<init>(Ljava/lang/Class;)V
+org.jgrapht.graph.SimpleGraph#instance-init#
+==
+addEdge org.jgrapht.Graph#addEdge(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+addVertex org.jgrapht.Graph#addVertex(Ljava/lang/Object;)Z
+containsVertex org.jgrapht.Graph#containsVertex(Ljava/lang/Object;)Z
+edgeSet org.jgrapht.Graph#edgeSet()Ljava/util/Set;
+forEach java.util.stream.Stream#forEach(Ljava/util/function/Consumer;)V
+getEdgeSource org.jgrapht.Graph#getEdgeSource(Ljava/lang/Object;)Ljava/lang/Object;
+getEdgeTarget org.jgrapht.Graph#getEdgeTarget(Ljava/lang/Object;)Ljava/lang/Object;
+getPrecosFreguesia CSVHandler#getPrecosFreguesia()Ljava/util/HashMap;
+getPropriedades CSVHandler#getPropriedades()Ljava/util/List;
+grafoProprietarios Grafo#grafoProprietarios(Lorg/jgrapht/Graph;)Lorg/jgrapht/Graph;
+isEmpty java.util.List#isEmpty()Z
+limit java.util.stream.Stream#limit(J)Ljava/util/stream/Stream;
+printf java.io.PrintStream#printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+println java.io.PrintStream#println(Ljava/lang/String;)V
+propriedade Grafo#propriedade()Lorg/jgrapht/Graph;
+size java.util.List#size()I
+stream java.util.Collection#stream()Ljava/util/stream/Stream;
+vertexSet org.jgrapht.Graph#vertexSet()Ljava/util/Set;

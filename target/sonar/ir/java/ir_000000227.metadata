@@ -1,3 +1,10 @@
-GrafoVisual#instance-init#
+Grafo#calcularAreaMediaUnificada(Ljava/util/Collection;)D
 false
-02f305baf19ca97a93716e2dc40f12bd
+ef0278a21582379b428053988758ef17
+Grafo#unirGeometriasPorDono(Ljava/util/Collection;)Ljava/util/List;
+==
+isEmpty java.util.List#isEmpty()Z
+mapToDouble java.util.stream.Stream#mapToDouble(Ljava/util/function/ToDoubleFunction;)Ljava/util/stream/DoubleStream;
+size java.util.List#size()I
+stream java.util.Collection#stream()Ljava/util/stream/Stream;
+sum java.util.stream.DoubleStream#sum()D

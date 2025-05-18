@@ -3,56 +3,95 @@ import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
-<span class="nc" id="L8">public class Main {</span>
+/**
+ * Classe principal responsável pela execução da aplicação.
+ * Esta classe:
+ * &lt;ul&gt;
+ *   &lt;li&gt;Lê dados de um ficheiro CSV.&lt;/li&gt;
+ *   &lt;li&gt;Constrói o grafo de propriedades com base em interseções geométricas.&lt;/li&gt;
+ *   &lt;li&gt;Gera o grafo de proprietários e visualiza um subgrafo com os primeiros 50 proprietários.&lt;/li&gt;
+ *   &lt;li&gt;Calcula e imprime a área média das propriedades (simples e unificada) para uma freguesia indicada.&lt;/li&gt;
+ *   &lt;li&gt;Gera e exibe sugestões de troca de propriedades entre proprietários para otimizar a área média.&lt;/li&gt;
+ * &lt;/ul&gt;
+ */
+
+<span class="nc" id="L21">public class Main {</span>
+
+    /**
+     * Ponto de entrada da aplicação.
+     *
+     * @param args argumentos de linha de comando (não utilizados)
+     * @throws IOException se ocorrer erro ao ler o ficheiro CSV
+     */
     public static void main(String[] args) throws IOException {
-<span class="nc" id="L10">        String csvFileName = &quot;Madeira-Moodle-1.1.csv&quot;;</span>
+<span class="nc" id="L30">        String csvFileName = &quot;Madeira-Moodle-1.1.csv&quot;;</span>
 
-<span class="nc" id="L12">        CSVHandler teste = new CSVHandler(csvFileName);</span>
-<span class="nc" id="L13">        List&lt;Propriedade&gt; propriedades = teste.getPropriedades();</span>
-<span class="nc" id="L14">        Grafo dois = new Grafo(propriedades);</span>
+        // Carregamento das Propriedades a partir do CSV
+<span class="nc" id="L33">        CSVHandler teste = new CSVHandler(csvFileName);</span>
+<span class="nc" id="L34">        List&lt;Propriedade&gt; propriedades = teste.getPropriedades();</span>
+<span class="nc" id="L35">        HashMap&lt;String,Double&gt; precos = teste.getPrecosFreguesia();</span>
+<span class="nc" id="L36">        Grafo dois = new Grafo(propriedades,precos);</span>
 
-<span class="nc" id="L16">        Graph&lt;Propriedade, DefaultEdge&gt; grafopropriedade = dois.propriedade();</span>
+        //Contrução do grafo de propriedades (com base em interseçoes geométricas)
+<span class="nc" id="L39">        Graph&lt;Propriedade, DefaultEdge&gt; grafopropriedade = dois.propriedade();</span>
 
-<span class="nc" id="L18">        Graph&lt;String, DefaultEdge&gt; grafoProprietarios = dois.grafoProprietarios(grafopropriedade);</span>
+        //Construçao do grafo de propriedades
+<span class="nc" id="L42">        Graph&lt;String, DefaultEdge&gt; grafoProprietarios = dois.grafoProprietarios(grafopropriedade);</span>
 
-<span class="nc" id="L20">        Graph&lt;String, DefaultEdge&gt; subGraph = new SimpleGraph&lt;&gt;(DefaultEdge.class);</span>
-<span class="nc" id="L21">        int count = 0;</span>
-<span class="nc bnc" id="L22" title="All 2 branches missed.">        for (String owner : grafoProprietarios.vertexSet()) {</span>
-<span class="nc" id="L23">            subGraph.addVertex(owner);</span>
-<span class="nc" id="L24">            count++;</span>
-<span class="nc bnc" id="L25" title="All 2 branches missed.">            if (count &gt;= 50) break;</span>
-<span class="nc" id="L26">        }</span>
+        //Subgrafo com apenas os primeiros 50 proprietários para visualização
+<span class="nc" id="L45">        Graph&lt;String, DefaultEdge&gt; subGraph = new SimpleGraph&lt;&gt;(DefaultEdge.class);</span>
+<span class="nc" id="L46">        int count = 0;</span>
+<span class="nc bnc" id="L47" title="All 2 branches missed.">        for (String owner : grafoProprietarios.vertexSet()) {</span>
+<span class="nc" id="L48">            subGraph.addVertex(owner);</span>
+<span class="nc" id="L49">            count++;</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">            if (count &gt;= 50) break;</span>
+<span class="nc" id="L51">        }</span>
 
-<span class="nc bnc" id="L28" title="All 2 branches missed.">        for (DefaultEdge edge : grafoProprietarios.edgeSet()) {</span>
-<span class="nc" id="L29">            String src = grafoProprietarios.getEdgeSource(edge);</span>
-<span class="nc" id="L30">            String tgt = grafoProprietarios.getEdgeTarget(edge);</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">        for (DefaultEdge edge : grafoProprietarios.edgeSet()) {</span>
+<span class="nc" id="L54">            String src = grafoProprietarios.getEdgeSource(edge);</span>
+<span class="nc" id="L55">            String tgt = grafoProprietarios.getEdgeTarget(edge);</span>
 
-<span class="nc bnc" id="L32" title="All 4 branches missed.">            if (subGraph.containsVertex(src) &amp;&amp; subGraph.containsVertex(tgt)) {</span>
-<span class="nc" id="L33">                subGraph.addEdge(src, tgt);</span>
+<span class="nc bnc" id="L57" title="All 4 branches missed.">            if (subGraph.containsVertex(src) &amp;&amp; subGraph.containsVertex(tgt)) {</span>
+<span class="nc" id="L58">                subGraph.addEdge(src, tgt);</span>
             }
-<span class="nc" id="L35">        }</span>
+<span class="nc" id="L60">        }</span>
 
-<span class="nc" id="L37">        GrafoVisual.visualize(subGraph);</span>
+        //Visualização do grafo filtrado
+<span class="nc" id="L63">        GrafoVisual.visualize(subGraph);</span>
 
-<span class="nc" id="L39">        String freguesia = &quot;Ponta do Sol&quot;;</span>
-<span class="nc" id="L40">        double media = Grafo.areaMedia(propriedades, &quot;freguesia&quot;, freguesia);</span>
-<span class="nc" id="L41">        System.out.printf(&quot;Área média das propriedades em &quot; + freguesia + &quot;: %.2f m²%n&quot;, media);</span>
+        //Cálculo e exibição da área média simples e unificada
+<span class="nc" id="L66">        String freguesia = &quot;Ponta do Sol&quot;;</span>
+<span class="nc" id="L67">        double media = Grafo.areaMedia(propriedades, &quot;freguesia&quot;, freguesia);</span>
+<span class="nc" id="L68">        System.out.printf(&quot;Área média das propriedades em &quot; + freguesia + &quot;: %.2f m²%n&quot;, media);</span>
 
-<span class="nc" id="L43">        double mediaUnificada = Grafo.areaMediaUnificada(propriedades, &quot;freguesia&quot;, freguesia);</span>
-<span class="nc" id="L44">        System.out.printf(&quot;Área média das propriedades em %s (com união): %.2f m²%n&quot;, freguesia, mediaUnificada);</span>
+<span class="nc" id="L70">        double mediaUnificada = Grafo.areaMediaUnificada(propriedades, &quot;freguesia&quot;, freguesia);</span>
+<span class="nc" id="L71">        System.out.printf(&quot;Área média das propriedades em %s (com união): %.2f m²%n&quot;, freguesia, mediaUnificada);</span>
 
-<span class="nc" id="L46">        List&lt;SugestaoTroca&gt; trocas = Grafo.sugerirTrocas(propriedades, &quot;freguesia&quot;, freguesia);</span>
-<span class="nc" id="L47">        System.out.println(&quot;Número total de sugestões geradas: &quot; + trocas.size());</span>
+        //Geração e exibição das melhores sugestões de troca
+<span class="nc" id="L74">        List&lt;SugestaoTroca&gt; trocas = Grafo.sugerirTrocas(propriedades, &quot;freguesia&quot;, freguesia);</span>
+<span class="nc" id="L75">        System.out.println(&quot;Número total de sugestões geradas: &quot; + trocas.size());</span>
 
-<span class="nc bnc" id="L49" title="All 2 branches missed.">        if (trocas.isEmpty()) {</span>
-<span class="nc" id="L50">            System.out.println(&quot;Nenhuma sugestão de troca encontrada.&quot;);</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">        if (trocas.isEmpty()) {</span>
+<span class="nc" id="L78">            System.out.println(&quot;Nenhuma sugestão de troca encontrada.&quot;);</span>
         } else {
-<span class="nc" id="L52">            System.out.println(&quot;Melhores sugestões de troca:&quot;);</span>
-<span class="nc" id="L53">            trocas.stream().limit(5).forEach(System.out::println);</span>
+<span class="nc" id="L80">            System.out.println(&quot;Melhores sugestões de troca:&quot;);</span>
+<span class="nc" id="L81">            trocas.stream().limit(5).forEach(System.out::println);</span>
         }
 
-<span class="nc" id="L56">    }</span>
+
+<span class="nc" id="L85">        List&lt;SugestaoTroca&gt; trocasAvancadas = Grafo.sugerirTrocasAvancado(propriedades, &quot;freguesia&quot;, freguesia);</span>
+<span class="nc" id="L86">        System.out.println(&quot;Número total de sugestões geradas: &quot; + trocas.size());</span>
+
+<span class="nc bnc" id="L88" title="All 2 branches missed.">        if (trocasAvancadas.isEmpty()) {</span>
+<span class="nc" id="L89">            System.out.println(&quot;Nenhuma sugestão de troca encontrada.&quot;);</span>
+        } else {
+<span class="nc" id="L91">            System.out.println(&quot;Melhores sugestões de troca AVANÇADAS:&quot;);</span>
+<span class="nc" id="L92">            trocasAvancadas.stream().limit(5).forEach(System.out::println);</span>
+        }
+
+<span class="nc" id="L95">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

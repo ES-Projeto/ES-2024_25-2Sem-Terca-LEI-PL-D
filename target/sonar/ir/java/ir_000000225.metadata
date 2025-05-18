@@ -1,9 +1,9 @@
-Grafo#areaMediaUnificada(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D
+Grafo#areaMedia(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)D
 false
-e88d3b39845b026925f3a5499d9b3986
-Grafo#calcularAreaMediaUnificada(Ljava/util/Collection;)D
-java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
+f4100898e30fc92f1b52b80f45f5d492
+java.util.OptionalDouble#orElse(D)D
 ==
-collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+average java.util.stream.DoubleStream#average()Ljava/util/OptionalDouble;
 filter java.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+mapToDouble java.util.stream.Stream#mapToDouble(Ljava/util/function/ToDoubleFunction;)Ljava/util/stream/DoubleStream;
 stream java.util.Collection#stream()Ljava/util/stream/Stream;

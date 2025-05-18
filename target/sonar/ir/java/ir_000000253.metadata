@@ -1,3 +1,3 @@
-Propriedade#setOwner(Ljava/lang/String;)V
+Propriedade#getIsLoteavel()Ljava/lang/Boolean;
 false
-324e7febab0400a1d6476d297c05d295
+9472b2439450227c884040eb9cb6af22
