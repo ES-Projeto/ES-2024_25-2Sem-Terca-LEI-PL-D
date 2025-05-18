@@ -58,6 +58,14 @@ public class CSVHandler {
         return propriedades;
     }
 
+
+    /**
+     * Obtém um mapa de preços médios por metro quadrado para cada freguesia,
+     * lendo os dados de um ficheiro CSV e gerando valores aleatórios entre 200 e 2000 euros.
+     * Cada freguesia terá um preço único gerado uma única vez durante a leitura.
+     *
+     * @return HashMap onde a chave é o nome da freguesia e o valor é o preço médio por metro quadrado arredondado a duas casas decimais.
+     */
     public HashMap<String, Double> getPrecosFreguesia() {
         HashMap<String, Double> precos = new HashMap<>();
         java.util.Random random = new java.util.Random();
