@@ -253,6 +253,20 @@ public class Grafo {
         return geometrias.isEmpty() ? 0.0 : soma / geometrias.size();
     }
 
+    /**
+     * Sugere trocas entre propriedades de diferentes proprietários filtradas por um critério geográfico,
+     * considerando se as propriedades são loteáveis, o preço médio da freguesia e a qualidade de acesso,
+     * e ordena as sugestões por um score calculado.
+     *
+     * A troca só é considerada se pelo menos uma das propriedades for loteável e o ganho na área unificada for positivo.
+     * O score de ordenação é calculado como o produto do ganho, preço médio das freguesias e qualidade média do acesso,
+     * ponderado também pelo potencial baseado na diferença de áreas.
+     *
+     * @param propriedades Lista completa de propriedades para análise.
+     * @param tipo Tipo de filtro geográfico ("freguesia", "municipio" ou "ilha").
+     * @param valor Valor do filtro geográfico para selecionar propriedades (exemplo: nome da freguesia).
+     * @return Lista ordenada de sugestões de troca, contendo as propriedades a trocar, ganho, potencial e score.
+     */
     public static List<SugestaoTroca> sugerirTrocasAvancado(List<Propriedade> propriedades, String tipo, String valor) {
         List<Propriedade> filtradas = propriedades.stream()
                 .filter(p -> switch (tipo.toLowerCase()) {
@@ -265,14 +279,14 @@ public class Grafo {
 
         List<SugestaoTroca> sugestoes = new ArrayList<>();
         int tentativas = 0;
-        int limite = 10000; // aumenta o limite
+        int limite = 10000; // Limita o número de tentativas para evitar processamento excessivo
 
         for (Propriedade a : filtradas) {
             for (Propriedade b : filtradas) {
                 if (tentativas++ > limite) break;
-                if (a.getPar_id() == b.getPar_id()) continue;
-                if (!a.getOwner().equals(b.getOwner())) {
-                    // Permite trocas se pelo menos uma for loteável
+                if (a.getPar_id() == b.getPar_id()) continue; // Ignorar a mesma propriedade
+                if (!a.getOwner().equals(b.getOwner())) { // Troca só entre proprietários diferentes
+                    // Permite trocas se pelo menos uma das propriedades for loteável
                     if (Boolean.TRUE.equals(a.getIsLoteavel()) || Boolean.TRUE.equals(b.getIsLoteavel())) {
                         String donoA = a.getOwner();
                         String donoB = b.getOwner();
@@ -283,35 +297,49 @@ public class Grafo {
 
                         double antes = calcularAreaMediaUnificada(grupoOriginal);
 
+                        // Simula a troca de proprietários
                         a.setOwner(donoB);
                         b.setOwner(donoA);
 
                         double depois = calcularAreaMediaUnificada(grupoOriginal);
 
+                        // Reverte a troca simulada
                         a.setOwner(donoA);
                         b.setOwner(donoB);
 
                         double ganho = depois - antes;
 
-                        if (ganho > 0) { // permite qualquer ganho positivo
+                        if (ganho > 0) { // Considera apenas ganhos positivos
+                            // Obtém preços médios por freguesia, valor padrão 1000.0 se não existir
                             double precoA = precos.getOrDefault(a.getFreguesia(), 1000.0);
                             double precoB = precos.getOrDefault(b.getFreguesia(), 1000.0);
                             double precoMedio = (precoA + precoB) / 2.0;
+
+                            // Qualidade média de acesso (assumindo escala 0-10 para cada propriedade, divide por 20 para normalizar)
                             double qualidadeMed = (a.getQualidadeAcesso() + b.getQualidadeAcesso()) / 20.0;
+
+                            // Score combinado para ordenar sugestões
                             double score = ganho * precoMedio * qualidadeMed;
+
                             double dif = Math.abs(a.getShapeArea() - b.getShapeArea());
                             double potencial = 1.0 / (1.0 + dif);
+
                             SugestaoTroca s = new SugestaoTroca(a, b, ganho, potencial);
+
+                            // Usa reflexão para definir o score na sugestão, caso o método exista
                             try {
                                 java.lang.reflect.Method m = s.getClass().getMethod("setScore", double.class);
                                 m.invoke(s, score);
                             } catch (Exception ignored) {}
+
                             sugestoes.add(s);
                         }
                     }
                 }
             }
         }
+
+        // Ordena sugestões por score (decrescente). Caso falhe, ordena por ganho * potencial
         sugestoes.sort((s1, s2) -> {
             try {
                 java.lang.reflect.Method m = s1.getClass().getMethod("getScore");
@@ -322,6 +350,8 @@ public class Grafo {
                 return -Double.compare(s1.getGanhoTotal() * s1.getPotencial(), s2.getGanhoTotal() * s2.getPotencial());
             }
         });
+
         return sugestoes;
     }
+
 }
