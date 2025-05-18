@@ -1,5 +1,10 @@
 import org.locationtech.jts.geom.Geometry;
 
+/**
+ * Representa uma propriedade geométrica e administrativa.
+ * Esta classe armazena informações como o identificador, área, perímetro,
+ * localização administrativa (freguesia, município, ilha), proprietário e geometria espacial.
+ */
 public class Propriedade {
 
     private int Objectid;

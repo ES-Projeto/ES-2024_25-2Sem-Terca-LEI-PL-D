@@ -1,0 +1,72 @@
+@options
+@argfile
+-classpath
+'C:/Users/alves/.m2/repository/org/apache/commons/commons-csv/1.10.0/commons-csv-1.10.0.jar;C:/Users/alves/.m2/repository/org/locationtech/jts/jts-core/1.18.2/jts-core-1.18.2.jar;C:/Users/alves/.m2/repository/org/jgrapht/jgrapht-core/1.5.1/jgrapht-core-1.5.1.jar;C:/Users/alves/.m2/repository/org/jheaps/jheaps/0.13/jheaps-0.13.jar;C:/Users/alves/.m2/repository/org/tinyjee/jgraphx/jgraphx/3.4.1.3/jgraphx-3.4.1.3.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'17'
+-sourcepath
+'C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'CSVHandler 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'CSVHandler 1.0-SNAPSHOT API'
+'C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/CSVHandler.java'
+'C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Grafo.java'
+'C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/GrafoVisual.java'
+'C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Main.java'
+'C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/Propriedade.java'
+'C:/Users/alves/Repositorio clonado/ES-2024_25-2Sem-Terca-LEI-PL-D/src/main/java/SugestaoTroca.java'
+C:\Users\alves\.m2\repository\org\apache\commons\commons-csv\1.10.0\commons-csv-1.10.0.jar = 1744038054867
+C:\Users\alves\.m2\repository\org\locationtech\jts\jts-core\1.18.2\jts-core-1.18.2.jar = 1744038054970
+C:\Users\alves\.m2\repository\org\jgrapht\jgrapht-core\1.5.1\jgrapht-core-1.5.1.jar = 1744038055076
+C:\Users\alves\.m2\repository\org\jheaps\jheaps\0.13\jheaps-0.13.jar = 1744038055154
+C:\Users\alves\.m2\repository\org\tinyjee\jgraphx\jgraphx\3.4.1.3\jgraphx-3.4.1.3.jar = 1747494213942
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\src\main\java\CSVHandler.java = 1747601606083
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\src\main\java\Grafo.java = 1747601872145
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\src\main\java\GrafoVisual.java = 1747601965120
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\src\main\java\Main.java = 1747602268436
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\src\main\java\Propriedade.java = 1747602344106
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\src\main\java\SugestaoTroca.java = 1747602457414
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\src\main\java = 1747602457415
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\allclasses-index.html = 1747602478249
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\allpackages-index.html = 1747602478253
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\copy.svg = 1747602478281
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\CSVHandler.html = 1747602478039
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\element-list = 1747602478171
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\Grafo.html = 1747602478071
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\GrafoVisual.html = 1747602478091
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\help-doc.html = 1747602478278
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\index-all.html = 1747602478269
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\index.html = 1747602478273
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\link.svg = 1747602478283
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\Main.html = 1747602478104
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\member-search-index.js = 1747602478257
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\module-search-index.js = 1747602478255
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\overview-tree.html = 1747602478235
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\package-search-index.js = 1747602478255
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\package-summary.html = 1747602478182
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\package-tree.html = 1747602478189
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\package-use.html = 1747602478233
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\Propriedade.html = 1747602478139
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\script.js = 1747602478280
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\search-page.js = 1747602478286
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\search.html = 1747602478272
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\search.js = 1747602478284
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\stylesheet.css = 1747602478279
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\SugestaoTroca.html = 1747602478168
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\tag-search-index.js = 1747602478258
+C:\Users\alves\Repositorio clonado\ES-2024_25-2Sem-Terca-LEI-PL-D\target\site\apidocs\type-search-index.js = 1747602478256

@@ -7,8 +7,20 @@ import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Classe utilitária responsável pela visualização gráfica de um grafo genérico usando a biblioteca JGraphX.
+ * Os vértices e arestas do grafo são convertidos em elementos visuais, exibidos numa interface Swing.
+ */
 public class GrafoVisual {
 
+    /**
+     * Visualiza um grafo passado como argumento numa janela gráfica.
+     * Esta função utiliza {@code mxGraph} para desenhar os vértices e as conexões (arestas) com um layout orgânico.
+     *
+     * @param jGraphTGraph Grafo do JGraphT a ser visualizado. Os nós e arestas são desenhados automaticamente.
+     * @param <V> Tipo dos vértices.
+     * @param <E> Tipo das arestas.
+     */
     public static <V, E> void visualize(Graph<V, E> jGraphTGraph) {
         if (jGraphTGraph == null || jGraphTGraph.vertexSet().isEmpty()) {
             System.out.println(" Grafo vazio. Nenhum nó para visualizar.");

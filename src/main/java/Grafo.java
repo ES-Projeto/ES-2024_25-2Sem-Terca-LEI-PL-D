@@ -9,13 +9,28 @@ import org.locationtech.jts.operation.union.CascadedPolygonUnion;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Classe responsável por construir e manipular grafos de propriedades e proprietários,
+ * bem como calcular métricas e sugerir trocas com base em critérios de otimização.
+ */
+
 public class Grafo {
     private List<Propriedade> propriedades;
 
+    /**
+     * Construtor da classe Grafo.
+     *
+     * @param propriedades Lista de propriedades disponíveis no sistema.
+     */
     public Grafo(List<Propriedade> propriedades) {
         this.propriedades = propriedades;
     }
 
+    /**
+     * Cria um grafo onde os nós são propriedades e as arestas representam interseções entre as suas geometrias.
+     *
+     * @return Grafo de propriedades baseado na vizinhança geométrica.
+     */
     public Graph<Propriedade, DefaultEdge> propriedade() {
         Graph<Propriedade, DefaultEdge> grafo = new SimpleGraph<>(DefaultEdge.class);
         STRtree tree = new STRtree();
@@ -37,6 +52,13 @@ public class Grafo {
         return grafo;
     }
 
+    /**
+     * Imprime a representação textual de um grafo, listando os seus nós e vizinhos.
+     *
+     * @param grafo Grafo a ser impresso.
+     * @param <V> Tipo dos vértices.
+     * @param <E> Tipo das arestas.
+     */
     public static <V, E> void printText(Graph<V, E> grafo) {
         for (V vertice : grafo.vertexSet()) {
             System.out.println("Nó: " + vertice);
@@ -47,6 +69,13 @@ public class Grafo {
         }
     }
 
+    /**
+     * Constrói um grafo onde os nós representam proprietários e as arestas representam relações de vizinhança
+     * entre suas propriedades.
+     *
+     * @param grafoPropriedades Grafo de propriedades.
+     * @return Grafo com proprietários conectados por vizinhança.
+     */
     public Graph<String, DefaultEdge> grafoProprietarios(Graph<Propriedade, DefaultEdge> grafoPropriedades) {
         Graph<String, DefaultEdge> grafo = new SimpleGraph<>(DefaultEdge.class);
         for (DefaultEdge edge : grafoPropriedades.edgeSet()) {
@@ -63,6 +92,14 @@ public class Grafo {
         return grafo;
     }
 
+    /**
+     * Calcula a área média das propriedades filtradas por freguesia, município ou ilha.
+     *
+     * @param propriedades Lista de propriedades.
+     * @param tipo Tipo de filtro ("freguesia", "municipio" ou "ilha").
+     * @param valor Valor do filtro.
+     * @return Área média das propriedades filtradas.
+     */
     public static double areaMedia(List<Propriedade> propriedades, String tipo, String valor) {
         return propriedades.stream()
                 .filter(p -> switch (tipo.toLowerCase()) {
@@ -76,6 +113,14 @@ public class Grafo {
                 .orElse(0.0);
     }
 
+    /**
+     * Calcula a área média considerando a união de propriedades adjacentes do mesmo proprietário.
+     *
+     * @param propriedades Lista de propriedades.
+     * @param tipo Tipo de filtro geográfico.
+     * @param valor Valor a ser filtrado.
+     * @return Área média após unificação de propriedades adjacentes por proprietário.
+     */
     public static double areaMediaUnificada(List<Propriedade> propriedades, String tipo, String valor) {
         List<Propriedade> filtradas = propriedades.stream()
                 .filter(p -> switch (tipo.toLowerCase()) {
@@ -89,6 +134,15 @@ public class Grafo {
         return calcularAreaMediaUnificada(filtradas);
     }
 
+    /**
+     * Sugere trocas entre propriedades de diferentes proprietários, visando aumentar a área média
+     * unificada e com base no potencial de troca.
+     *
+     * @param propriedades Lista de propriedades.
+     * @param tipo Tipo de filtro ("freguesia", "municipio", "ilha").
+     * @param valor Valor a ser usado no filtro.
+     * @return Lista de sugestões de trocas com ganho e potencial calculado.
+     */
     public static List<SugestaoTroca> sugerirTrocas(List<Propriedade> propriedades, String tipo, String valor) {
         List<Propriedade> filtradas = propriedades.stream()
                 .filter(p -> switch (tipo.toLowerCase()) {
@@ -140,6 +194,12 @@ public class Grafo {
         return sugestoes;
     }
 
+    /**
+     * Agrupa e une geometrias de propriedades por proprietário, tratando interseções e vizinhanças.
+     *
+     * @param propriedades Lista de propriedades.
+     * @return Lista de geometrias unificadas por dono.
+     */
     private static List<Geometry> unirGeometriasPorDono(Collection<Propriedade> propriedades) {
         Map<String, List<Propriedade>> porDono = propriedades.stream()
                 .collect(Collectors.groupingBy(Propriedade::getOwner));
@@ -175,6 +235,12 @@ public class Grafo {
         return geometriasAgrupadas;
     }
 
+    /**
+     * Calcula a média da área total das geometrias agrupadas/unificadas por proprietário.
+     *
+     * @param propriedades Subconjunto de propriedades.
+     * @return Área média resultante da união de parcelas adjacentes.
+     */
     private static double calcularAreaMediaUnificada(Collection<Propriedade> propriedades) {
         List<Geometry> geometrias = unirGeometriasPorDono(propriedades);
         double soma = geometrias.stream().mapToDouble(Geometry::getArea).sum();
